@@ -5,10 +5,33 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link rel="stylesheet" href="/build/tailwind.css">
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+
 </head>
 <body>
-  <div class="flex h-screen justify-center items-center">
-    <h1 class="text-4xl text-yellow-400">Hello</h1>
+  <div class="flex h-screen justify-center items-center" style="background-image: url('img/background.jpg');">
+    <h1 class="text-6xl text-yellow-400 text-center uppercase">
+      <span x-data="scrambled('Akcia')" x-text="scrambledText"></span>
+      <br/>
+      <span x-data="scrambled('Zet')" x-text="scrambledText"></span>
+    </h1>
   </div>
+
+  <script>
+    const SCRAMBLE_PROBABILITY = 1/2
+
+    function scrambled(initialText) {
+      let scrambledText = ''
+
+      for(let letterIndex = 0; letterIndex < initialText.length; letterIndex++) {
+        const shouldScramble = Math.random() <= SCRAMBLE_PROBABILITY
+        scrambledText += shouldScramble ? '*' : initialText[letterIndex]
+      }
+
+      return {
+        scrambledText: scrambledText,
+      }
+    }
+  </script>
 </body>
 </html>
