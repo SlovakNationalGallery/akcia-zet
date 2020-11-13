@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,23 +8,28 @@
   <link rel="stylesheet" href="/build/tailwind.css">
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
+
 <body>
-  <div id="openseadragon1" class="absolute h-screen w-screen"></div>
-  <div class="relative flex h-screen justify-center items-center">
-    <h1 class="text-6xl text-yellow-400 text-center uppercase">
-      <span x-data="scrambled('Akcia')" x-text="scrambledText"></span>
-      <br/>
-      <span x-data="scrambled('Zet')" x-text="scrambledText"></span>
-    </h1>
+  <div class="relative h-4/5">
+    <div id="openseadragon1" class="absolute inset-0"></div>
+    <div class="relative h-full flex justify-center items-center text-yellow-400 uppercase">
+      <h1 class="text-8xl text-center leading-loose">
+        <span x-data="scrambled('Akcia')" x-text="scrambledText"></span>
+        <br />
+        <span x-data="scrambled('Zet')" x-text="scrambledText"></span>
+      </h1>
+      <h3 class="absolute tracking-widest mt-3 text-3xl mx-auto my-auto">Umenovedná výprava</h3>
+    </div>
   </div>
 
+
   <script>
-    const SCRAMBLE_PROBABILITY = 1/2
+    const SCRAMBLE_PROBABILITY = 1 / 2
 
     function scrambled(initialText) {
       let scrambledText = ''
 
-      for(let letterIndex = 0; letterIndex < initialText.length; letterIndex++) {
+      for (let letterIndex = 0; letterIndex < initialText.length; letterIndex++) {
         const shouldScramble = Math.random() <= SCRAMBLE_PROBABILITY
         scrambledText += shouldScramble ? '*' : initialText[letterIndex]
       }
@@ -65,4 +71,5 @@
     })
   </script>
 </body>
+
 </html>
