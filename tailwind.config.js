@@ -15,6 +15,7 @@ module.exports = {
       fontSize: {
         '8xl': '6rem',
       },
+
       colors: {
         gray: {
           ...colors.gray,
@@ -30,6 +31,10 @@ module.exports = {
           '400': '#fc579d',
         },
       },
+
+      minHeight: {
+        '96': '24rem'
+      }
     },
   },
   variants: {},
