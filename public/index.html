@@ -6,10 +6,10 @@
   <title>Document</title>
   <link rel="stylesheet" href="/build/tailwind.css">
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-
 </head>
 <body>
-  <div class="flex h-screen justify-center items-center" style="background-image: url('img/background.jpg');">
+  <div id="openseadragon1" class="absolute h-screen w-screen"></div>
+  <div class="relative flex h-screen justify-center items-center">
     <h1 class="text-6xl text-yellow-400 text-center uppercase">
       <span x-data="scrambled('Akcia')" x-text="scrambledText"></span>
       <br/>
@@ -32,6 +32,37 @@
         scrambledText: scrambledText,
       }
     }
+  </script>
+
+  <!-- Loading background image -->
+  <script src="https://cdn.jsdelivr.net/npm/openseadragon@2.4/build/openseadragon/openseadragon.min.js"></script>
+  <script type="text/javascript">
+    const tileSource = new OpenSeadragon.DziTileSource(
+      11242, 7793, 256, 0,
+      'https://img.webumenia.sk/zoom/?path=%2FSNGARTPETRUS%2FX3900%2FSNG--O_3844--1_1--2010_03_11--L2_WEB.jp2_files/',
+      'jpg',
+    )
+
+    const destinations = [
+      new OpenSeadragon.Point(.5, .37),
+      new OpenSeadragon.Point(.43, .33),
+      new OpenSeadragon.Point(.357, .194),
+    ]
+
+    var viewer = OpenSeadragon({
+      id: "openseadragon1",
+      showNavigationControl: false,
+      mouseNavEnabled: false,
+      defaultZoomLevel: 14,
+      minPixelRatio: 1,
+      tileSources: tileSource,
+      immediateRender: true,
+    })
+
+    viewer.addHandler('open', function () {
+      const randomDestination = destinations[Math.floor(Math.random() * destinations.length)]
+      viewer.viewport.panTo(randomDestination, true);
+    })
   </script>
 </body>
 </html>
