@@ -1,3 +1,5 @@
+const { colors } = require('tailwindcss/defaultTheme')
+
 module.exports = {
   future: {
     removeDeprecatedGapUtilities: true,
@@ -12,7 +14,22 @@ module.exports = {
 
       fontSize: {
         '8xl': '6rem',
-      }
+      },
+      colors: {
+        gray: {
+          ...colors.gray,
+          '800': '#3c3838',
+        },
+        yellow: {
+          ...colors.yellow,
+          '200': '#fffdc1',
+          '400': '#f5ff00',
+        },
+        pink: {
+          ...colors.pink,
+          '400': '#fc579d',
+        },
+      },
     },
   },
   variants: {},

@@ -1,10 +1,10 @@
-<html lang="en">
+<html lang="en" x-data="scrambledTitle()">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title x-text="scrambledTitle + ' — umenovedná výprava'">***** ***</title>
   <link rel="stylesheet" href="/build/tailwind.css">
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
@@ -13,29 +13,63 @@
   <div class="relative h-4/5">
     <div id="openseadragon1" class="absolute inset-0"></div>
     <div class="relative h-full flex justify-center items-center text-yellow-400 uppercase">
-      <h1 class="text-8xl text-center leading-loose">
-        <span x-data="scrambled('Akcia')" x-text="scrambledText"></span>
-        <br />
-        <span x-data="scrambled('Zet')" x-text="scrambledText"></span>
-      </h1>
-      <h3 class="absolute tracking-widest mt-3 text-3xl mx-auto my-auto">Umenovedná výprava</h3>
+      <h1 class="text-8xl text-center leading-loose" x-html="scrambledTitle.replace(' ', '<br>')"></h1>
+      <h3 class="absolute tracking-widest mt-2 text-3xl mx-auto my-auto">Umenovedná výprava</h3>
+    </div>
+  </div>
+  <div class="bg-gray-800 py-8">
+    <div class="w-4/5 mx-auto text-center text-yellow-200 font-bold uppercase">
+      <p class="text-xl pt-8 leading-relaxed tracking-wider">
+        Vydávame sa na niekoľkomesačnú vzrušujúcu umenovednú výpravu
+        na ktorej otvoríme dôležité a aktuálne témy
+      </p>
+
+      <ul class="text-2xl my-6">
+        <li class="my-2">umenie × propaganda</li>
+        <li class="my-2">hoax</li>
+        <li class="my-2">kult osobnosti</li>
+        <li class="my-2">originál × kópia</li>
+        <li class="my-2">monumentálna maľba</li>
+        <li class="my-2">umenie na zakázku</li>
+        <li class="my-2">a mnoho ďalších.</li>
+      </ul>
+
+      <p class="text-xl py-8 leading-relaxed tracking-wider">
+        Pripravované videá, prednášky, diskusie, články, audio podcasty,
+        a ďalšie formáty na tieto témy budete môcť už onedlho sledovať
+        práve tu.
+      </p>
+
+      <a class="inline-block py-4 bg-yellow-400 text-pink-400 text-2xl leading-tight rounded-xl" href="#">
+        Prihláste sa do nášho newslettera!
+      </a>
     </div>
   </div>
 
 
   <script>
-    const SCRAMBLE_PROBABILITY = 1 / 2
+    function pickRandom(array) {
+      return array[Math.floor(Math.random() * array.length)]
+    }
 
-    function scrambled(initialText) {
-      let scrambledText = ''
+    const titleVariants = [
+      '*k*i* ze*',
+      '**ci* ze*',
+      '**cia ***',
+      'ak**a ***',
+      '*k*ia ***',
+      '**c** *et',
+      'a*c** *e*',
+      '*k**a **t',
+      '**c*a z**',
+      'a**i* ***',
+      '**ci* **t',
+      '****a zet',
+    ]
 
-      for (let letterIndex = 0; letterIndex < initialText.length; letterIndex++) {
-        const shouldScramble = Math.random() <= SCRAMBLE_PROBABILITY
-        scrambledText += shouldScramble ? '*' : initialText[letterIndex]
-      }
-
+    function scrambledTitle() {
       return {
-        scrambledText: scrambledText,
+        scrambledTitle: pickRandom(titleVariants).toUpperCase()
       }
     }
   </script>
@@ -66,8 +100,7 @@
     })
 
     viewer.addHandler('open', function () {
-      const randomDestination = destinations[Math.floor(Math.random() * destinations.length)]
-      viewer.viewport.panTo(randomDestination, true);
+      viewer.viewport.panTo(pickRandom(destinations), true);
     })
   </script>
 </body>
