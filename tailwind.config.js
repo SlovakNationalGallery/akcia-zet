@@ -9,6 +9,7 @@ module.exports = {
   theme: {
     extend: {
       spacing: {
+        '1/2': '50%',
         '3/4': '75%',
       },
 
@@ -19,12 +20,14 @@ module.exports = {
 
       fontSize: {
         '8xl': '6rem',
+        '9xl': '8rem',
+        '10xl': '11rem',
       },
 
       colors: {
         gray: {
           ...colors.gray,
-          '800': '#3c3838',
+          '800': '#353738',
         },
         yellow: {
           ...colors.yellow,
@@ -34,6 +37,11 @@ module.exports = {
         pink: {
           ...colors.pink,
           '400': '#fc579d',
+        },
+        red: {
+          ...colors.red,
+          '800': '#b10000',
+          '900': '#4d4141',
         },
       },
       letterSpacing: {

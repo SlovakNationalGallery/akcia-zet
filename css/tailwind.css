@@ -36,3 +36,18 @@
     font-style: 700;
   }
 }
+
+@layer utilities {
+  .bg-gradient-to-r-slanted {
+    background-image: linear-gradient(87deg, var(--gradient-color-stops));
+  }
+
+  @responsive {
+    .text-shadow {
+      text-shadow: .1em 0.1em #b1000099;
+    }
+    .text-shadow-none {
+      text-shadow: none;
+    }
+  }
+}
