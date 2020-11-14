@@ -9,41 +9,41 @@
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
 
-<body class="bg-gray-800 font-serif">
-  <div class="relative min-h-96 h-4/5 text-yellow-400">
+<body class="bg-gray-800 font-serif antialiased">
+  <div class="relative min-h-96 h-3/4 text-yellow-400">
     <div id="openseadragon1" class="absolute inset-0"></div>
-    <div class="relative h-full flex justify-center items-center uppercase">
-      <h1 class="text-8xl font-mono text-center leading-loose" x-html="scrambledTitle.replace(' ', '<br>')"></h1>
-      <h2 class="absolute text-center tracking-widest mt-2 text-2xl mx-auto my-auto">Umenovedná&nbsp;výprava</h3>
+    <div class="relative h-full pt-10 flex justify-center items-center uppercase">
+      <h1 class="text-8xl font-mono text-center leading-relaxed tracking-wider" x-html="scrambledTitle.replace(' ', '<br>')"></h1>
+      <h2 class="absolute text-xl font-bold text-center tracking-widest mt-4 mx-auto my-auto">Umenovedná&nbsp;výprava</h3>
     </div>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="fill-current absolute w-6 top-0 right-0 m-8">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="fill-current absolute w-5 top-0 right-0 m-8">
       <path d="M10.684 10.684h7.945v3.29h-6.577v1.369h6.577v3.288h-7.945v-7.947zm0-8.349l6.979 6.98h-6.979v-6.98zm-9.316-.967h7.948v7.947H1.368V1.368zm10.285 0h6.976v6.981l-6.976-6.981zM0 0v10.684h9.316v7.947H1.368v-6.579H0V20h20V0H0z" />
     </svg>
   </div>
-  <div class="py-8">
-    <div class="w-4/5 mx-auto text-center text-yellow-200 font-bold uppercase">
-      <p class="text-xl pt-8 leading-relaxed tracking-wider">
-        Vydávame sa na niekoľkomesačnú vzrušujúcu umenovednú výpravu
-        na ktorej otvoríme dôležité a aktuálne témy
+  <div class="container mx-auto py-8 px-8">
+    <div class="text-center text-yellow-200 font-bold uppercase">
+      <p class="text-m leading-loose tracking-wider">
+        Vydávame sa na niekoľkomesačnú vzrušujúcu umenovednú výpravu,
+        na ktorej otvoríme dôležité a&nbsp;aktuálne témy
       </p>
 
-      <ul class="text-2xl my-6">
-        <li class="my-2">umenie × propaganda</li>
-        <li class="my-2">hoax</li>
-        <li class="my-2">kult osobnosti</li>
-        <li class="my-2">originál × kópia</li>
-        <li class="my-2">monumentálna maľba</li>
-        <li class="my-2">umenie na zakázku</li>
-        <li class="my-2">a mnoho ďalších.</li>
+      <ul class="text-xl mt-8 tracking-widest">
+        <li class="my-6">umenie&nbsp;×&nbsp;propaganda</li>
+        <li class="my-6">hoax</li>
+        <li class="my-6">kult osobnosti</li>
+        <li class="my-6">originál × kópia</li>
+        <li class="my-6">monumentálna maľba</li>
+        <li class="my-6">umenie na zakázku</li>
+        <li class="my-6">a mnoho ďalších.</li>
       </ul>
 
-      <p class="text-xl py-8 leading-relaxed tracking-wider">
+      <p class="text-m mt-8 leading-relaxed tracking-wider">
         Pripravované videá, prednášky, diskusie, články, audio podcasty,
-        a ďalšie formáty na tieto témy budete môcť už onedlho sledovať
+        a&nbsp;ďalšie formáty na tieto témy budete môcť už onedlho sledovať
         práve tu.
       </p>
 
-      <a class="inline-block py-4 px-3 bg-yellow-400 text-pink-400 text-2xl leading-tight rounded-xl" href="#">
+      <a class="inline-block mt-10 py-4 px-3 bg-yellow-400 text-pink-400 text-xl tracking-wider rounded-2xl" href="#">
         Prihláste sa do nášho newslettera!
       </a>
     </div>
@@ -107,7 +107,7 @@
       id: "openseadragon1",
       showNavigationControl: false,
       mouseNavEnabled: false,
-      defaultZoomLevel: 7,
+      defaultZoomLevel: 12,
       minPixelRatio: 1,
       tileSources: tileSource,
       immediateRender: true,

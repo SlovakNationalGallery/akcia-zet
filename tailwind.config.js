@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       spacing: {
-        '4/5': '80%',
+        '3/4': '75%',
       },
 
       fontFamily: {
@@ -35,6 +35,10 @@ module.exports = {
           ...colors.pink,
           '400': '#fc579d',
         },
+      },
+      letterSpacing: {
+        wider: '.08em',
+        widest: '.3em',
       },
 
       minHeight: {
