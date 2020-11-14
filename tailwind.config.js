@@ -58,4 +58,10 @@ module.exports = {
     backgroundColor: ['responsive', 'hover', 'focus', 'active'],
   },
   plugins: [],
+  purge: {
+    enabled: process.env.NODE_ENV === 'production',
+    content: [
+      './public/index.html',
+    ],
+  }
 }
