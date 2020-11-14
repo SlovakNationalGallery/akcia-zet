@@ -1,4 +1,4 @@
-const { colors } = require('tailwindcss/defaultTheme')
+const { colors, fontFamily } = require('tailwindcss/defaultTheme')
 
 module.exports = {
   future: {
@@ -10,6 +10,11 @@ module.exports = {
     extend: {
       spacing: {
         '4/5': '80%',
+      },
+
+      fontFamily: {
+        serif: ['Rockwell Nova Cond', ...fontFamily.serif],
+        mono: ['Terminal One', ...fontFamily.mono],
       },
 
       fontSize: {
