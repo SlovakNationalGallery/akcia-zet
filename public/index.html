@@ -9,7 +9,7 @@
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
 
-<body>
+<body class="bg-gray-800">
   <div class="relative min-h-96 h-4/5 text-yellow-400">
     <div id="openseadragon1" class="absolute inset-0"></div>
     <div class="relative h-full flex justify-center items-center uppercase">
@@ -20,7 +20,7 @@
       <path d="M10.684 10.684h7.945v3.29h-6.577v1.369h6.577v3.288h-7.945v-7.947zm0-8.349l6.979 6.98h-6.979v-6.98zm-9.316-.967h7.948v7.947H1.368V1.368zm10.285 0h6.976v6.981l-6.976-6.981zM0 0v10.684h9.316v7.947H1.368v-6.579H0V20h20V0H0z" />
     </svg>
   </div>
-  <div class="bg-gray-800 py-8">
+  <div class="py-8">
     <div class="w-4/5 mx-auto text-center text-yellow-200 font-bold uppercase">
       <p class="text-xl pt-8 leading-relaxed tracking-wider">
         Vydávame sa na niekoľkomesačnú vzrušujúcu umenovednú výpravu
@@ -81,22 +81,33 @@
   <script src="https://cdn.jsdelivr.net/npm/openseadragon@2.4/build/openseadragon/openseadragon.min.js"></script>
   <script type="text/javascript">
     const tileSource = new OpenSeadragon.DziTileSource(
-      11242, 7793, 256, 0,
-      'https://img.webumenia.sk/zoom/?path=%2FSNGARTPETRUS%2FX3900%2FSNG--O_3844--1_1--2010_03_11--L2_WEB.jp2_files/',
+      12250, 13337, 256, 0,
+      'https://img.webumenia.sk/zoom/?path=%2FVystavy%2Fakciazet%2Fjp2%2Fakciazet.jp2_files/',
       'jpg',
     )
 
     const destinations = [
-      new OpenSeadragon.Point(.5, .37),
-      new OpenSeadragon.Point(.43, .33),
-      new OpenSeadragon.Point(.357, .194),
+      // Basket and laser
+      new OpenSeadragon.Point(0.842960994906955, 0.8255290402730286),
+      // Laser
+      new OpenSeadragon.Point(0.8523437192450622, 0.9084920054965528),
+      // Basket
+      new OpenSeadragon.Point(0.8328838529685686, 0.727800779243577),
+      // Kid
+      new OpenSeadragon.Point(0.9004653202226491, 0.6406824684652968),
+      // Flowers, steps
+      new OpenSeadragon.Point(0.3631640732536106, 0.8829698372826646),
+      // Vase
+      new OpenSeadragon.Point(0.15148269401970513, 0.9554515575399319),
+      // Elderly
+      new OpenSeadragon.Point(0.09602800100641957, 0.6637986366888344),
     ]
 
     var viewer = OpenSeadragon({
       id: "openseadragon1",
       showNavigationControl: false,
       mouseNavEnabled: false,
-      defaultZoomLevel: 14,
+      defaultZoomLevel: 7,
       minPixelRatio: 1,
       tileSources: tileSource,
       immediateRender: true,
@@ -104,6 +115,10 @@
 
     viewer.addHandler('open', function () {
       viewer.viewport.panTo(pickRandom(destinations), true);
+    })
+    viewer.addHandler('pan', function () {
+      // Utility for setting destinations
+      // console.log(viewer.viewport.getCenter());
     })
   </script>
 </body>
