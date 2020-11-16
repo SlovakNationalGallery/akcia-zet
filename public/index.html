@@ -1,10 +1,10 @@
-<html lang="en" x-data="scrambledTitle()">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title x-text="scrambledTitle + ' — umenovedná výprava'">***** ***</title>
+  <title>Akcia ZET — umenovedná výprava</title>
   <link rel="stylesheet" href="/build/tailwind.css">
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
@@ -13,7 +13,7 @@
   <div class="relative min-h-96 text-yellow-400">
     <div id="openseadragon1" class="absolute inset-0"></div>
     <div class="relative py-24 xl:py-40 flex justify-center items-center uppercase">
-      <h1 class="text-8xl xl:text-9xl font-mono text-center leading-relaxed tracking-wider" x-html="scrambledTitle.replace(' ', '<br>')"></h1>
+      <h1 class="text-8xl xl:text-9xl font-mono text-center leading-relaxed tracking-wider" x-data="scrambledTitle()" x-html="scrambledTitle.replace(' ', '<br>')"></h1>
       <h2 class="absolute text-xl xl:text-3xl font-bold text-center tracking-widest mt-4 mx-auto my-auto">Umenovedná&nbsp;výprava</h3>
     </div>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="fill-current absolute w-5 top-0 right-0 m-8">
