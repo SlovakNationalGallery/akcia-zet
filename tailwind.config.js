@@ -8,6 +8,30 @@ module.exports = {
   purge: [],
   theme: {
     extend: {
+      // scrolling-text.html
+      animation: {
+        'marquee-up-1': 'marquee-up-1 8s linear infinite',
+        'marquee-up-2': 'marquee-up-2 8s linear 4s infinite',
+      },
+      keyframes: {
+        'marquee-up-1': {
+          from: {
+            transform: 'translateY(100%)',
+          },
+          to: {
+            transform: 'translateY(-100%)',
+          },
+        },
+        'marquee-up-2': {
+          from: {
+            transform: 'translateY(0%)',
+          },
+          to: {
+            transform: 'translateY(-200%)',
+          },
+        },
+      },
+
       spacing: {
         '1/2': '50%',
         '3/4': '75%',
@@ -44,6 +68,7 @@ module.exports = {
           '900': '#4d4141',
         },
       },
+
       letterSpacing: {
         wider: '.08em',
         widest: '.3em',
