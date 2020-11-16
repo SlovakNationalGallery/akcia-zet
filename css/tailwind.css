@@ -44,7 +44,7 @@
 
   @responsive {
     .text-shadow {
-      text-shadow: 0.1em 0.1em #b1000099;
+      text-shadow: 0.04em 0.04em #b1000099;
     }
     .text-shadow-none {
       text-shadow: none;
