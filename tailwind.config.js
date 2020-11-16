@@ -10,8 +10,8 @@ module.exports = {
     extend: {
       // scrolling-text.html
       animation: {
-        'marquee-up-1': 'marquee-up-1 8s linear infinite',
-        'marquee-up-2': 'marquee-up-2 8s linear 4s infinite',
+        'marquee-up-1': 'marquee-up-1 12s linear infinite',
+        'marquee-up-2': 'marquee-up-2 12s linear 6s infinite',
       },
       keyframes: {
         'marquee-up-1': {
