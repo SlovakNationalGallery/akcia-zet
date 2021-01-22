@@ -119,7 +119,7 @@ return [
     */
 
     'hosts' => [
-        'webumenia2.vps.wbsprt.com' => [
+        'webumenia.sk' => [
             'deploy_path' => '/var/www/akciazet.sng.sk',
             'user' => 'lab_sng',
         ],
