@@ -39,7 +39,7 @@ jobs:
         extensions: mbstring, bcmath, fileinfo, pdo_mysql
     - run: composer install --no-progress --no-interaction
     - run: npm install && npm run production
-    - run: php artisan deploy
+    - run: php artisan test
       env:
         APP_KEY: base64:HXaE/pTpPoSNdHFMl5SpgX2XKtdph3EjrdmvWFDKisE=
         DATABASE_URL: mysql://root:@127.0.0.1:${{ job.services.mysql.ports[3306] }}/akcia_zet_test
