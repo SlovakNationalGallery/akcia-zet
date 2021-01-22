@@ -103,7 +103,6 @@
             id: "openseadragon1",
             showNavigationControl: false,
             mouseNavEnabled: false,
-            // defaultZoomLevel: 12, //TODO make zoom level responsive
             defaultZoomLevel: 5,
             minPixelRatio: 1,
             tileSources: tileSource,
