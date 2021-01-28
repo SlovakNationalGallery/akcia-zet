@@ -5,6 +5,8 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <x-admin.banner></x-admin.banner>
+
             <a href="{{ route('admin.articles.create') }}" class="btn mb-4">Pridať článok</a>
 
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">

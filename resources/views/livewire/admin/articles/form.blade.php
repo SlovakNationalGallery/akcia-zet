@@ -1,22 +1,9 @@
 <form wire:submit.prevent="save">
-    <div x-data="{{ json_encode(['show' => session()->has('message')])}}"
-        x-show="show"
-        style="display: none;"
-        class="text-sm text-gray-600 overflow-hidden sm:rounded-md my-4">
-        <div class="px-4 py-5 bg-indigo-500 text-white sm:p-6 flex flex-row items-start">
-            <div class="flex-grow">
-                {{ session('message') }}
-            </div>
-            <a href="#" class="font-bold hover:underline" @click.prevent="show = false">Zavrieť</a>
-        </div>
-
-    </div>
-
     <div class="shadow overflow-hidden sm:rounded-md">
         <div class="px-4 py-5 bg-white sm:p-6">
             <div class="grid grid-cols-6 gap-6">
                 <div class="col-span-6 sm:col-span-4">
-                    <x-jet-label for="title" value="Titulok" class="font-bold text-xl" />
+                    <x-admin.label for="title" value="Titulok" class="font-bold text-xl" required />
                     <x-jet-input id="title" type="text" class="mt-1 block w-full" wire:model.defer="article.title" />
                     <x-jet-input-error for="article.title" class="mt-2" />
                 </div>
@@ -49,8 +36,8 @@
                     </div>
                 </div>
 
-                <div class="col-span-4 sm:col-span-4">
-                    <label class="flex items-center">
+                <div class="col-span-4 sm:col-span-2">
+                    <label class="flex items-center cursor-pointer select-none">
                         <x-jet-checkbox wire:model.defer="article.published" />
                         <span class="ml-2 text-gray-600">Publikovať</span>
                     </label>
@@ -65,7 +52,7 @@
             </x-jet-action-message>
 
             @if($article->exists)
-            <button class="btn-danger mx-4" wire:click="confirmDeletion" wire:loading.attr="disabled">
+            <button type="button" class="btn-danger mx-4" wire:click="confirmDeletion" wire:loading.attr="disabled">
                 Zmazať
             </button>
             @endif

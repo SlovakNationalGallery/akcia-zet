@@ -46,6 +46,10 @@ class Form extends Component
     {
         $this->validate();
 
+        if($this->article->exists) {
+            $this->validate(['article.slug' => 'required|string',]);
+        }
+
         $this->article->save();
 
         $this->emit('saved');
