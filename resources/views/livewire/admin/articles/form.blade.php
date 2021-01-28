@@ -22,9 +22,31 @@
                 </div>
 
                 <div class="col-span-6 sm:col-span-4">
-                    <x-jet-label for="slug" value="Slug (URL)" />
+                    <x-jet-label for="slug" value="Slug (URL)" class="font-bold" />
                     <x-jet-input id="slug" type="text" class="mt-1 block w-full" wire:model.defer="article.slug" />
                     <x-jet-input-error for="article.slug" class="mt-2" />
+                </div>
+
+                <div class="col-span-6">
+                    <x-jet-label for="perex" value="Perex" class="font-bold" />
+                    <div x-data="{ trix: @entangle('article.perex').defer }" class="mt-2">
+                        <input id="perex" type="hidden" value="{{ $article->perex }}" />
+                        <div wire:ignore>
+                            <trix-editor x-model.debounce.300ms="trix" input="perex" class="trix-content h-40 overflow-y-auto">
+                            </trix-editor>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-span-6">
+                    <x-jet-label for="content" value="Obsah" class="font-bold text-xl" />
+                    <div x-data="{ trix: @entangle('article.content').defer }" class="mt-2">
+                        <input id="content" type="hidden" value="{{ $article->content }}" />
+                        <div wire:ignore>
+                            <trix-editor x-model.debounce.300ms="trix" input="content" class="trix-content h-96 overflow-y-auto">
+                            </trix-editor>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="col-span-4 sm:col-span-4">

@@ -12,6 +12,8 @@ class Form extends Component
     protected $rules = [
         'article.title' => 'required|string',
         'article.slug' => 'string',
+        'article.perex' => 'string',
+        'article.content' => 'string',
         'article.published' => 'required|boolean',
     ];
 

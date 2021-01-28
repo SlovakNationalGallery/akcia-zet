@@ -27,8 +27,8 @@
                                                         <div class="text-md font-medium text-gray-900">
                                                             {{ $article->title }}
                                                         </div>
-                                                        <div class="text-sm text-gray-500">
-                                                            {{ $article->perex }}
+                                                        <div class="text-sm text-gray-500 max-h-16 overflow-hidden">
+                                                            {!! $article->perex !!}
                                                         </div>
                                                     </div>
                                                 </div>
