@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/admin', function () {
-    return view('admin.dashboard');
-})->name('admin.dashboard');
+Route::prefix('admin')->name('admin.')->middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('/', function () {
+        return view('admin.dashboard');
+    })->name('dashboard');
+
+    Route::resource('articles', ArticleController::class);
+});
