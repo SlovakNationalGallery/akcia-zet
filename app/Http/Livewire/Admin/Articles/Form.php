@@ -9,6 +9,13 @@ class Form extends Component
 {
     public Article $article;
 
+    /**
+     * Indicates if user deletion is being confirmed.
+     *
+     * @var bool
+     */
+    public $confirmingDeletion = false;
+
     protected $rules = [
         'article.title' => 'required|string',
         'article.slug' => 'string',
@@ -21,6 +28,18 @@ class Form extends Component
     {
         // TODO maybe this is not the best place for setting defaults
         $this->article->published = $this->article->published ?? false;
+    }
+
+    public function confirmDeletion()
+    {
+        $this->confirmingDeletion = true;
+    }
+
+    public function delete()
+    {
+        $this->article->delete();
+        session()->flash('message', 'Článok bol vymazaný.');
+        return redirect()->route('admin.articles.index');
     }
 
     public function save()

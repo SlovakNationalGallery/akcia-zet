@@ -64,7 +64,33 @@
                 Zmeny boli uložené
             </x-jet-action-message>
 
+            @if($article->exists)
+            <button class="btn-danger mx-4" wire:click="confirmDeletion" wire:loading.attr="disabled">
+                Zmazať
+            </button>
+            @endif
             <x-jet-button>Uložiť</x-jet-button>
         </div>
     </div>
+
+    <!-- Delete Confirmation Modal -->
+    <x-jet-dialog-modal wire:model="confirmingDeletion">
+        <x-slot name="title">
+            Vymazať článok
+        </x-slot>
+
+        <x-slot name="content">
+            Naozaj chcete vymazať tento článok?
+        </x-slot>
+
+        <x-slot name="footer">
+            <x-jet-secondary-button wire:click="$toggle('confirmingDeletion')" wire:loading.attr="disabled">
+                Zrušiť
+            </x-jet-secondary-button>
+
+            <x-jet-danger-button class="ml-2" wire:click="delete" wire:loading.attr="disabled">
+                Vymazať
+            </x-jet-danger-button>
+        </x-slot>
+    </x-jet-dialog-modal>
 </form>
