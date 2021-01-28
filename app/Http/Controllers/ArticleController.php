@@ -14,7 +14,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        return view('admin.articles.index');
+        $articles = Article::all();
+        return view('admin.articles.index', compact('articles'));
     }
 
     /**
@@ -24,7 +25,8 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        $article = new Article();
+        return view('admin.articles.form', compact('article'));
     }
 
     /**
@@ -57,7 +59,7 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        //
+        return view('admin.articles.form', compact('article'));
     }
 
     /**
