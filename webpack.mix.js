@@ -12,7 +12,9 @@ const tailwindPlugin =  require('tailwindcss')
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
+mix
+    .js('resources/js/app.js', 'public/js')
+    .js('resources/js/admin.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
         tailwindPlugin({ config: './tailwind.config.js' }), // Explicit default
     ])
