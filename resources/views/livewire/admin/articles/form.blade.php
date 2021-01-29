@@ -16,24 +16,12 @@
 
                 <div class="col-span-6">
                     <x-jet-label for="perex" value="Perex" class="font-bold" />
-                    <div x-data="{ trix: @entangle('article.perex').defer }" class="mt-2">
-                        <input id="perex" type="hidden" value="{{ $article->perex }}" />
-                        <div wire:ignore>
-                            <trix-editor x-model.debounce.300ms="trix" input="perex" class="trix-content h-40 overflow-y-auto">
-                            </trix-editor>
-                        </div>
-                    </div>
+                    <x-admin.trix-editor class="h-40" wire:model.defer="article.perex" :value="$article->perex" />
                 </div>
 
                 <div class="col-span-6">
                     <x-jet-label for="content" value="Obsah" class="font-bold text-xl" />
-                    <div x-data="{ trix: @entangle('article.content').defer }" class="mt-2">
-                        <input id="content" type="hidden" value="{{ $article->content }}" />
-                        <div wire:ignore>
-                            <trix-editor x-model.debounce.300ms="trix" input="content" class="trix-content h-96 overflow-y-auto">
-                            </trix-editor>
-                        </div>
-                    </div>
+                    <x-admin.trix-editor class="h-96" wire:model.defer="article.content" :value="$article->content" />
                 </div>
 
 
