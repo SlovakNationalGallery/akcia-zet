@@ -47,9 +47,6 @@
                             availableTags: {{ json_encode($this->availableTags) }},
                             input: '',
                             open: false,
-                            close() {
-                                this.$nextTick(() => { this.open = false })
-                            },
                             getMatchingTags() {
                                 return this.availableTags
                                     .filter(tag => tag.includes(this.input))
@@ -91,17 +88,15 @@
                                 </div>
                             </div>
 
-                            <template
-                                x-for="(tag, index) in tags"
-                                :key="tag"
-                            >
+                            <template x-for="(tag, index) in tags" :key="tag">
                                 <div
                                     x-transition:enter="transition ease-out duration-300"
                                     x-transition:enter-start="opacity-0 transform scale-90"
                                     x-transition:enter-end="opacity-100 transform scale-100"
-                                    class="bg-indigo-100 inline-flex items-center text-sm rounded mt-2 mr-1">
+                                    class="bg-indigo-100 inline-flex items-center text-sm rounded mt-2 mr-1"
+                                >
                                     <span class="ml-2 mr-1 leading-relaxed truncate max-w-xs" x-text="tag"></span>
-                                    <button @click.prevent="tags.splice(index,1)"
+                                    <button @click.prevent="tags.splice(index, 1)"
                                         class="w-6 h-8 inline-block align-middle text-gray-500 hover:text-gray-600 focus:outline-none">
                                         <svg class="w-6 h-6 fill-current mx-auto" xmlns="http://www.w3.org/2000/svg"
                                             viewBox="0 0 24 24">
