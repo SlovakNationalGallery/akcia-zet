@@ -23,3 +23,7 @@
     @apply list-disc;
   }
 }
+
+/*! purgecss start ignore */
+@import "trix/dist/trix";
+/*! purgecss end ignore */
