@@ -4,10 +4,12 @@ namespace App\Http\Livewire\Admin\Articles;
 
 use Livewire\Component;
 use App\Models\Article;
+use Spatie\Tags\Tag;
 
 class Form extends Component
 {
     public Article $article;
+    public array $tags;
 
     /**
      * Indicates if user deletion is being confirmed.
@@ -22,12 +24,22 @@ class Form extends Component
         'article.perex' => 'string',
         'article.content' => 'string',
         'article.published' => 'required|boolean',
+        'tags.*' => 'string',
     ];
+
+
+    public function getAvailableTagsProperty()
+    {
+        return Tag::all()->pluck('name')->toArray();
+    }
 
     public function mount()
     {
         // TODO maybe this is not the best place for setting defaults
         $this->article->published = $this->article->published ?? false;
+
+        // Didn't work with article.tags out of the box, so handling tags separately
+        $this->tags = $this->article->tags->pluck('name')->toArray();
     }
 
     public function confirmDeletion()
@@ -45,6 +57,8 @@ class Form extends Component
     public function save()
     {
         $this->validate();
+
+        $this->article->tags = $this->tags;
 
         if($this->article->exists) {
             $this->validate(['article.slug' => 'required|string',]);
