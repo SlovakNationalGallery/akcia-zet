@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="{{ mix('css/admin.css') }}">
 
         @livewireStyles
+        <x-embed-styles />
 
         <!-- Scripts -->
         <script src="{{ mix('js/admin.js') }}" defer></script>

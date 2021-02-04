@@ -18,11 +18,14 @@ class Form extends Component
      */
     public $confirmingDeletion = false;
 
+    public $embedPreviewUrl;
+
     protected $rules = [
         'article.title' => 'required|string',
         'article.slug' => 'string',
         'article.perex' => 'string',
         'article.content' => 'string',
+        'article.embed_url' => 'string',
         'article.published' => 'required|boolean',
         'tags.*' => 'string',
     ];
