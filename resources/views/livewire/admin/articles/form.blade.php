@@ -16,12 +16,12 @@
 
                 <div class="col-span-6">
                     <x-jet-label for="perex" value="Perex" class="font-bold" />
-                    <x-admin.trix-editor class="h-40" wire:model.defer="article.perex" :value="$article->perex" />
+                    <x-admin.quill-editor wire:model.defer="article.perex" :value="$article->perex" />
                 </div>
 
                 <div class="col-span-6">
                     <x-jet-label for="content" value="Obsah" class="font-bold text-xl" />
-                    <x-admin.trix-editor class="h-96" wire:model.defer="article.content" :value="$article->content" />
+                    <x-admin.quill-editor wire:model.defer="article.content" :value="$article->content" />
                 </div>
 
 
