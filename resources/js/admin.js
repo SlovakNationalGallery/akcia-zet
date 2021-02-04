@@ -10,7 +10,7 @@ function initQuill(ref, dispatch) {
         ['blockquote'],
         [{ 'header': 1 }, { 'header': 2 }],               // custom button values
         ['clean'],                                         // remove formatting button
-        ['link', 'image', 'video']
+        ['link']
     ]
 
     const quill = new Quill(ref, {theme: 'snow', modules: { toolbar } });

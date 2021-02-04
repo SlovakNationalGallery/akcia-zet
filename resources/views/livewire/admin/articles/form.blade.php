@@ -9,15 +9,15 @@
                 </div>
 
                 <div class="col-span-6 sm:col-span-4">
-                    <x-jet-label for="slug" value="Slug (URL)" class="font-bold" />
+                    <x-jet-label for="slug" value="Slug (URL)" class="font-bold text-xl" />
                     <x-jet-input id="slug" type="text" class="mt-1 block w-full" wire:model.defer="article.slug" />
                     <x-jet-input-error for="article.slug" class="mt-2" />
                     <x-admin.input-hint class="mt-2">Ak je prázdny, bude vytvorený automaticky</x-admin.input-hint>
                 </div>
 
-                <div class="col-span-6">
-                    <x-jet-label for="perex" value="Perex" class="font-bold" />
-                    <x-admin.quill-editor wire:model.defer="article.perex" :value="$article->perex" />
+                <div class="col-span-6 sm:col-span-4">
+                    <x-jet-label for="perex" value="Perex" class="font-bold text-xl" />
+                    <textarea class="w-full h-36 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1" wire:model.defer="article.perex"></textarea>
                 </div>
 
                 <div class="col-span-6">
@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="col-span-6 sm:col-span-4">
-                    <x-jet-label for="tags" value="Tagy" class="font-bold" />
+                    <x-jet-label for="tags" value="Tagy" class="font-bold text-xl" />
                     <x-admin.input-tags id="tags" wire:model.defer="tags" :available-tags="$this->availableTags" />
                     <x-jet-input-error for="tags" class="mt-2" />
                 </div>
@@ -44,17 +44,25 @@
                 </div>
             </div>
         </div>
-        <div class="flex items-center justify-end px-4 py-3 bg-gray-50 text-right sm:px-6">
-            <x-jet-action-message class="mr-3" on="saved">
-                Zmeny boli uložené
-            </x-jet-action-message>
-
-            @if($article->exists)
-            <button type="button" class="btn-danger mx-4" wire:click="confirmDeletion" wire:loading.attr="disabled">
-                Zmazať
-            </button>
-            @endif
-            <x-jet-button>Uložiť</x-jet-button>
+        <div class="flex items-center justify-between px-4 py-3 bg-gray-50 text-right sm:px-6">
+            <div>
+                @if($article->exists)
+                <button type="button" class="btn-danger" wire:click="confirmDeletion" wire:loading.attr="disabled">
+                    Zmazať
+                </button>
+                @endif
+            </div>
+            <div>
+                <x-jet-action-message class="mr-3" on="saved">
+                    Zmeny boli uložené
+                </x-jet-action-message>
+                @if($article->exists)
+                    <a href="{{ route('admin.articles.show', $article )}}" class="btn-secondary mx-4" target="_blank">
+                        Náhľad
+                    </a>
+                @endif
+                <x-jet-button>Uložiť</x-jet-button>
+            </div>
         </div>
     </div>
 
