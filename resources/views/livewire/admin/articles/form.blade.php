@@ -112,21 +112,20 @@
                 </div>
             </div>
         </div>
+        <div class="flex items-center justify-end px-4 py-3 bg-gray-50 text-right sm:px-6">
+            <x-jet-action-message class="mr-3" on="saved">
+                Zmeny boli uložené
+            </x-jet-action-message>
 
+            @if($article->exists)
+            <button type="button" class="btn-danger mx-4" wire:click="confirmDeletion" wire:loading.attr="disabled">
+                Zmazať
+            </button>
+            @endif
+            <x-jet-button>Uložiť</x-jet-button>
+        </div>
     </div>
 
-    <div class="flex items-center justify-end px-4 py-3 bg-gray-50 text-right sm:px-6">
-        <x-jet-action-message class="mr-3" on="saved">
-            Zmeny boli uložené
-        </x-jet-action-message>
-
-        @if($article->exists)
-        <button type="button" class="btn-danger mx-4" wire:click="confirmDeletion" wire:loading.attr="disabled">
-            Zmazať
-        </button>
-        @endif
-        <x-jet-button>Uložiť</x-jet-button>
-    </div>
 
     <!-- Delete Confirmation Modal -->
     <x-jet-dialog-modal wire:model="confirmingDeletion">
