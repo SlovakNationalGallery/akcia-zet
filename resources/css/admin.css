@@ -30,5 +30,6 @@
 
 /*! purgecss start ignore */
 @import "trix/dist/trix";
-@import "quill/dist/quill.snow"
+@import "quill/dist/quill.snow";
+@import "media-library-pro-styles";
 /*! purgecss end ignore */

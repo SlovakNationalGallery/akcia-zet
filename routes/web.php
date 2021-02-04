@@ -24,4 +24,6 @@ Route::prefix('admin')->name('admin.')->middleware(['auth:sanctum', 'verified'])
     })->name('dashboard');
 
     Route::resource('articles', ArticleController::class);
+
+    Route::mediaLibrary();
 });

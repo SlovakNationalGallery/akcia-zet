@@ -20,7 +20,15 @@ mix
     ])
     .postCss('resources/css/admin.css', 'public/css', [
         tailwindPlugin({ config: './tailwind-admin.config.js' }),
-    ]);
+    ])
+
+    // https://spatie.be/docs/laravel-medialibrary/v9/handling-uploads-with-media-library-pro/installation#using-laravel-mix-or-webpack-with-css-loader
+    .override((webpackConfig) => {
+        webpackConfig.resolve.modules = [
+            "node_modules",
+            __dirname + "/vendor/spatie/laravel-medialibrary-pro/resources/js",
+        ];
+    })
 
 if (mix.inProduction()) {
     mix.version();
