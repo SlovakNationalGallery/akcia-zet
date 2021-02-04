@@ -22,8 +22,13 @@
   .trix-content > ol,ul {
     @apply list-disc;
   }
+
+  .ql-video {
+    @apply w-full h-96;
+  }
 }
 
 /*! purgecss start ignore */
 @import "trix/dist/trix";
+@import "quill/dist/quill.snow"
 /*! purgecss end ignore */
