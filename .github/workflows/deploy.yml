@@ -37,6 +37,8 @@ jobs:
       with:
         php-version: 7.4
         extensions: mbstring, bcmath, fileinfo, pdo_mysql
+    - name: Add Composer auth credentials (for Spatie MediaLibrary Pro)
+      run: echo '${{ secrets.COMPOSER_AUTH_JSON }}' > $GITHUB_WORKSPACE/auth.json
     - run: composer install --no-progress --no-interaction
     - run: npm install && npm run production
     - run: php artisan test
