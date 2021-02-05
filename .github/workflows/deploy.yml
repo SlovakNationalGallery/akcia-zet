@@ -58,6 +58,9 @@ jobs:
         php-version: 7.4
     - name: Get Composer Cache Directory
       id: composer-cache
+      run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+    - name: Restore Composer cache
+      uses: actions/cache@v1
       with:
         path: ${{ steps.composer-cache.outputs.dir }}
         key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
