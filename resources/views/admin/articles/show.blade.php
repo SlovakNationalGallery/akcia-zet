@@ -10,7 +10,7 @@
                 <h1 class="text-xl font-bold">{{ $article->title }}</h1>
                 @if($article->embed_url)
                     <div class="my-4">
-                        <x-embed url="{{ $article->embed_url }}" />
+                        <x-extended-embed url="{{ $article->embed_url }}" />
                     </div>
                 @endif
                 {!! $article->perex !!}
@@ -20,7 +20,7 @@
                 <h1 class="text-xl font-bold">{{ $article->title }}</h1>
                 @if($article->embed_url)
                     <div class="my-4">
-                        <x-embed url="{{ $article->embed_url }}" />
+                        <x-extended-embed url="{{ $article->embed_url }}" />
                     </div>
                 @endif
                 {!! $article->content !!}
