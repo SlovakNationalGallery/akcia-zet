@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9f38c6508d3ad87af9a70ba78e0ea8bd",
+    "content-hash": "3e17bbc328749e8f2a89c207647e4237",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3830,29 +3830,29 @@
         },
         {
             "name": "spatie/laravel-medialibrary-pro",
-            "version": "v1.0.0",
+            "version": "1.12.15",
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-medialibrary-pro.git",
-                "reference": "82872c56b6ea5040bda3d0bb73ab6b4b7cae54a5"
+                "reference": "d60f4e86ea629057e4d57b2873fafd2b14384791"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.spatie.be/dist/spatie/laravel-medialibrary-pro/spatie-laravel-medialibrary-pro-82872c56b6ea5040bda3d0bb73ab6b4b7cae54a5-zip-52435f.zip",
-                "reference": "82872c56b6ea5040bda3d0bb73ab6b4b7cae54a5",
-                "shasum": "cfcd05edf8b5cd52591b6051e7c720297415702b"
+                "url": "https://satis.spatie.be/dist/spatie/laravel-medialibrary-pro/spatie-laravel-medialibrary-pro-d60f4e86ea629057e4d57b2873fafd2b14384791-zip-2f903c.zip",
+                "reference": "d60f4e86ea629057e4d57b2873fafd2b14384791",
+                "shasum": "0795b9fa72de8fda6b683b390671dd3332fc54af"
             },
             "require": {
                 "ext-json": "*",
                 "illuminate/validation": "^7.25|^8.0",
-                "php": "^7.4",
-                "spatie/laravel-medialibrary": "^9.0",
+                "php": "^7.4|^8.0",
+                "spatie/laravel-medialibrary": "^9.3.0",
                 "symfony/mime": "^5.1"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.16",
                 "illuminate/support": "^7.25|^8.0",
-                "livewire/livewire": "^2.0",
+                "livewire/livewire": "^2.3.3",
+                "mockery/mockery": "^1.4",
                 "orchestra/testbench": "^5.0|^6.0",
                 "phpunit/phpunit": "^9.3",
                 "spatie/laravel-log-dumper": "^1.2",
@@ -3905,10 +3905,10 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-medialibrary-pro/tree/v1.0.0",
+                "source": "https://github.com/spatie/laravel-medialibrary-pro/tree/v1.1.9",
                 "issues": "https://github.com/spatie/laravel-medialibrary-pro/issues"
             },
-            "time": "2020-11-09T12:55:46+00:00"
+            "time": "2021-02-03T16:11:05+00:00"
         },
         {
             "name": "spatie/laravel-sluggable",

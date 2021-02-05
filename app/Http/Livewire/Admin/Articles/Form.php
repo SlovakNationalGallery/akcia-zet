@@ -4,12 +4,19 @@ namespace App\Http\Livewire\Admin\Articles;
 
 use Livewire\Component;
 use App\Models\Article;
+use Spatie\MediaLibraryPro\Http\Livewire\Concerns\WithMedia;
 use Spatie\Tags\Tag;
 
 class Form extends Component
 {
+    use WithMedia;
+
     public Article $article;
     public array $tags;
+
+    // MediaLibraryPro
+    public $mediaComponentNames = ['images'];
+    public $images;
 
     /**
      * Indicates if user deletion is being confirmed.
@@ -68,6 +75,10 @@ class Form extends Component
         }
 
         $this->article->save();
+
+        $this->article
+            ->syncFromMediaLibraryRequest($this->images)
+            ->toMediaCollection('images');
 
         $this->emit('saved');
 
