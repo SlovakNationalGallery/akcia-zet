@@ -29,6 +29,11 @@ Route::prefix('admin')->name('admin.')->middleware(['auth:sanctum', 'verified'])
         return view('admin.coming-soon.form', compact('setting'));
     })->name('coming_soon.edit');
 
+    Route::get('/casozber', function () {
+        $setting = Setting::first();
+        return view('admin.timelapse.form', compact('setting'));
+    })->name('timelapse.edit');
+
     Route::resource('articles', ArticleController::class);
 
     Route::mediaLibrary();
