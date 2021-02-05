@@ -101,6 +101,10 @@ return [
         'bin/php' => 'php7.4',
         'bin/composer' => 'php7.4 $(which composer)',
         'php_fpm_service' => 'php7.4-fpm',
+        'shared_files' => [
+            '.env',
+            'auth.json',
+        ],
         'shared_dirs' => [
             'storage',
             'public/fonts',
