@@ -40,7 +40,7 @@
                     @if($embedPreviewUrl ?? $article->embed_url)
                         <div class="mt-4">
                             <x-admin.input-hint class="mb-2">Náhľad:</x-admin.input-hint>
-                            <x-embed url="{{ $embedPreviewUrl ?? $article->embed_url }}" />
+                            <x-extended-embed url="{{ $embedPreviewUrl ?? $article->embed_url }}" />
                         </div>
                     @endif
                 </div>
