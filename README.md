@@ -1,3 +1,5 @@
+![CI/CD](https://github.com/SlovakNationalGallery/akcia-zet/workflows/CI/CD/badge.svg)
+
 # Akcia ZET
 https://akciazet.sng.sk/
 
