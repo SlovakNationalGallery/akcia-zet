@@ -70,11 +70,18 @@
                 </div>
 
                 <div class="col-span-4 sm:col-span-2">
-                    <label class="flex items-center cursor-pointer select-none">
-                        <x-jet-checkbox wire:model.defer="article.published" />
-                        <span class="ml-2 text-gray-600">Publikovať</span>
-                    </label>
-                    <x-jet-input-error for="article.published" class="mt-2" />
+                    <x-jet-label for="published_at" value="Dátum zverejnenia" class="font-bold text-xl" />
+                    <div class="flex flex-row items-baseline">
+                        <x-jet-input id="published_at" type="date" class="mt-1 block w-48" wire:model="article.published_at" />
+                        <a
+                            href="#"
+                            class="text-indigo-700 ml-2"
+                            x-show="published_at"
+                            x-data="{ published_at: @entangle('article.published_at') }"
+                            @click.prevent="published_at = null"
+                        >Zrušiť</a>
+                    </div>
+                    <x-jet-input-error for="article.published_at" class="mt-2" />
                 </div>
             </div>
         </div>

@@ -18,7 +18,7 @@
         @endif
         <div class="px-8">
             <p class="text-sm text-gray-400 my-5">
-                {{ ucfirst($article->updated_at->diffForHumans()) }}
+                {{ ucfirst($article->published_at->diffForHumans()) }}
             </p>
             <p class="text-sm text-white">
                 {{ $article->perex }}

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 use Spatie\Image\Manipulations;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -18,6 +19,15 @@ class Article extends Model implements HasMedia
     use HasSlug;
     use HasTags;
     use InteractsWithMedia;
+
+    protected $casts = [
+        'published_at' => 'datetime:Y-m-d', // Requied by <input type="date">
+    ];
+
+    public function scopePublished($query)
+    {
+        return $query->where('published_at', '<', Carbon::now());
+    }
 
     public function getSlugOptions(): SlugOptions
     {

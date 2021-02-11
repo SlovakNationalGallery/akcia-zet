@@ -33,7 +33,7 @@ class Form extends Component
         'article.perex' => 'string',
         'article.content' => 'string',
         'article.embed_url' => 'string',
-        'article.published' => 'required|boolean',
+        'article.published_at' => 'date',
         'tags.*' => 'string',
     ];
 
