@@ -29,6 +29,7 @@ mix
             __dirname + "/vendor/spatie/laravel-medialibrary-pro/resources/js",
         ];
     })
+    .browserSync('localhost:8000');
 
 if (mix.inProduction()) {
     mix.version();
