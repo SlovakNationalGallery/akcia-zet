@@ -1,6 +1,7 @@
 <html lang="sk">
 
 <head>
+  @include('googletagmanager::head')
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -12,24 +13,11 @@
   <meta property="og:url" content="https://akciazet.sng.sk/" />
   <meta property="og:image" content="https://akciazet.sng.sk/img/og_image.png" />
   <link rel="stylesheet" href="/css/landing.css">
-
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-KQMSXMH');</script>
-  <!-- End Google Tag Manager -->
-
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
 
 <body class="font-serif antialiased bg-gradient-to-r-slanted from-gray-800 to-red-900">
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQMSXMH"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
+  @include('googletagmanager::body')
   <div class="relative min-h-96 text-yellow-400">
     <div id="openseadragon1" class="absolute inset-0"></div>
     <div class="relative py-24 xl:py-32 flex justify-center items-center uppercase">
