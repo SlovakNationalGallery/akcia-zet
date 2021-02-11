@@ -1,8 +1,13 @@
 <form wire:submit.prevent="save">
     <div class="shadow overflow-hidden sm:rounded-md">
-        <div class="px-4 py-5 bg-white sm:p-6">
+        <div class="px-4 py-5 bg-white sm:p-6 grid grid-cols-6 gap-6">
             <div class="col-span-6 sm:col-span-4">
-                <x-admin.input-hint>Názvy sa nezobrazia</x-admin.input-hint>
+                <p class="font-medium text-sm text-gray-500">
+                    Priestor na nahrávanie obrázkov do "časozberu" na titulke.
+                    <br>Názvy (<em>Name</em>) obrázkov nie sú dôležité — na titulke sa nezobrazia.
+                </p>
+            </div>
+            <div class="col-span-6">
                 <div class="mt-1">
                     <x-media-library-collection
                         id="images"
