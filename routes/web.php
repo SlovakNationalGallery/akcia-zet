@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ArticleController;
+use App\Models\Article;
 use App\Models\Setting;
 use Illuminate\Support\Facades\Route;
 
@@ -37,4 +38,11 @@ Route::prefix('admin')->name('admin.')->middleware(['auth:sanctum', 'verified'])
     Route::resource('articles', ArticleController::class);
 
     Route::mediaLibrary();
+});
+
+Route::prefix('preview')->middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('/', function () {
+        $articles = Article::all();
+        return view('welcome', compact('articles'));
+    })->name('dashboard');
 });

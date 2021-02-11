@@ -25,16 +25,18 @@ module.exports = {
             colors: {
                 gray: {
                     ...defaultTheme.colors.gray,
-                    800: "#353738",
+                    400: "#A5A5A5",
+                    700: "#767474",
+                    800: "#655959",
                 },
                 yellow: {
                     ...defaultTheme.colors.yellow,
                     200: "#fffdc1",
-                    400: "#f5ff00",
+                    400: "#FFFA60",
                 },
                 pink: {
                     ...defaultTheme.colors.pink,
-                    400: "#fc579d",
+                    400: "#F4538A",
                 },
                 red: {
                     ...defaultTheme.colors.red,
