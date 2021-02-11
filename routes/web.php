@@ -44,5 +44,5 @@ Route::prefix('preview')->middleware(['auth:sanctum', 'verified'])->group(functi
     Route::get('/', function () {
         $articles = Article::published()->get();
         return view('welcome', compact('articles'));
-    })->name('dashboard');
+    })->name('home');
 });
