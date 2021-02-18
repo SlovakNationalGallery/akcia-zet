@@ -14,6 +14,9 @@ module.exports = {
 
             backgroundImage: theme => ({
                 'gradient-to-r-slanted': 'linear-gradient(87deg, var(--tw-gradient-stops))',
+                'gradient-to-r-260': 'linear-gradient(260deg, var(--tw-gradient-stops))',
+                'gradient-to-r-334': 'linear-gradient(334deg, var(--tw-gradient-stops))',
+                'gradient-to-r-252': 'linear-gradient(252deg, var(--tw-gradient-stops))',
             }),
 
             fontSize: {
@@ -25,9 +28,10 @@ module.exports = {
             colors: {
                 gray: {
                     ...defaultTheme.colors.gray,
+                    300: "#D0D0D0",
                     400: "#A5A5A5",
+                    500: "#918585",
                     700: "#767474",
-                    800: "#655959",
                 },
                 yellow: {
                     ...defaultTheme.colors.yellow,
@@ -40,8 +44,7 @@ module.exports = {
                 },
                 red: {
                     ...defaultTheme.colors.red,
-                    800: "#b10000",
-                    900: "#4d4141",
+                    800: "#655959",
                 },
             },
 

@@ -46,4 +46,8 @@
         text-shadow: none;
       }
     }
+
+    .slab {
+      @apply tracking-wider font-serif font-bold uppercase;
+    }
   }
