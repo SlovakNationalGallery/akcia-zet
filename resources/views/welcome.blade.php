@@ -1,8 +1,20 @@
 <x-app-layout>
-  @include('googletagmanager::body')
   <div class="bg-gradient-to-r-260 from-red-800 to-gray-400">
       {{-- TODO time lapse --}}
-    <img src="https://placekitten.com/800/600" class="object-cover h-64 w-full">
+    <img src="https://placekitten.com/800/600" class="object-cover h-1/2-screen">
+    <nav class="absolute inset-x-0 top-0 px-4 pt-4">
+        {{-- shader --}}
+        <div class="absolute inset-0 opacity-40 bg-gradient-to-b from-black to-transparent"></div>
+        <div class="relative flex justify-between">
+            <a href="/" class="text-5xl block text-yellow-400 text-shadow font-mono">A*Z</a>
+            <svg viewBox="0 0 100 120" width="40" height="40" class="inline-block fill-current text-yellow-400 text-5xl mt-3" style="filter: drop-shadow(0.04em -0.02em 0 #ce4369)">
+                <rect width="100" height="8"></rect>
+                <rect y="40" width="100" height="8"></rect>
+                <rect y="80" width="100" height="8"></rect>
+            </svg>
+        </div>
+
+    </nav>
     <div class="container text-center mx-auto py-8 sm:w-3/4 xl:w-1/2 overflow-hidden">
         <p class="uppercase font-serif font-bold text-gray-300 leading-relaxed tracking-wider px-6">
             Vydávame sa na niekoľkomesačnú vzrušujúcu umenovednú výpravu,
