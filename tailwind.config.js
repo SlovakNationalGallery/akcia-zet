@@ -14,6 +14,7 @@ module.exports = {
 
             backgroundImage: theme => ({
                 'gradient-to-r-slanted': 'linear-gradient(87deg, var(--tw-gradient-stops))',
+                'gradient-to-r-270': 'linear-gradient(270deg, var(--tw-gradient-stops))',
                 'gradient-to-r-260': 'linear-gradient(260deg, var(--tw-gradient-stops))',
                 'gradient-to-r-334': 'linear-gradient(334deg, var(--tw-gradient-stops))',
                 'gradient-to-r-252': 'linear-gradient(252deg, var(--tw-gradient-stops))',
@@ -55,6 +56,7 @@ module.exports = {
 
             height: {
                 "1/2-screen": "50vh",
+                "3/4-screen": "75vh",
             },
 
             minHeight: {
