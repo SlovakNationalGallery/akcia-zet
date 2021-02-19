@@ -5,7 +5,7 @@
         {{-- Desktop nav --}}
         <div class="hidden md:flex justify-between">
             <a href="/" class="text-5xl block text-yellow-400 text-shadow font-mono">AKCIA</a>
-            <ul class="slab flex space-x-8 text-4xl text-gray-400 mt-2">
+            <ul class="slab flex space-x-8 md:text-4xl sm:text-2xl text-gray-400 mt-2">
                 <li>Aktéri</li>
                 <li>Pridané</li>
                 <li>Texty</li>
@@ -44,7 +44,11 @@
    $article = $articles[0]    ;
   @endphp
   <h2 class="pt-4 -mb-5 tracking-wide font-serif font-bold uppercase text-center text-6xl md:text-7xl text-gray-500">Pridané</h2>
-  <div class="relative px-8 bg-gradient-to-r-334 from-red-800 to-gray-700 text-center">
+  <div class="relative px-8 bg-gradient-to-r-334 from-red-800 to-gray-700 text-center"
+    x-data="calculateCutoutPolygon($el, 'hr')"
+    x-on:resize.window.debounce="polygonPoints = calculateCutoutPolygon($el, 'hr').polygonPoints"
+    :style="`clip-path: polygon(${polygonPoints.join(',')})`"
+    >
     <h3 class="text-2xl  md:text-3xl font-serif text-yellow-400 font-bold uppercase tracking-wider py-6 md:py-8">{{ $article->title }}</h3>
     <div class="md:w-1/2 mx-auto md:flex gap-12">
         @if($article->embed_url)
@@ -71,7 +75,7 @@
     <div class="text-left text-sm md:text-center md:flex md:gap-12 md:max-w-5xl md:mx-auto">
         @foreach([...$articles, $articles[0]] as $article)
             <div class="md:w-1/3">
-                <hr class="my-6 md:mt-12 md:mx-6 border-t-2 border-gray-300">
+                <hr class="my-6 md:mt-12 md:mx-6 border-t-3 border-transparent">
                 <p class="text-gray-400 mt-4">
                     {{ ucfirst($article->published_at->diffForHumans()) }}
                 </p>
@@ -99,7 +103,12 @@
   </div>
 
   <h2 class="pt-4 -mb-5 tracking-wide font-serif font-bold uppercase text-center text-6xl md:text-7xl text-gray-500">Texty</h2>
-  <div class="relative px-8 bg-gradient-to-r-252 from-red-800 to-gray-700 text-center py-8">
+  <div
+    class="relative px-8 bg-gradient-to-r-252 from-red-800 to-gray-700 text-center py-8"
+    x-data="calculateCutoutPolygon($el, '.cutout')"
+    x-on:resize.window.debounce="polygonPoints = calculateCutoutPolygon($el, '.cutout').polygonPoints"
+    :style="`clip-path: polygon(${polygonPoints.join(',')})`"
+    >
       <div class="md:flex md:max-w-5xl mx-auto">
         <div class="md:text-left md:flex md:w-1/2">
             <div class="hidden md:w-1/3 md:block mr-8 mt-8">
@@ -112,9 +121,10 @@
                 <img src="https://placekitten.com/100/100" class="object-cover w-40 mx-auto my-4 md:hidden">
                 <p class="text-sm text-white mt-4 md:w-3/4">Krátka beseda o tom, čo sú hoaxy, na čo sú dobré a čím sa líšía hoaxy dneška od včerajších hoaxov.</p>
             </div>
-            <hr class="my-6 border-t-2 border-gray-300 md:hidden">
+            <hr class="my-6 border-t-2 border-gray-300 md:hidden cutout">
         </div>
-        <div class="md:border-l-2 md:pl-8 md:w-1/2">
+        <div class="relative top-4 bottom-4 cutout hidden md:block" style="width:2px"></div>
+        <div class="md:w-1/2">
             <div class="md:w-1/2 mx-auto">
                 <h5 class="text-sm text-gray-400">Prvýkrát zverejnené</h5>
                 <h3 class="slab text-2xl md:text-3xl text-white mt-2">Výskum</h3>
