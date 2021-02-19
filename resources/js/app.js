@@ -1,6 +1,11 @@
 require('./bootstrap');
 require('alpinejs');
 
+window.Flickity = require('flickity-fade')
+window.noUiSlider = require('nouislider')
+
+// Makes "cut-outs" in background of parentElement in the shape of elements
+// found by cutoutsSelector. Used for divider "slits"
 function calculateCutoutPolygon(parentElement, cutoutsSelector){
     const polygonPoints = ['0% 0%', '0% 100%']
     let parentRect = parentElement.getBoundingClientRect()

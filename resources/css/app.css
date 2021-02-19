@@ -47,7 +47,13 @@
       }
     }
 
-    .slab {
-      @apply tracking-wider font-serif font-bold uppercase;
-    }
+  .slab {
+    @apply tracking-wider font-serif font-bold uppercase;
   }
+}
+
+/*! purgecss start ignore */
+@import "flickity/css/flickity";
+@import "flickity-fade/flickity-fade";
+@import "nouislider/distribute/nouislider";
+/*! purgecss end ignore */

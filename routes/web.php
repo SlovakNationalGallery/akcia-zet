@@ -43,6 +43,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth:sanctum', 'verified'])
 Route::prefix('preview')->middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/', function () {
         $articles = Article::published()->get();
-        return view('welcome', compact('articles'));
+        $setting = Setting::first();
+        return view('welcome', compact('articles', 'setting'));
     })->name('home');
 });

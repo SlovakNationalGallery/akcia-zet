@@ -1,7 +1,7 @@
 <x-app-layout>
   <div class="bg-gradient-to-r-260 from-red-800 to-gray-400">
 
-    <nav class="absolute inset-x-0 top-0 px-4 pt-4 md:static md:px-8 md:py-4 md:bg-gradient-to-r-270 from-red-800 to-gray-700">
+    <nav class="absolute inset-x-0 top-0 px-4 pt-4 md:static md:px-8 md:py-4 md:bg-gradient-to-r-270 from-red-800 to-gray-700 z-10">
         {{-- Desktop nav --}}
         <div class="hidden md:flex justify-between">
             <a href="/" class="text-5xl block text-yellow-400 text-shadow font-mono">AKCIA</a>
@@ -29,7 +29,71 @@
         </div>
     </nav>
     {{-- TODO time lapse --}}
-    <img src="https://placekitten.com/800/600" class="object-cover h-1/2-screen md:h-3/4-screen w-full">
+    <div
+        x-data="initTimelapse()"
+        x-init="init($dispatch)"
+        @update="flickity.select($event.detail.slide)"
+    >
+        <div class="main-carousel h-1/2-screen md:h-3/4-screen xoverflow-hidden" x-ref="carousel">
+            @php
+                $images = ['https://placekitten.com/800/600', 'https://placekitten.com/800/601', 'https://placekitten.com/800/602'];
+            @endphp
+            @foreach ($setting->getMedia('timelapse') as $image)
+                <div class="carousel-cell w-full h-full border">
+                    <img
+                        data-flickity-lazyload-srcset="{{ $image->getSrcset() }}"
+                        data-flickity-lazyload-src="{{ $image->getUrl() }}"
+                        sizes="1px" {{-- Initial size updated in JS --}}
+                        class="object-cover object-center h-full w-full"
+                    >
+                </div>
+            @endforeach
+        </div>
+        <div x-ref="slider"></div>
+    </div>
+    <script>
+        function initTimelapse(refs) {
+            return {
+                carousel: null,
+                slider: null,
+                init(dispatch) {
+                    this.flickity = initFlickity(this.$refs.carousel)
+                    this.slider= initSlider(this.$refs.slider, this.flickity)
+                }
+            }
+        }
+
+        function initFlickity(element) {
+            return new Flickity(element, {
+                cellAlign: 'left',
+                contain: true,
+                prevNextButtons: false,
+                pageDots: false,
+                draggable: false,
+                fade: true,
+                lazyLoad: 2,
+                on: {
+                    lazyLoad(event, cell) {
+                        const image = cell.querySelector('img')
+                        image.sizes = Math.ceil(cell.getBoundingClientRect().width / window.innerWidth * 100 ) + 'vw'
+                    },
+                }
+            })
+        }
+
+        function initSlider(element, flickity) {
+            noUiSlider.create(element, {
+                start: [0],
+                step: 1,
+                connect: true,
+                range: {
+                    'min': 0,
+                    'max': 2
+                }
+            })
+            .on('slide', (values) => flickity.select(parseInt(values[0])));
+        }
+    </script>
     <div class="container text-center mx-auto md:w-1/2 py-8">
         <p class="uppercase font-serif font-bold text-white leading-relaxed tracking-wider px-6">
             Vydávame sa na niekoľkomesačnú vzrušujúcu umenovednú výpravu,
