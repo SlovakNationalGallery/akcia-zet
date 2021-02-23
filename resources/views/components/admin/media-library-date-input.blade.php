@@ -7,7 +7,7 @@
         type="date"
         required
         {{ $mediaItem->livewireCustomPropertyAttributes('date') }}
-        x-on:change.debounce.150="$wire.setCustomProperty('{{ $mediaItem->uuid }}', 'date', document.getElementsByName('{{ $mediaItem->customPropertyAttributeName('date') }}')[0].value)"',
+        x-on:change="$dispatch('keyup')" {{-- Trigger update event for MediaLibrary --}}
     />
 
     @error($mediaItem->customPropertyErrorName('date'))

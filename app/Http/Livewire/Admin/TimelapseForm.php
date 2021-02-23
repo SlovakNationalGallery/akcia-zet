@@ -26,6 +26,7 @@ class TimelapseForm extends Component
 
         $this->setting
             ->syncFromMediaLibraryRequest($this->images)
+            ->withCustomProperties('date')
             ->toMediaCollection('timelapse');
 
         $this->emit('saved');
