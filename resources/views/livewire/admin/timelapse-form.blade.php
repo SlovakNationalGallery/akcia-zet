@@ -4,7 +4,6 @@
             <div class="col-span-6 sm:col-span-4">
                 <p class="font-medium text-sm text-gray-500">
                     Priestor na nahrávanie obrázkov do "časozberu" na titulke.
-                    <br>Názvy (<em>Name</em>) obrázkov nie sú dôležité — na titulke sa nezobrazia.
                 </p>
             </div>
             <div class="col-span-6">

@@ -1,5 +1,3 @@
-@include('media-library::livewire.partials.collection.fields')
-
 <div class="media-library-field">
     <label class="media-library-label">Dátum</label>
     <input
