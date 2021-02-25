@@ -2,7 +2,7 @@
 
 <div
     x-data="{
-        tags: @entangle($attributes->wire('model')).defer,
+        tags: @entangle($attributes->wire('model')),
         availableTags: {{ json_encode($availableTags) }},
         input: '',
         open: false,
@@ -14,6 +14,7 @@
         },
         addTag(tag) {
             this.tags.push(tag)
+            this.input = ''
         }
     }"
 >

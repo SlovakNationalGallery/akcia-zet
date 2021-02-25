@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Admin\Articles;
 
 use Livewire\Component;
 use App\Models\Article;
+use Illuminate\Support\Collection;
 use Spatie\MediaLibraryPro\Http\Livewire\Concerns\WithMedia;
 use Spatie\Tags\Tag;
 
@@ -13,6 +14,7 @@ class Form extends Component
 
     public Article $article;
     public array $tags;
+    public Collection $availableTags;
 
     // MediaLibraryPro
     public $mediaComponentNames = ['images'];
@@ -38,18 +40,11 @@ class Form extends Component
     ];
 
 
-    public function getAvailableTagsProperty()
-    {
-        return Tag::all()->pluck('name')->toArray();
-    }
-
     public function mount()
     {
-        // TODO maybe this is not the best place for setting defaults
-        $this->article->published = $this->article->published ?? false;
-
         // Didn't work with article.tags out of the box, so handling tags separately
         $this->tags = $this->article->tags->pluck('name')->toArray();
+        $this->availableTags = Tag::all()->pluck('name');
     }
 
     public function confirmDeletion()
