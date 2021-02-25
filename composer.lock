@@ -3892,17 +3892,17 @@
         },
         {
             "name": "spatie/laravel-medialibrary-pro",
-            "version": "1.12.16",
+            "version": "1.12.17",
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-medialibrary-pro.git",
-                "reference": "07d66cfd64e28517ed0a5839be5bc65aad883d1c"
+                "reference": "5fa7787fddc2c0ef2e4b90f9a463cbedf5771eb4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.spatie.be/dist/spatie/laravel-medialibrary-pro/spatie-laravel-medialibrary-pro-07d66cfd64e28517ed0a5839be5bc65aad883d1c-zip-b4dca2.zip",
-                "reference": "07d66cfd64e28517ed0a5839be5bc65aad883d1c",
-                "shasum": "0dfd945b66637a3f1da20c42936892cb788324b1"
+                "url": "https://satis.spatie.be/dist/spatie/laravel-medialibrary-pro/spatie-laravel-medialibrary-pro-5fa7787fddc2c0ef2e4b90f9a463cbedf5771eb4-zip-b04807.zip",
+                "reference": "5fa7787fddc2c0ef2e4b90f9a463cbedf5771eb4",
+                "shasum": "5bb1bd19f3c74ff2cfc2334ea157bff95be19d23"
             },
             "require": {
                 "ext-json": "*",
@@ -3967,10 +3967,10 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-medialibrary-pro/tree/1.12.16",
+                "source": "https://github.com/spatie/laravel-medialibrary-pro/tree/1.12.17",
                 "issues": "https://github.com/spatie/laravel-medialibrary-pro/issues"
             },
-            "time": "2021-02-07T12:51:05+00:00"
+            "time": "2021-02-24T15:22:30+00:00"
         },
         {
             "name": "spatie/laravel-sluggable",

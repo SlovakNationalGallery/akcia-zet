@@ -14,3 +14,7 @@
     </span>
     @enderror
 </div>
+<div class="media-library-field">
+    {{ $mediaItem->name }}
+</div>
+
