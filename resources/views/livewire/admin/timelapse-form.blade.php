@@ -13,7 +13,6 @@
                         id="images"
                         name="images"
                         :model="$setting"
-                        :sortable="false"
                         collection="timelapse"
                         rules="mimes:jpeg,png"
                         fields-view="components.admin.media-library-date-input"
