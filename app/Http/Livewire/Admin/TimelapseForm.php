@@ -33,6 +33,7 @@ class TimelapseForm extends Component
         // Order timelapse images by date
         Media::setNewOrder(
             $this->setting
+              ->fresh()
               ->getMedia('timelapse')
               ->sortBy('custom_properties.date')
               ->pluck('id')
