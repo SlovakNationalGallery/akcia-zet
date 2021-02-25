@@ -4,6 +4,7 @@
             <div class="col-span-6 sm:col-span-4">
                 <p class="font-medium text-sm text-gray-500">
                     Priestor na nahrávanie obrázkov do "časozberu" na titulke.
+                    Obrázky budú automaticky zoradené podľa dátumu.
                 </p>
             </div>
             <div class="col-span-6">
@@ -12,6 +13,7 @@
                         id="images"
                         name="images"
                         :model="$setting"
+                        :sortable="false"
                         collection="timelapse"
                         rules="mimes:jpeg,png"
                         fields-view="components.admin.media-library-date-input"
