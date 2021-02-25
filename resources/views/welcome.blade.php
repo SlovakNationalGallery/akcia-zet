@@ -28,17 +28,21 @@
             </div>
         </div>
     </nav>
-    {{-- TODO time lapse --}}
     <div
-        x-data="initTimelapse()"
+        x-data="{
+            dates: {{ json_encode($timelapseImages->map->getCustomProperty('date')) }},
+            flickity: null,
+            slider: null,
+            init(dispatch) {
+                this.flickity = initFlickity(this.$refs.carousel)
+                this.slider= initSlider(this.$refs.slider, this.flickity, this.dates)
+            }
+        }"
         x-init="init($dispatch)"
         @update="flickity.select($event.detail.slide)"
     >
         <div class="main-carousel h-1/2-screen md:h-3/4-screen xoverflow-hidden" x-ref="carousel">
-            @php
-                $images = ['https://placekitten.com/800/600', 'https://placekitten.com/800/601', 'https://placekitten.com/800/602'];
-            @endphp
-            @foreach ($setting->getMedia('timelapse') as $image)
+            @foreach ($timelapseImages as $image)
                 <div class="carousel-cell w-full h-full border">
                     <img
                         data-flickity-lazyload-srcset="{{ $image->getSrcset() }}"
@@ -52,17 +56,6 @@
         <div x-ref="slider"></div>
     </div>
     <script>
-        function initTimelapse(refs) {
-            return {
-                carousel: null,
-                slider: null,
-                init(dispatch) {
-                    this.flickity = initFlickity(this.$refs.carousel)
-                    this.slider= initSlider(this.$refs.slider, this.flickity)
-                }
-            }
-        }
-
         function initFlickity(element) {
             return new Flickity(element, {
                 cellAlign: 'left',
@@ -81,14 +74,14 @@
             })
         }
 
-        function initSlider(element, flickity) {
+        function initSlider(element, flickity, dates) {
             noUiSlider.create(element, {
                 start: [0],
                 step: 1,
                 connect: true,
                 range: {
                     'min': 0,
-                    'max': 2
+                    'max': dates.length - 1,
                 }
             })
             .on('slide', (values) => flickity.select(parseInt(values[0])));
