@@ -30,11 +30,11 @@
     </nav>
     <div
         x-data="{
-            dates: {{ json_encode($timelapseImages->map->getCustomProperty('date')) }},
+            dates: {{ json_encode($timelapseImagesDates->map->timestamp) }},
             flickity: null,
             slider: null,
             init(dispatch) {
-                this.flickity = initFlickity(this.$refs.carousel)
+                this.flickity = initFlickity(this.$refs.carousel, this.dates.length - 1)
                 this.slider= initSlider(this.$refs.slider, this.flickity, this.dates)
             }
         }"
@@ -56,8 +56,9 @@
         <div x-ref="slider"></div>
     </div>
     <script>
-        function initFlickity(element) {
+        function initFlickity(element, initialIndex) {
             return new Flickity(element, {
+                initialIndex,
                 cellAlign: 'left',
                 contain: true,
                 prevNextButtons: false,
@@ -75,16 +76,35 @@
         }
 
         function initSlider(element, flickity, dates) {
+            // Set limits for the slider (note these are not actually reachable)
+            range = {
+                min: new Date("2020-12-01").getTime() / 1000,
+                max: new Date("2021-06-30").getTime() / 1000
+            }
+            dates.forEach((date) => {
+                range[`${(date - range.min) / (range.max - range.min) * 100}%`] = date
+            });
+
+            // Variables for reachable values
+            const minDate = dates[0]
+            const maxDate = dates[dates.length - 1]
+
             noUiSlider.create(element, {
-                start: [0],
-                step: 1,
-                connect: true,
-                range: {
-                    'min': 0,
-                    'max': dates.length - 1,
-                }
+                start: maxDate,
+                snap: true,
+                connect: 'lower',
+                range,
             })
-            .on('slide', (values) => flickity.select(parseInt(values[0])));
+            .on('slide', (values, handle, unencoded, tap, positions, noUiSlider) =>  {
+                const value = unencoded[0]
+
+                // Limit to values within range
+                if (value < minDate) return noUiSlider.set(minDate)
+                if (value > maxDate) return noUiSlider.set(maxDate)
+
+                // Move to the corresponsing image
+                flickity.select(dates.indexOf(value))
+            })
         }
     </script>
     <div class="container text-center mx-auto md:w-1/2 py-8">

@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\ArticleController;
 use App\Models\Article;
 use App\Models\Setting;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,6 +45,9 @@ Route::prefix('preview')->middleware(['auth:sanctum', 'verified'])->group(functi
     Route::get('/', function () {
         $articles = Article::published()->get();
         $timelapseImages = Setting::first()->getMedia('timelapse');
-        return view('welcome', compact('articles', 'timelapseImages'));
+        $timelapseImagesDates = $timelapseImages
+            ->map(fn ($image) => Carbon::parse($image->getCustomProperty('date')));
+
+        return view('welcome', compact('articles', 'timelapseImages', 'timelapseImagesDates'));
     })->name('home');
 });
