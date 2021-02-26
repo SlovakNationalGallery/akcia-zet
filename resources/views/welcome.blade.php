@@ -32,9 +32,17 @@
         x-data="{
             dates: {{ json_encode($timelapseImagesDates->map->timestamp) }},
             flickity: null,
+            sliderCssClasses: {
+                target: 'target bg-gray-400 border-0 rounded-none shadow-none h-3',
+                connect: 'connect bg-yellow-400',
+                connects: 'connects rounded-none',
+                handle: ' absolute w-12 -right-6 -top-5 focus:outline-none',
+                active: '',
+                tooltip: ' absolute transform left-1/2 -translate-x-1/2 font-mono text-yellow-200 mt-2 text-xl',
+            },
             init(dispatch) {
                 this.flickity = Timelapse.initFlickity(this.$refs.carousel, this.dates.length - 1)
-                Timelapse.initSlider(this.$refs.slider, this.dates, dispatch)
+                Timelapse.initSlider(this.$refs.slider, this.dates, this.sliderCssClasses, dispatch)
 
                 this.$refs.slider
                     .querySelector('[data-handle] > div')

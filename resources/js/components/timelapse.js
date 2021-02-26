@@ -20,7 +20,7 @@ function initFlickity(element, initialIndex) {
     })
 }
 
-function initSlider(target, dates, dispatch) {
+function initSlider(target, dates, cssClasses, dispatch) {
     // Set limits for the slider (note these are not actually reachable)
     const range = {
         min: new Date("2020-12-01").getTime() / 1000,
@@ -50,12 +50,7 @@ function initSlider(target, dates, dispatch) {
         },
         cssClasses: {
             ...noUiSlider.cssClasses,
-            target: noUiSlider.cssClasses.target + ' bg-gray-400 border-0 rounded-none shadow-none h-3',
-            connect: noUiSlider.cssClasses.connect + ' bg-yellow-400',
-            connects: noUiSlider.cssClasses.connects + ' rounded-none',
-            handle: ' absolute w-12 -right-6 -top-5 focus:outline-none',
-            active: '',
-            tooltip: ' absolute transform left-1/2 -translate-x-1/2 font-mono text-yellow-200 mt-2 text-xl',
+            ...cssClasses,
         }
     })
 
