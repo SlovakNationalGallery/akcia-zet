@@ -39,10 +39,15 @@
                                                 <div class="text-sm text-gray-500">{{ $article->created_at->diffForHumans() }}</div>
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap">
-                                                @if($article->published)
+                                                @if($article->is_published)
+                                                <span
+                                                    class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-300 text-green-800">
+                                                    Publikovaný
+                                                </span>
+                                                @elseif($article->will_be_published)
                                                 <span
                                                     class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                                    Publikovaný
+                                                    Publikovaný od {{ $article->published_at }}
                                                 </span>
                                                 @else
                                                 <span

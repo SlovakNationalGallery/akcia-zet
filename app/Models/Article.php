@@ -37,6 +37,16 @@ class Article extends Model implements HasMedia
             ->doNotGenerateSlugsOnUpdate();
     }
 
+    public function getIsPublishedAttribute(): bool {
+        if (!$this->published_at) return false;
+        return $this->published_at->isPast();
+    }
+
+    public function getWillBePublishedAttribute() {
+        if (!$this->published_at) return false;
+        return $this->published_at->isFuture();
+    }
+
     // Required for MediaLibraryPro components to show thumbnails of uploaded images
     public function registerMediaConversions(Media $media = null): void
     {
