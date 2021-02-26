@@ -32,18 +32,22 @@
         x-data="{
             dates: {{ json_encode($timelapseImagesDates->map->timestamp) }},
             flickity: null,
-            slider: null,
             init(dispatch) {
-                this.flickity = initFlickity(this.$refs.carousel, this.dates.length - 1)
-                this.slider= initSlider(this.$refs.slider, this.flickity, this.dates)
+                this.flickity = Timelapse.initFlickity(this.$refs.carousel, this.dates.length - 1)
+                Timelapse.initSlider(this.$refs.slider, this.dates, dispatch)
+
+                this.$refs.slider
+                    .querySelector('[data-handle] > div')
+                    .appendChild(this.$refs.handle)
             }
         }"
         x-init="init($dispatch)"
-        @update="flickity.select($event.detail.slide)"
+        x-on:resize.window.debounce="flickity.resize()"
+        x-on:slider-change="flickity.select(dates.indexOf($event.detail))"
     >
         <div class="main-carousel h-1/2-screen md:h-3/4-screen xoverflow-hidden" x-ref="carousel">
             @foreach ($timelapseImages as $image)
-                <div class="carousel-cell w-full h-full border">
+                <div class="carousel-cell w-full h-full">
                     <img
                         data-flickity-lazyload-srcset="{{ $image->getSrcset() }}"
                         data-flickity-lazyload-src="{{ $image->getUrl() }}"
@@ -54,59 +58,12 @@
             @endforeach
         </div>
         <div x-ref="slider"></div>
+        <svg x-ref="handle" x-cloak xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.01 512.01" class="fill-current text-yellow-200 w-12 hover:text-yellow-300 filter-shadow">
+            <path d="M507.804,200.28L262.471,12.866c-3.84-2.923-9.131-2.923-12.949,0L4.188,200.28c-3.605,2.773-5.077,7.531-3.648,11.84
+                        l93.717,281.92c1.451,4.373,5.525,7.296,10.133,7.296h303.253c4.587,0,8.683-2.944,10.133-7.296l93.717-281.92
+                        C512.882,207.789,511.41,203.053,507.804,200.28z"/>
+        </svg>
     </div>
-    <script>
-        function initFlickity(element, initialIndex) {
-            return new Flickity(element, {
-                initialIndex,
-                cellAlign: 'left',
-                contain: true,
-                prevNextButtons: false,
-                pageDots: false,
-                draggable: false,
-                fade: true,
-                lazyLoad: 2,
-                on: {
-                    lazyLoad(event, cell) {
-                        const image = cell.querySelector('img')
-                        image.sizes = Math.ceil(cell.getBoundingClientRect().width / window.innerWidth * 100 ) + 'vw'
-                    },
-                }
-            })
-        }
-
-        function initSlider(element, flickity, dates) {
-            // Set limits for the slider (note these are not actually reachable)
-            range = {
-                min: new Date("2020-12-01").getTime() / 1000,
-                max: new Date("2021-06-30").getTime() / 1000
-            }
-            dates.forEach((date) => {
-                range[`${(date - range.min) / (range.max - range.min) * 100}%`] = date
-            });
-
-            // Variables for reachable values
-            const minDate = dates[0]
-            const maxDate = dates[dates.length - 1]
-
-            noUiSlider.create(element, {
-                start: maxDate,
-                snap: true,
-                connect: 'lower',
-                range,
-            })
-            .on('slide', (values, handle, unencoded, tap, positions, noUiSlider) =>  {
-                const value = unencoded[0]
-
-                // Limit to values within range
-                if (value < minDate) return noUiSlider.set(minDate)
-                if (value > maxDate) return noUiSlider.set(maxDate)
-
-                // Move to the corresponsing image
-                flickity.select(dates.indexOf(value))
-            })
-        }
-    </script>
     <div class="container text-center mx-auto md:w-1/2 py-8">
         <p class="uppercase font-serif font-bold text-white leading-relaxed tracking-wider px-6">
             Vydávame sa na niekoľkomesačnú vzrušujúcu umenovednú výpravu,
