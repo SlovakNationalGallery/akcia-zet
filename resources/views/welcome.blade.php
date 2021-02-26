@@ -5,7 +5,7 @@
         {{-- Desktop nav --}}
         <div class="hidden md:flex justify-between">
             <a href="/" class="text-5xl block text-yellow-400 text-shadow font-mono">AKCIA</a>
-            <ul class="slab flex space-x-8 md:text-4xl sm:text-2xl text-gray-400 mt-2">
+            <ul class="slab flex text-3xl space-x-4 lg:space-x-8 lg:text-4xl text-gray-400 mt-2">
                 <li>Aktéri</li>
                 <li>Pridané</li>
                 <li>Texty</li>
@@ -63,8 +63,12 @@
                         l93.717,281.92c1.451,4.373,5.525,7.296,10.133,7.296h303.253c4.587,0,8.683-2.944,10.133-7.296l93.717-281.92
                         C512.882,207.789,511.41,203.053,507.804,200.28z"/>
         </svg>
+        <div class="hidden md:flex justify-between px-8 mt-6 font-mono text-xl">
+            <div class="text-yellow-400">11/20</div>
+            <div class="text-gray-400">6/21</div>
+        </div>
     </div>
-    <div class="container text-center mx-auto md:w-1/2 py-8">
+    <div class="container text-center mx-auto md:w-1/2 py-8 pt-16 md:pt-8">
         <p class="uppercase font-serif font-bold text-white leading-relaxed tracking-wider px-6">
             Vydávame sa na niekoľkomesačnú vzrušujúcu umenovednú výpravu,
             na&nbsp;ktorej otvoríme dôležité a&nbsp;aktuálne témy

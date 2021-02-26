@@ -39,14 +39,23 @@ function initSlider(target, dates, dispatch) {
         start: maxDate,
         snap: true,
         connect: 'lower',
+        tooltips: [true],
         range,
+        format: {
+            from: (val) => val,
+            to: (val) => {
+                const date = new Date(val * 1000)
+                return `${date.getMonth() + 1}/${date.getFullYear().toString().substring(2)}`
+            }
+        },
         cssClasses: {
             ...noUiSlider.cssClasses,
             target: noUiSlider.cssClasses.target + ' bg-gray-400 border-0 rounded-none shadow-none h-3',
             connect: noUiSlider.cssClasses.connect + ' bg-yellow-400',
             connects: noUiSlider.cssClasses.connects + ' rounded-none',
             handle: ' absolute w-12 -right-6 -top-5 focus:outline-none',
-            active: ''
+            active: '',
+            tooltip: ' absolute transform left-1/2 -translate-x-1/2 font-mono text-yellow-200 mt-2 text-xl',
         }
     })
 
