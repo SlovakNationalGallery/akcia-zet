@@ -60,7 +60,7 @@
                     Vydávame sa na niekoľkomesačnú vzrušujúcu umenovednú výpravu,
                     na&nbsp;ktorej otvoríme dôležité a&nbsp;aktuálne témy
                 </p>
-                <a href="/o-projekte" class="mt-4 slab inline-block text-gray-400 underline">O projekte</a>
+                <a href="/o-projekte" class="mt-4 slab tracking-wider inline-block text-gray-400 underline">O projekte</a>
             </div>
         </div>
 
@@ -110,7 +110,7 @@
                                 <x-extended-embed url="{{ $article->embed_url }}" />
                             </div>
                             @endif
-                            <h3 class="text-lg text-yellow-200 slab {{ $article->embed_url ? 'md:text-left' : ''}}"><a href="#TODO">{{ $article->title }}</a></h3>
+                            <h3 class="text-lg text-yellow-200 slab tracking-wider {{ $article->embed_url ? 'md:text-left' : ''}}"><a href="#TODO">{{ $article->title }}</a></h3>
                         </div>
                         <p class="text-white mt-2">
                             {{ $article->perex }}
@@ -124,7 +124,7 @@
                 @endforeach
             </div>
 
-            <a href="/pridane" class="my-8 slab inline-block text-gray-400 underline">Všetky príspevky</a>
+            <a href="/pridane" class="my-8 slab tracking-wider inline-block text-gray-400 underline">Všetky príspevky</a>
         </div>
 
         <h2 class="pt-4 -mb-5 tracking-wide font-serif font-bold uppercase text-center text-6xl md:text-7xl text-gray-500">Texty</h2>
@@ -141,8 +141,8 @@
                     </div>
                     <div class="md:w-2/3">
                         <h5 class="text-sm text-gray-400">Pripravujeme</h5>
-                        <h3 class="slab text-2xl  md:text-3xl text-white mt-2">Stratený svätý</h3>
-                        <h4 class="slab text-yellow-200 mt-2 hidden md:block w-3/4">S. Kusá a O. Chrobák v komixe o pátraní po stratenom obraze</h4>
+                        <h3 class="slab tracking-wider text-2xl  md:text-3xl text-white mt-2">Stratený svätý</h3>
+                        <h4 class="slab tracking-wider text-yellow-200 mt-2 hidden md:block w-3/4">S. Kusá a O. Chrobák v komixe o pátraní po stratenom obraze</h4>
                         <img src="https://placekitten.com/100/100" class="object-cover w-40 mx-auto my-4 md:hidden">
                         <p class="text-sm text-white mt-4 md:w-3/4">Krátka beseda o tom, čo sú hoaxy, na čo sú dobré a čím sa líšía hoaxy dneška od včerajších hoaxov.</p>
                     </div>
@@ -152,8 +152,8 @@
                 <div class="md:w-1/2">
                     <div class="md:w-1/2 mx-auto">
                         <h5 class="text-sm text-gray-400">Prvýkrát zverejnené</h5>
-                        <h3 class="slab text-2xl md:text-3xl text-white mt-2">Výskum</h3>
-                        <h4 class="slab text-yellow-200 mt-2 hidden md:block">Markéta Peringerová v komixe o pátraní po stratenom obraze</h4>
+                        <h3 class="slab tracking-wider text-2xl md:text-3xl text-white mt-2">Výskum</h3>
+                        <h4 class="slab tracking-wider text-yellow-200 mt-2 hidden md:block">Markéta Peringerová v komixe o pátraní po stratenom obraze</h4>
                         <img src="https://placekitten.com/100/100" class="object-cover w-40 mx-auto my-4 md:hidden">
                         <p class="text-center text-sm text-white mt-4">Krátka beseda o tom, čo sú hoaxy, na čo sú dobré a čím sa líšía hoaxy dneška od včerajších hoaxov.</p>
                     </div>

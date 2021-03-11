@@ -42,6 +42,7 @@ module.exports = {
                 pink: {
                     ...defaultTheme.colors.pink,
                     400: "#F4538A",
+                    600: "#CE4369"
                 },
                 red: {
                     ...defaultTheme.colors.red,

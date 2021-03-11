@@ -50,4 +50,6 @@ Route::prefix('preview')->middleware(['auth:sanctum', 'verified'])->group(functi
 
         return view('welcome', compact('articles', 'timelapseImages', 'timelapseImagesDates'));
     })->name('home');
+
+    Route::get('/o-projekte', fn () => view('about'));
 });

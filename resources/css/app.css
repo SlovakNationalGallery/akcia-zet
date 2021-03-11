@@ -52,7 +52,7 @@
   }
 
   .slab {
-    @apply tracking-wider font-serif font-bold uppercase;
+    @apply font-serif font-bold uppercase;
   }
 
   .nav-spacer {
