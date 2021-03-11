@@ -33,3 +33,4 @@ function calculateCutoutPolygon(parentElement, cutoutsSelector){
 
 window.calculateCutoutPolygon = calculateCutoutPolygon
 window.Timelapse = require('./components/timelapse')
+window.initOpenSeaDragon = require('./components/openseadragon').initOpenSeaDragon
