@@ -8,6 +8,7 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
+                sans: ["Source Sans Pro", ...defaultTheme.fontFamily.sans],
                 serif: ["Rockwell Nova Cond", ...defaultTheme.fontFamily.serif],
                 mono: ["Terminal One", ...defaultTheme.fontFamily.mono],
             },
@@ -33,6 +34,7 @@ module.exports = {
                     400: "#A5A5A5",
                     500: "#918585",
                     700: "#767474",
+                    800: "#413939",
                 },
                 yellow: {
                     ...defaultTheme.colors.yellow,
