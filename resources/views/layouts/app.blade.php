@@ -26,7 +26,7 @@
     <body class="antialiased">
         @include('googletagmanager::body')
         <div class="bg-gradient-to-b from-white to-yellow-200">
-            <nav class="absolute inset-x-0 top-0 px-4 pt-4 md:px-8 md:py-4 z-20">
+            <nav class="absolute inset-x-0 top-0 px-6 pt-4 md:px-8 md:py-4 z-20">
                 {{-- Desktop nav --}}
                 <div class="hidden md:flex justify-between">
                     <a href="/" class="text-5xl block text-yellow-400 text-shadow font-mono">AKCIA</a>
