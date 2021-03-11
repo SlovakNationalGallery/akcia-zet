@@ -55,6 +55,10 @@
     @apply tracking-wider font-serif font-bold uppercase;
   }
 
+  .nav-spacer {
+    @apply h-20
+  }
+
   [x-cloak] {
     display: none;
   }

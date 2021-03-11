@@ -1,35 +1,12 @@
 <x-app-layout>
-    <div class="fixed inset-0" x-data id="openseaviewer" x-init="initOpenSeaDragon($el.id)">
+    <div class="fixed inset-0 bg-gray-800" x-data id="openseaviewer" x-init="initOpenSeaDragon($el.id)">
     </div>
     <div class="relative">
+        {{-- Solid colour for md+ --}}
+        <div class="nav-spacer hidden md:block md:bg-gradient-to-r-270 md:from-red-800 md:to-gray-700 md:opacity-100"></div>
+        {{-- Background overlay shadow for mobile --}}
+        <div class="absolute md:hidden inset-x-0 h-20 z-10 opacity-40 bg-gradient-to-b from-black to-transparent"></div>
         <div class="bg-gradient-to-r-260 from-red-800 to-gray-400">
-            <nav class="absolute inset-x-0 top-0 px-4 pt-4 md:static md:px-8 md:py-4 md:bg-gradient-to-r-270 from-red-800 to-gray-700 z-10">
-                {{-- Desktop nav --}}
-                <div class="hidden md:flex justify-between">
-                    <a href="/" class="text-5xl block text-yellow-400 text-shadow font-mono">AKCIA</a>
-                    <ul class="slab flex text-3xl space-x-4 lg:space-x-8 lg:text-4xl text-gray-400 mt-2">
-                        <li>Aktéri</li>
-                        <li>Pridané</li>
-                        <li>Texty</li>
-                        <li>Prečo</li>
-                    </ul>
-                    <a href="/" class="text-5xl block text-yellow-400 text-shadow font-mono">ZET</a>
-                </div>
-
-                {{-- Mobile nav --}}
-                <div class="md:hidden">
-                    {{-- shader --}}
-                    <div class="absolute inset-0 opacity-40 bg-gradient-to-b from-black to-transparent"></div>
-                    <div class="relative flex justify-between">
-                        <a href="/" class="text-5xl block text-yellow-400 text-shadow font-mono">A*Z</a>
-                        <svg viewBox="0 0 100 120" width="40" height="40" class="inline-block fill-current text-yellow-400 text-5xl mt-3" style="filter: drop-shadow(0.04em -0.02em 0 #ce4369)">
-                            <rect width="100" height="8"></rect>
-                            <rect y="40" width="100" height="8"></rect>
-                            <rect y="80" width="100" height="8"></rect>
-                        </svg>
-                    </div>
-                </div>
-            </nav>
             <div
                 x-data="{
                     dates: {{ json_encode($timelapseImagesDates->map->timestamp) }},
