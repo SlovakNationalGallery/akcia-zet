@@ -59,7 +59,13 @@ Route::prefix('preview')->middleware(['auth:sanctum', 'verified'])->group(functi
     })->name('actors');
 
     Route::get('/pridane', function () {
-        return "TODO";
+        $tags = Article::published()
+            ->with('tags')->get()
+            ->pluck('tags')->flatten()->pluck('name')->unique()->sort()->toArray();
+
+        $comingSoon = Setting::first()->coming_soon;
+
+        return view('articles.index', compact('tags', 'comingSoon'));
     })->name('articles.index');
 
     Route::get('/pridane/{article:slug}', function (Article $article) {

@@ -31,6 +31,9 @@
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <x-embed-styles />
 
+        {{-- Additional styles --}}
+        {{ $styles ?? '' }}
+
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
@@ -70,5 +73,8 @@
 
             {{ $slot }}
         </div>
+
+        {{-- Additional scripts --}}
+        {{ $scripts ?? '' }}
     </body>
 </html>
