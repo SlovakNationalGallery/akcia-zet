@@ -70,28 +70,34 @@
             <a href="#" class="px-2">#video</a>
         </div>
     </div>
-    <div class="mt-12 bg-gradient-to-r-334 from-red-800 to-gray-700 shadow-lg">
-        <div class="p-6 max-w-7xl mx-auto grid md:grid-cols-2 gap-x-16">
-            <div class="flex">
-                <div class="border border-yellow-200 h-full w-20 flex-shrink-0 md:mr-12"></div>
-                <x-article-preview class="pt-4" />
+    <div class="mt-12 p-6 md:p-24 md:pb-10 bg-gradient-to-r-334 from-red-800 to-gray-700 shadow-lg">
+        <div class="max-w-screen-2xl mx-auto grid md:grid-cols-2 gap-x-16">
+            <div class="flex items-center">
+                {{-- <div class="border border-yellow-200 h-full w-20 flex-shrink-0 md:mr-12"></div> --}}
+                <svg class="h-44 md:h-60 mr-8 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.813 300.578">
+                    <defs/><g data-name="Path 15"><path fill="none" stroke="#fffdc1" stroke-miterlimit="10" stroke-width="2.835" d="M31.425.289L2.662 138.338a58.34 58.34 0 000 23.9l28.763 138.049" data-name="Path 18"/></g>
+                </svg>
+                <x-article-preview class="pt-4 md:px-24" />
             </div>
             <div>
                 {{-- Mobile divider --}}
                 <hr class="my-6 border-t-2 border-yellow-200 md:hidden">
-                <div class="flex h-full">
+                <div class="flex items-center">
                     {{-- Desktop divider --}}
-                    <div class="border-l-2 border-yellow-200 h-full w-2 -ml-8 mr-8"></div>
-                    <x-article-preview class="pt-4" />
-                    <div class="border border-yellow-200 h-full w-20 flex-shrink-0 md:ml-12"></div>
+                    <div class="hidden md:block border-l-2 border-yellow-200 h-60 w-2 -ml-8 mr-8"></div>
+                    <x-article-preview class="pt-4 md:px-24" />
+                    <svg class="h-44 ml-8 md:h-60 flex-shrink-0 transform rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.813 300.578">
+                        <defs/><g data-name="Path 15"><path fill="none" stroke="#fffdc1" stroke-miterlimit="10" stroke-width="2.835" d="M31.425.289L2.662 138.338a58.34 58.34 0 000 23.9l28.763 138.049" data-name="Path 18"/></g>
+                    </svg>
                 </div>
             </div>
         </div>
+        <h3 class="slab mt-12 text-2xl md:text-xl tracking-wide text-center text-gray-400 underline"><a href="#">Všetky príspevky</a></h3>
     </div>
     <div class="px-6 pb-16 max-w-5xl mx-auto">
         <div class="md:flex text-center md:text-left text-red-800 mt-6 md:mt-12">
             <div class="order-2">
-                <h3 class="slab text-2xl md:text-lg tracking-wide">Partneri projektu</h3>
+                <h3 class="slab text-2xl md:text-xl tracking-wide">Partneri projektu</h3>
                 <ul class="mt-4 text-xs md:text-base space-y-4">
                     <li><a href="https://www.ustrcr.cz/" class="font-bold underline">Ústav pro studium totalitních režimů v Prahe</a></li>
                     <li><a href="https://historickarevue.sme.sk/t/5318/dejiny-tyzdenny-historicky-podcast" class="font-bold underline">Denník SME – podcast Dejiny a Jaroslav Valent (šéfredaktor časopisu Historická revue)</a></li>
@@ -102,7 +108,7 @@
                 </ul>
             </div>
             <div class="order-1 md:max-w-md">
-                <h3 class="mt-10 md:mt-0 slab text-2xl md:text-lg tracking-wide">Cold Revolution</h3>
+                <h3 class="mt-10 md:mt-0 slab text-2xl md:text-xl tracking-wide">Cold Revolution</h3>
                 <p class="mt-4 text-xs md:text-base md:pr-16">
                     Akcia ZET je pripravená aj pri príležitosti výstavno-edičného projektu Cold Revolution
                     (Jérôme Bazin, Joanna Kordjak) v Národnej galérii umenia Zachęta vo Varšave.
