@@ -54,7 +54,8 @@ Route::prefix('preview')->middleware(['auth:sanctum', 'verified'])->group(functi
     })->name('home');
 
     Route::get('/akteri', function () {
-        return "TODO";
+        $articles = Article::published()->orderBy('published_at', 'desc')->take(2)->get();
+        return view('actors', compact('articles'));
     })->name('actors');
 
     Route::get('/pridane', function () {

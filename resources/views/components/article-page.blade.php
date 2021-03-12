@@ -1,5 +1,9 @@
 @props(['title', 'perex', 'tags', 'meta', 'embedUrl', 'previousArticle', 'nextArticle'])
 
+@php
+    $tags = $tags ?? [];
+@endphp
+
 <x-app-layout>
     <div class="nav-spacer"></div>
     {{-- Mobile header --}}
@@ -14,7 +18,7 @@
            {{ $meta }}
         </p>
     </div>
-    @if($embedUrl)
+    @isset($embedUrl)
         <div class="mt-10 md:mt-0 hidden md:block">
             <x-extended-embed url="{{ $embedUrl }}" aspect-ratio="16:6.5" />
         </div>
@@ -23,11 +27,11 @@
         </div>
     @else
         <div class="mt-24"></div>
-    @endif
+    @endisset
     <div class="px-6 max-w-5xl mx-auto">
         <h2 class="mt-10 hidden md:block slab text-5xl text-red-800 tracking-wide leading-tight text-center">{{ $title }}</h2>
         <p class="mt-8 max-w-2xl mx-auto slab font-bold text-sm tracking-wide text-red-800 text-center leading-relaxed md:text-lg md:leading-7">
-            {{ $perex }}
+            {{ $perex ?? '' }}
         </p>
         <div class="mt-4 md:mt-12 md:grid md:grid-cols-3 gap-x-8  text-sm md:text-lg ">
             <div class="hidden md:block">
@@ -40,7 +44,7 @@
                     @endforeach
                 </ul>
             </div>
-            <div class="text-gray-800 col-span-2">
+            <div class="text-gray-800 col-span-2 article-content">
                 {{ $content }}
             </div>
         </div>

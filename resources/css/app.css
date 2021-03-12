@@ -55,6 +55,17 @@
     @apply font-serif font-bold uppercase;
   }
 
+  .article-content h1, h2, h3, h4 {
+    @apply mt-8 slab
+  }
+  .article-content p {
+    @apply mt-4
+  }
+
+  .article-content a {
+    @apply underline
+  }
+
   .nav-spacer {
     @apply h-20
   }
