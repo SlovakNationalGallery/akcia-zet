@@ -43,7 +43,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth:sanctum', 'verified'])
 
 Route::prefix('preview')->middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/', function () {
-        $articles = Article::published()->orderBy('published_at', 'desc')->get();
+        $articles = Article::published()->orderBy('published_at', 'desc')->take(4)->get();
         $featuredArticle = $articles->shift();
 
         $timelapseImages = Setting::first()->getMedia('timelapse');
