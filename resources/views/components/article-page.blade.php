@@ -55,6 +55,7 @@
             @endforeach
         </div>
     </div>
+    @if(isset($previousArticle) && isset($nextArticle))
     <div class="mt-12 p-6 md:p-24 md:pb-10 bg-gradient-to-r-334 from-red-800 to-gray-700 shadow-lg">
         <div class="max-w-screen-2xl mx-auto grid md:grid-cols-2 gap-x-16">
             <div class="flex items-center">
@@ -80,6 +81,7 @@
             <a href="{{ route('articles.index') }}">Všetky príspevky</a>
         </h3>
     </div>
+    @endif
     <div class="px-6 pb-16 max-w-5xl mx-auto">
         <div class="md:flex text-center md:text-left text-red-800 mt-6 md:mt-12">
             <div class="order-2">
