@@ -15,9 +15,14 @@
         </p>
     </div>
     @if($embedUrl)
-        <div class="mt-10 md:mt-0">
+        <div class="mt-10 md:mt-0 hidden md:block">
             <x-extended-embed url="{{ $embedUrl }}" aspect-ratio="16:6.5" />
         </div>
+        <div class="mt-10 md:mt-0 md:hidden">
+            <x-extended-embed url="{{ $embedUrl }}" />
+        </div>
+    @else
+        <div class="mt-24"></div>
     @endif
     <div class="px-6 max-w-5xl mx-auto">
         <h2 class="mt-10 hidden md:block slab text-5xl text-red-800 tracking-wide leading-tight text-center">{{ $title }}</h2>
