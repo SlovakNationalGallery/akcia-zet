@@ -59,7 +59,7 @@
     @apply mt-0 !important;
   }
 
-  .article-content h1, h2, h3, h4 {
+  .article-content h1, .article-content h2, .article-content h3, .article-content h4 {
     @apply mt-8 slab
   }
   .article-content p {
