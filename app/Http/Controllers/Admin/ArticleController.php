@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Article;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class ArticleController extends Controller
 {
@@ -50,6 +51,10 @@ class ArticleController extends Controller
     public function show(Article $article)
     {
         $articles = Article::published()->take(2)->get();
+
+        // Fake published_at for an unpublished article
+        $article->published_at = $article->published_at ?? Carbon::today();
+
         return view('articles.show', [
             'article' => $article,
             'prevArticle' => $articles[0],
