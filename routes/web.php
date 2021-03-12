@@ -62,6 +62,27 @@ Route::prefix('preview')->middleware(['auth:sanctum', 'verified'])->group(functi
         return "TODO";
     })->name('articles.index');
 
+    Route::get('/pridane/{article:slug}', function (Article $article) {
+        $articles = Article::published()->orderBy('published_at')->get();
+        $articleIndex = $articleIndex = $articles->search(fn ($haystack) => $haystack->id == $article->id);
+
+        // Wrap-around next and prev articles
+        $nextArticle = $articles
+            ->slice($articleIndex + 1)
+            ->first()
+            ??
+            $articles->first();
+
+        $prevArticle = $articles
+            ->slice(0, $articleIndex)
+            ->last()
+            ??
+            $articles->last();
+
+
+        return view('articles.show', compact('article', 'nextArticle', 'prevArticle'));
+    })->name('articles.show');
+
     Route::get('/texty', function () {
         return "TODO";
     })->name('research');

@@ -55,6 +55,10 @@
     @apply font-serif font-bold uppercase;
   }
 
+  .article-content *:first-child {
+    @apply mt-0 !important;
+  }
+
   .article-content h1, h2, h3, h4 {
     @apply mt-8 slab
   }

@@ -1,4 +1,4 @@
-@props(['title', 'perex', 'tags', 'meta', 'embedUrl', 'previousArticle', 'nextArticle'])
+@props(['title', 'perex', 'tags', 'meta', 'embedUrl', 'previousArticle', 'nextArticle', 'content'])
 
 @php
     $tags = $tags ?? [];
@@ -44,8 +44,8 @@
                     @endforeach
                 </ul>
             </div>
-            <div class="text-gray-800 col-span-2 article-content">
-                {{ $content }}
+            <div class="text-gray-800 col-span-2 article-content first:mt-0">
+                {!! $content !!}
             </div>
         </div>
 
