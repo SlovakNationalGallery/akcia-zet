@@ -6,7 +6,7 @@
         <div class="nav-spacer hidden md:block md:bg-gradient-to-r-270 md:from-red-800 md:to-gray-700 md:opacity-100"></div>
         {{-- Background overlay shadow for mobile --}}
         <div class="absolute md:hidden inset-x-0 h-20 z-10 opacity-40 bg-gradient-to-b from-black to-transparent"></div>
-        <div class="bg-gradient-to-r-260 from-red-800 to-gray-400">
+        <div class="bg-gradient-to-r-260 from-red-800 to-gray-700">
             <div
                 x-data="{
                     dates: {{ json_encode($timelapseImagesDates->map->timestamp) }},
@@ -17,7 +17,7 @@
                         connects: 'connects rounded-none',
                         handle: ' absolute w-12 -right-6 -top-5 focus:outline-none',
                         active: '',
-                        tooltip: ' absolute transform left-1/2 -translate-x-1/2 font-mono text-yellow-200 mt-2 text-xl',
+                        tooltip: ' absolute transform left-1/2 -translate-x-1/2 font-mono text-yellow-200 mt-2 text-2xl',
                     },
                     init(dispatch) {
                         this.flickity = Timelapse.initFlickity(this.$refs.carousel, this.dates.length - 1)
@@ -50,17 +50,19 @@
                                 l93.717,281.92c1.451,4.373,5.525,7.296,10.133,7.296h303.253c4.587,0,8.683-2.944,10.133-7.296l93.717-281.92
                                 C512.882,207.789,511.41,203.053,507.804,200.28z"/>
                 </svg>
-                <div class="hidden md:flex justify-between px-8 mt-6 font-mono text-xl">
+                <div class="hidden md:flex justify-between px-8 mt-6 font-mono text-2xl">
                     <div class="text-yellow-400">11/20</div>
                     <div class="text-gray-400">6/21</div>
                 </div>
             </div>
-            <div class="container text-center mx-auto md:w-1/2 py-8 pt-16 md:pt-8">
-                <p class="uppercase font-serif font-bold text-white leading-relaxed tracking-wider px-6">
+            <div class="container text-center mx-auto md:max-w-screen-md py-8 pt-16 md:pt-8 text-xl slab">
+                <p class="text-white leading-relaxed tracking-wider px-6">
                     Vydávame sa na niekoľkomesačnú vzrušujúcu umenovednú výpravu,
                     na&nbsp;ktorej otvoríme dôležité a&nbsp;aktuálne témy
                 </p>
-                <a href="/o-projekte" class="mt-4 slab tracking-wider inline-block text-gray-400 underline">O projekte</a>
+                <h3 class="text-center mt-4 mb-8">
+                    <a href="/o-projekte" class="tracking-wider text-gray-400 underline">O projekte</a>
+                </h3>
             </div>
         </div>
 
@@ -68,7 +70,7 @@
             //   TODO
         $article = $articles[0]    ;
         @endphp
-        <h2 class="pt-4 -mb-5 tracking-wide font-serif font-bold uppercase text-center text-6xl md:text-7xl text-gray-500">Pridané</h2>
+        <h2 class="pt-4 -mb-5 md:-mb-8 tracking-wide font-serif font-bold uppercase text-center text-6xl md:text-8xl text-gray-500">Pridané</h2>
         <div class="relative px-8 bg-gradient-to-r-334 from-red-800 to-gray-700 text-center"
             x-data="calculateCutoutPolygon($el, 'hr')"
             x-on:resize.window.debounce="polygonPoints = calculateCutoutPolygon($el, 'hr').polygonPoints"
@@ -127,7 +129,7 @@
             <a href="/pridane" class="my-8 slab tracking-wider inline-block text-gray-400 underline">Všetky príspevky</a>
         </div>
 
-        <h2 class="pt-4 -mb-5 tracking-wide font-serif font-bold uppercase text-center text-6xl md:text-7xl text-gray-500">Texty</h2>
+        <h2 class="pt-4 -mb-5 md:-mb-8 tracking-wide font-serif font-bold uppercase text-center text-6xl md:text-8xl text-gray-500">Texty</h2>
         <div
             class="relative px-8 bg-gradient-to-r-252 from-red-800 to-gray-700 text-center py-8"
             x-data="calculateCutoutPolygon($el, '.cutout')"
