@@ -43,13 +43,30 @@ Route::prefix('admin')->name('admin.')->middleware(['auth:sanctum', 'verified'])
 
 Route::prefix('preview')->middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/', function () {
-        $articles = Article::published()->get();
+        $articles = Article::published()->orderBy('published_at', 'desc')->get();
+        $featuredArticle = $articles->shift();
+
         $timelapseImages = Setting::first()->getMedia('timelapse');
         $timelapseImagesDates = $timelapseImages
             ->map(fn ($image) => Carbon::parse($image->getCustomProperty('date')));
 
-        return view('welcome', compact('articles', 'timelapseImages', 'timelapseImagesDates'));
+        return view('welcome', compact('articles', 'featuredArticle', 'timelapseImages', 'timelapseImagesDates'));
     })->name('home');
 
-    Route::get('/o-projekte', fn () => view('about'));
+    Route::get('/akteri', function () {
+        return "TODO";
+    })->name('actors');
+
+    Route::get('/pridane', function () {
+        return "TODO";
+    })->name('articles.index');
+
+    Route::get('/texty', function () {
+        return "TODO";
+    })->name('research');
+
+    Route::get('/preco', function () {
+        $articles = Article::published()->orderBy('published_at', 'desc')->take(2)->get();
+        return view('about', compact('articles'));
+    })->name('about');
 });

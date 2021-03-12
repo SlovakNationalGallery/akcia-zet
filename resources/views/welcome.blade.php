@@ -55,44 +55,39 @@
                     <div class="text-gray-400">6/21</div>
                 </div>
             </div>
-            <div class="container text-center mx-auto md:max-w-screen-md py-8 pt-16 md:pt-8 text-xl slab">
-                <p class="text-white leading-relaxed tracking-wider px-6">
+            <div class="container text-center mx-auto md:max-w-screen-md py-8 pt-16 md:pt-8 ">
+                <p class="text-xl slab text-white leading-relaxed tracking-wider px-6">
                     Vydávame sa na niekoľkomesačnú vzrušujúcu umenovednú výpravu,
                     na&nbsp;ktorej otvoríme dôležité a&nbsp;aktuálne témy
                 </p>
-                <h3 class="text-center mt-4 mb-8">
+                <h3 class="text-center mt-4 mb-8 slab text-xl">
                     <a href="/o-projekte" class="tracking-wider text-gray-400 underline">O projekte</a>
                 </h3>
             </div>
         </div>
-
-        @php
-            //   TODO
-        $article = $articles[0]    ;
-        @endphp
         <h2 class="pt-4 -mb-5 md:-mb-8 tracking-wide font-serif font-bold uppercase text-center text-6xl md:text-8xl text-gray-500">Pridané</h2>
-        <div class="relative px-8 bg-gradient-to-r-334 from-red-800 to-gray-700 text-center"
+        <div class="relative p-8 bg-gradient-to-r-334 from-red-800 to-gray-700 text-center"
             x-data="calculateCutoutPolygon($el, 'hr')"
             x-on:resize.window.debounce="polygonPoints = calculateCutoutPolygon($el, 'hr').polygonPoints"
             :style="`clip-path: polygon(${polygonPoints.join(',')})`"
             >
-            <h3 class="text-2xl  md:text-3xl font-serif text-yellow-400 font-bold uppercase tracking-wider py-6 md:py-8">{{ $article->title }}</h3>
+            <h3 class="text-2xl  md:text-3xl font-serif text-yellow-400 font-bold uppercase tracking-wider py-6 md:py-8">{{ $featuredArticle->title }}</h3>
             <div class="md:w-1/2 mx-auto md:flex gap-12">
-                @if($article->embed_url)
+                @if($featuredArticle->embed_url)
                     <div class="-mx-8 md:text-right md:w-1/2">
-                        <x-extended-embed url="{{ $article->embed_url }}" />
+                        <x-extended-embed url="{{ $featuredArticle->embed_url }}" />
                     </div>
                 @endif
                 <div class="md:w-1/2 mx-auto">
                     <p class="text-sm text-gray-400 my-5">
-                        {{ ucfirst($article->published_at->diffForHumans()) }}
+                        {{ ucfirst($featuredArticle->published_at->diffForHumans()) }}
                     </p>
                     <p class="text-sm text-white">
-                        {{ $article->perex }}
+                        {{ $featuredArticle->perex }}
                     </p>
 
                     <div class="mt-4">
-                        @foreach($article->tags as $tag)
+                        @foreach($featuredArticle->tags as $tag)
                         <a href="#" class="text-pink-400 mr-1">#{{ $tag->name }}</a>
                         @endforeach
                     </div>
@@ -100,38 +95,22 @@
             </div>
 
             <div class="text-left text-sm md:text-center md:flex md:gap-12 md:max-w-5xl md:mx-auto">
-                @foreach([...$articles, $articles[0]] as $article)
+                @foreach($articles as $article)
                     <div class="md:w-1/3">
                         <hr class="my-6 md:mt-12 md:mx-6 border-t-3 border-transparent">
-                        <p class="text-gray-400 mt-4">
-                            {{ ucfirst($article->published_at->diffForHumans()) }}
-                        </p>
-                        <div class="grid grid-cols-{{ $article->embed_url ? '2' : '1' }} gap-4 mt-2">
-                            @if($article->embed_url)
-                            <div>
-                                <x-extended-embed url="{{ $article->embed_url }}" />
-                            </div>
-                            @endif
-                            <h3 class="text-lg text-yellow-200 slab tracking-wider {{ $article->embed_url ? 'md:text-left' : ''}}"><a href="#TODO">{{ $article->title }}</a></h3>
-                        </div>
-                        <p class="text-white mt-2">
-                            {{ $article->perex }}
-                        </p>
-                        <div class="mt-2">
-                            @foreach($article->tags as $tag)
-                                <a href="#" class="text-pink-400 mr-1">#{{ $tag->name }}</a>
-                            @endforeach
-                        </div>
+                        <x-article-preview :article="$article" class="mt-4" />
                     </div>
                 @endforeach
             </div>
 
-            <a href="/pridane" class="my-8 slab tracking-wider inline-block text-gray-400 underline">Všetky príspevky</a>
+            <h3 class="text-center mt-8 slab text-xl">
+                <a href="{{ route('articles.index') }}" class="tracking-wider text-gray-400 underline">Všetky príspevky</a>
+            </h3>
         </div>
 
         <h2 class="pt-4 -mb-5 md:-mb-8 tracking-wide font-serif font-bold uppercase text-center text-6xl md:text-8xl text-gray-500">Texty</h2>
         <div
-            class="relative px-8 bg-gradient-to-r-252 from-red-800 to-gray-700 text-center py-8"
+            class="relative p-8 bg-gradient-to-r-252 from-red-800 to-gray-700 text-center py-8"
             x-data="calculateCutoutPolygon($el, '.cutout')"
             x-on:resize.window.debounce="polygonPoints = calculateCutoutPolygon($el, '.cutout').polygonPoints"
             :style="`clip-path: polygon(${polygonPoints.join(',')})`"
@@ -150,7 +129,7 @@
                     </div>
                     <hr class="my-6 border-t-2 border-gray-300 md:hidden cutout">
                 </div>
-                <div class="relative top-4 bottom-4 cutout hidden md:block" style="width:2px"></div>
+                <div class="h-60 cutout hidden md:block" style="width:2px"></div>
                 <div class="md:w-1/2">
                     <div class="md:w-1/2 mx-auto">
                         <h5 class="text-sm text-gray-400">Prvýkrát zverejnené</h5>
@@ -161,6 +140,10 @@
                     </div>
                 </div>
             </div>
+
+            <h3 class="text-center mt-8 slab text-xl">
+                <a href="/pridane" class="tracking-wider text-gray-400 underline">Všetky texty</a>
+            </h3>
         </div>
     </div>
 </x-app-layout>

@@ -40,12 +40,17 @@
             <nav class="absolute inset-x-0 top-0 px-6 pt-4 md:px-8 md:py-4 z-20">
                 {{-- Desktop nav --}}
                 <div class="hidden md:flex justify-between">
-                    <a href="/" class="text-5xl block text-yellow-400 text-shadow font-mono">AKCIA</a>
-                    <ul class="slab flex text-3xl space-x-4 lg:space-x-8 lg:text-4xl text-gray-400 mt-2">
-                        <li>Aktéri</li>
-                        <li>Pridané</li>
-                        <li>Texty</li>
-                        <li>Prečo</li>
+                    <a href="{{ route('home') }}" class="text-5xl block text-yellow-400 text-shadow font-mono">AKCIA</a>
+                    @php
+                        $colorClass = request()->routeIs('home') ? 'text-gray-400' : 'text-red-800';
+                        $hoverColorClass = request()->routeIs('home') ? 'text-gray-800' : 'text-gray-400';
+                    @endphp
+
+                    <ul class="slab flex text-3xl space-x-4 lg:space-x-8 lg:text-4xl {{ $colorClass }} mt-2">
+                        <li><a class="hover:{{ $hoverColorClass }}{{ request()->routeIs('actors')     ? ' text-gray-400' : '' }}" href="{{ route('actors') }}">Aktéri</a></li>
+                        <li><a class="hover:{{ $hoverColorClass }}{{ request()->routeIs('articles.*') ? ' text-gray-400' : '' }}" href="{{ route('articles.index') }}">Pridané</a></li>
+                        <li><a class="hover:{{ $hoverColorClass }}{{ request()->routeIs('research')   ? ' text-gray-400' : '' }}" href="{{ route('research') }}">Texty</a></li>
+                        <li><a class="hover:{{ $hoverColorClass }}{{ request()->routeIs('about')      ? ' text-gray-400' : '' }}" href="{{ route('about') }}">Prečo</a></li>
                     </ul>
                     <a href="/" class="text-5xl block text-yellow-400 text-shadow font-mono">ZET</a>
                 </div>

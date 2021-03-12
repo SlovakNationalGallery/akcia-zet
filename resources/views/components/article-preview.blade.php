@@ -1,7 +1,7 @@
 @props(['article'])
 
 @php
-    $article = \App\Models\Article::first();
+    $article = $article ?? \App\Models\Article::first();
 @endphp
 
 <div {{ $attributes }}>

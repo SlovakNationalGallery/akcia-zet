@@ -3,9 +3,9 @@
     {{-- Mobile header --}}
     <div class="px-6 md:hidden">
         <div class="mt-4 text-sm text-pink-400 font-semibold flex justify-center flex-wrap">
-            <a href="#" class="px-2">#propaganda</a>
-            <a href="#" class="px-2">#článok</a>
-            <a href="#" class="px-2">#video</a>
+            <a href="{{ route('articles.index', ['tag' => 'propaganda']) }}" class="px-2">#propaganda</a>
+            <a href="{{ route('articles.index', ['tag' => 'článok']) }}" class="px-2">#článok</a>
+            <a href="{{ route('articles.index', ['tag' => 'video']) }}" class="px-2">#video</a>
         </div>
         <h2 class="mt-4 slab text-4xl text-red-800 tracking-wide leading-tight text-center">Akcia ZET umenovedná výprava</h2>
         <p class="mt-4 text-gray-400 text-sm text-center">
@@ -30,9 +30,9 @@
                     Námet: Alexandra Kusá
                 </p>
                 <ul class="mt-8 text-pink-400 font-semibold space-y-2">
-                    <li><a href="#">#propaganda</a></li>
-                    <li><a href="#">#článok</a></li>
-                    <li><a href="#">#video</a></li>
+                    <li><a href="{{ route('articles.index', ['tag' => 'propaganda']) }}" class="px-2">#propaganda</a></li>
+                    <li><a href="{{ route('articles.index', ['tag' => 'článok']) }}" class="px-2">#článok</a></li>
+                    <li><a href="{{ route('articles.index', ['tag' => 'video']) }}" class="px-2">#video</a></li>
                 </ul>
             </div>
             <div class="text-gray-800 col-span-2">
@@ -65,9 +65,9 @@
         </div>
 
         <div class="mt-6 md:hidden text-sm text-pink-400 font-semibold flex justify-center flex-wrap">
-            <a href="#" class="px-2">#propaganda</a>
-            <a href="#" class="px-2">#článok</a>
-            <a href="#" class="px-2">#video</a>
+            <a href="{{ route('articles.index', ['tag' => 'propaganda']) }}" class="px-2">#propaganda</a>
+            <a href="{{ route('articles.index', ['tag' => 'článok']) }}" class="px-2">#článok</a>
+            <a href="{{ route('articles.index', ['tag' => 'video']) }}" class="px-2">#video</a>
         </div>
     </div>
     <div class="mt-12 p-6 md:p-24 md:pb-10 bg-gradient-to-r-334 from-red-800 to-gray-700 shadow-lg">
@@ -77,7 +77,7 @@
                 <svg class="h-44 md:h-60 mr-8 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.813 300.578">
                     <defs/><g data-name="Path 15"><path fill="none" stroke="#fffdc1" stroke-miterlimit="10" stroke-width="2.835" d="M31.425.289L2.662 138.338a58.34 58.34 0 000 23.9l28.763 138.049" data-name="Path 18"/></g>
                 </svg>
-                <x-article-preview class="pt-4 md:px-24" />
+                <x-article-preview class="pt-4 md:px-24 md:self-start" :article="$articles[0]" />
             </div>
             <div>
                 {{-- Mobile divider --}}
@@ -85,14 +85,16 @@
                 <div class="flex items-center">
                     {{-- Desktop divider --}}
                     <div class="hidden md:block border-l-2 border-yellow-200 h-60 w-2 -ml-8 mr-8"></div>
-                    <x-article-preview class="pt-4 md:px-24" />
+                    <x-article-preview class="pt-4 md:px-24 md:self-start" :article="$articles[1]" />
                     <svg class="h-44 ml-8 md:h-60 flex-shrink-0 transform rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.813 300.578">
                         <defs/><g data-name="Path 15"><path fill="none" stroke="#fffdc1" stroke-miterlimit="10" stroke-width="2.835" d="M31.425.289L2.662 138.338a58.34 58.34 0 000 23.9l28.763 138.049" data-name="Path 18"/></g>
                     </svg>
                 </div>
             </div>
         </div>
-        <h3 class="slab mt-12 text-2xl md:text-xl tracking-wide text-center text-gray-400 underline"><a href="#">Všetky príspevky</a></h3>
+        <h3 class="slab mt-12 text-2xl md:text-xl tracking-wide text-center text-gray-400 underline">
+            <a href="{{ route('articles.index') }}">Všetky príspevky</a>
+        </h3>
     </div>
     <div class="px-6 pb-16 max-w-5xl mx-auto">
         <div class="md:flex text-center md:text-left text-red-800 mt-6 md:mt-12">
