@@ -45,10 +45,20 @@
                     @endforeach
                 </div>
                 <div x-ref="slider"></div>
-                <svg x-ref="handle" x-cloak xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.01 512.01" class="fill-current text-yellow-200 w-12 hover:text-yellow-300 filter-shadow">
-                    <path d="M507.804,200.28L262.471,12.866c-3.84-2.923-9.131-2.923-12.949,0L4.188,200.28c-3.605,2.773-5.077,7.531-3.648,11.84
-                                l93.717,281.92c1.451,4.373,5.525,7.296,10.133,7.296h303.253c4.587,0,8.683-2.944,10.133-7.296l93.717-281.92
-                                C512.882,207.789,511.41,203.053,507.804,200.28z"/>
+                <svg x-ref="handle" x-cloak class="fill-current text-yellow-200 hover:text-yellow-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 78">
+                    <defs>
+                        <filter id="a" width="80" height="78" x="0" y="0" filterUnits="userSpaceOnUse">
+                        <feOffset dy="3"/>
+                        <feGaussianBlur result="blur" stdDeviation="3"/>
+                        <feFlood flood-opacity=".161"/>
+                        <feComposite in2="blur" operator="in"/>
+                        <feComposite in="SourceGraphic"/>
+                        </filter>
+                    </defs>
+                    <g filter="url(#a)">
+                        <path d="M40 6l31 22.918L59.159 66H20.841L9 28.918z" data-name="Polygon 1"/>
+                    </g>
+                    <path fill="rgba(0,0,0,0)" stroke="#a5a5a5" d="M64.386 41.5L33.5 64.071zm-6-9L27.5 55.071zm-7-8L20.5 47.071zm-6-9L14.5 38.071z" data-name="Union 1"/>
                 </svg>
                 <div class="hidden md:flex justify-between px-8 mt-6 font-mono text-2xl">
                     <div class="text-yellow-400">11/20</div>
