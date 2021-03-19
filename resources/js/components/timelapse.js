@@ -31,6 +31,12 @@ function initSlider(target, dates, cssClasses, dispatch) {
         range[`${(date - range.min) / (range.max - range.min) * 100}%`] = date
     });
 
+    // Only show pips for existing values
+    function filterPips(value, type) {
+        if (value === range.min || value === range.max || type !== 1) return -1
+        return type
+    }
+
     // Variables for reachable values
     const minDate = dates[0]
     const maxDate = dates[dates.length - 1]
@@ -47,6 +53,10 @@ function initSlider(target, dates, cssClasses, dispatch) {
                 const date = new Date(val * 1000)
                 return `${date.getMonth() + 1}/${date.getFullYear().toString().substring(2)}`
             }
+        },
+        pips: {
+            mode: 'range',
+            filter: filterPips,
         },
         cssClasses: {
             ...noUiSlider.cssClasses,
