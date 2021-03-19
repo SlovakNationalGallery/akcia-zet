@@ -12,10 +12,10 @@
                     dates: {{ json_encode($timelapseImagesDates->map->timestamp) }},
                     flickity: null,
                     sliderCssClasses: {
-                        target: 'target bg-gray-400 border-0 rounded-none shadow-none h-3',
+                        target: 'target bg-gray-400 border-0 rounded-none shadow-none h-4',
                         connect: 'connect bg-yellow-400',
                         connects: 'connects rounded-none',
-                        handle: ' absolute w-12 -right-6 -top-5 focus:outline-none',
+                        handle: ' absolute w-16 -right-6 -top-7 focus:outline-none',
                         active: '',
                         tooltip: ' absolute transform left-1/2 -translate-x-1/2 font-mono text-yellow-200 mt-2 text-2xl',
                     },
@@ -32,7 +32,7 @@
                 x-on:resize.window.debounce="flickity.resize()"
                 x-on:slider-change="flickity.select(dates.indexOf($event.detail))"
             >
-                <div class="main-carousel h-1/2-screen md:h-3/4-screen xoverflow-hidden" x-ref="carousel">
+                <div class="main-carousel h-1/2-screen md:h-5/6-screen overflow-hidden" x-ref="carousel">
                     @foreach ($timelapseImages as $image)
                         <div class="carousel-cell w-full h-full">
                             <img
