@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\ArticleController;
 use App\Models\Article;
 use App\Models\Setting;
+use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Route;
 
@@ -58,14 +59,16 @@ Route::prefix('preview')->middleware(['auth:sanctum', 'verified'])->group(functi
         return view('actors', compact('articles'));
     })->name('actors');
 
-    Route::get('/pridane', function () {
-        $tags = Article::published()
-            ->with('tags')->get()
-            ->pluck('tags')->flatten()->pluck('name')->unique()->sort()->toArray();
+    Route::get('/pridane', function (Request $request) {
+        $articles = Article::published()->with('tags')->orderBy('published_at', 'desc');
+        $tag = $request->get('tag');
+
+        if ($tag) $articles = $articles->withAnyTags($tag);
+        $articles = $articles->get();
 
         $comingSoon = Setting::first()->coming_soon;
 
-        return view('articles.index', compact('tags', 'comingSoon'));
+        return view('articles.index', compact('articles', 'tag', 'comingSoon'));
     })->name('articles.index');
 
     Route::get('/pridane/{article:slug}', function (Article $article) {

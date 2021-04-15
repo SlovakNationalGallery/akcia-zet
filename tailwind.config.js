@@ -19,6 +19,7 @@ module.exports = {
                 'gradient-to-r-260': 'linear-gradient(260deg, var(--tw-gradient-stops))',
                 'gradient-to-r-334': 'linear-gradient(334deg, var(--tw-gradient-stops))',
                 'gradient-to-r-252': 'linear-gradient(252deg, var(--tw-gradient-stops))',
+                'gradient-to-r-216': 'linear-gradient(216deg, var(--tw-gradient-stops))',
             }),
 
             fontSize: {
@@ -42,6 +43,7 @@ module.exports = {
                     200: "#fffdc1",
                     400: "#FFFA60",
                     500: "#F5FF00",
+                    600: "#FAC820",
                 },
                 pink: {
                     ...defaultTheme.colors.pink,
