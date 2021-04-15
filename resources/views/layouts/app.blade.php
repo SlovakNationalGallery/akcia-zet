@@ -62,11 +62,40 @@
                 <div class="md:hidden">
                     <div class="relative flex justify-between">
                         <a href="/" class="text-5xl block text-yellow-400 text-shadow font-mono">A*Z</a>
-                        <svg viewBox="0 0 100 120" width="40" height="40" class="inline-block fill-current text-yellow-400 text-5xl mt-3" style="filter: drop-shadow(0.04em -0.02em 0 #ce4369)">
-                            <rect width="100" height="8"></rect>
-                            <rect y="40" width="100" height="8"></rect>
-                            <rect y="80" width="100" height="8"></rect>
-                        </svg>
+                        <div x-data="{ show: false }">
+                            <a x-on:click="show = true">
+                                <svg viewBox="0 0 100 120" width="40" height="40" class="inline-block fill-current text-yellow-400 text-5xl mt-3" style="filter: drop-shadow(0.04em -0.02em 0 #ce4369)">
+                                    <rect width="100" height="8"></rect>
+                                    <rect y="40" width="100" height="8"></rect>
+                                    <rect y="80" width="100" height="8"></rect>
+                                </svg>
+                            </a>
+                            <div x-show="show"
+                                class="fixed inset-0 bg-pink-700 z-10 flex flex-col justify-between p-6"
+                                x-transition:enter="transition ease-out duration-300"
+                                x-transition:enter-start="opacity-0 transform translate-x-full"
+                                x-transition:enter-end="opacity-100 transform translate-x-0"
+                                x-transition:leave="transition ease-in duration-300"
+                                x-transition:leave-start="opacity-100 transform translate-x-0"
+                                x-transition:leave-end="opacity-0 transform translate-x-full"
+                            >
+                                <h3 class="text-5xl text-yellow-200 text-center font-mono">AKCIA ZET</h3>
+                                <ul class="text-center slab text-6xl font-bold text-gray-200 mt-10 space-y-4">
+                                    <li><a class="hover:{{ $hoverColorClass }}{{ request()->routeIs('actors')     ? ' text-yellow-400' : '' }}" href="{{ route('actors') }}">Aktéri</a></li>
+                                    <li><a class="hover:{{ $hoverColorClass }}{{ request()->routeIs('articles.*') ? ' text-yellow-400' : '' }}" href="{{ route('articles.index') }}">Pridané</a></li>
+                                    <li><a class="hover:{{ $hoverColorClass }}{{ request()->routeIs('research')   ? ' text-yellow-400' : '' }}" href="{{ route('research') }}">Texty</a></li>
+                                    <li><a class="hover:{{ $hoverColorClass }}{{ request()->routeIs('about')      ? ' text-yellow-400' : '' }}" href="{{ route('about') }}">Prečo</a></li>
+                                </ul>
+                                <div class="text-right">
+                                    <a x-on:click="show = false">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="text-gray-200 inline-block fill-current w-16 h-16">
+                                            <defs/>
+                                            <path d="M77.6 21.1l-28 28.1-28.1-28.1-1.9 1.9 28 28.1-28 28.1 1.9 1.9L49.6 53l28 28.1 2-1.9-28.1-28.1L79.6 23z"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </nav>
