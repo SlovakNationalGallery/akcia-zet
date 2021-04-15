@@ -1,6 +1,6 @@
 @props(['title', 'tags'])
 <div {{ $attributes }}>
-    <h4 class="text-4xl slab text-center tracking-wide">{{ $title }}</h4>
+    <h4 class="text-4xl md:text-2xl slab text-center tracking-wide">{{ $title }}</h4>
     <ul class="text-center underline mt-2 space-y-2">
         @foreach ($tags as $tag)
         <li>
