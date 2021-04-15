@@ -71,6 +71,7 @@
                                 </svg>
                             </a>
                             <div x-show="show"
+                                x-cloak
                                 class="fixed inset-0 bg-pink-700 z-10 flex flex-col justify-between p-6"
                                 x-transition:enter="transition ease-out duration-300"
                                 x-transition:enter-start="opacity-0 transform translate-x-full"
