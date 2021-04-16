@@ -62,7 +62,7 @@
                 <div class="md:hidden">
                     <div class="relative flex justify-between">
                         <a href="/" class="text-5xl block text-yellow-400 text-shadow font-mono">A*Z</a>
-                        <div x-data="{ show: false }">
+                        <div x-data="{ show: false }" x-cloak>
                             <a x-on:click="show = true">
                                 <svg viewBox="0 0 100 120" width="40" height="40" class="inline-block fill-current text-yellow-400 text-5xl mt-3" style="filter: drop-shadow(0.04em -0.02em 0 #ce4369)">
                                     <rect width="100" height="8"></rect>
@@ -71,7 +71,6 @@
                                 </svg>
                             </a>
                             <div x-show="show"
-                                x-cloak
                                 class="fixed inset-0 bg-pink-700 z-10 flex flex-col justify-between p-6"
                                 x-transition:enter="transition ease-out duration-300"
                                 x-transition:enter-start="opacity-0 transform translate-x-full"
