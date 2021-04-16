@@ -93,7 +93,7 @@ Route::prefix('preview')->middleware(['auth:sanctum', 'verified'])->group(functi
     })->name('articles.show');
 
     Route::get('/texty', function () {
-        return "TODO";
+        return view('research-articles.index');
     })->name('research');
 
     Route::get('/preco', function () {

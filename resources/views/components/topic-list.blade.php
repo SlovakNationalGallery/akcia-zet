@@ -1,4 +1,4 @@
-<div class="bg-gradient-to-r-216 from-red-800 to-gray-700 shadow-md">
+<div {{ $attributes->merge(['class' => 'bg-gradient-to-r-216 from-red-800 to-gray-700 shadow-md' ]) }}>
     <div class="p-8 pt-4 md:pt-6 md:pb-20 max-w-5xl mx-auto">
         <h3 class="text-xl md:text-3xl slab text-gray-400 text-center tracking-wide">
             Témy projektu
