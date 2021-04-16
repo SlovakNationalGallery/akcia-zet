@@ -1,12 +1,13 @@
 <x-app-layout>
-    <div class="fixed inset-0 bg-gray-800" x-data id="openseaviewer" x-init="initOpenSeaDragon($el.id)">
-    </div>
+    {{-- Background image --}}
+    <div class="fixed inset-0 bg-gray-800" x-data id="openseaviewer" x-init="initOpenSeaDragon($el.id)"></div>
+
     <div class="relative">
-        {{-- Solid colour for md+ --}}
-        <div class="nav-spacer hidden md:block md:bg-gradient-to-r-270 md:from-red-800 md:to-gray-700 md:opacity-100"></div>
-        {{-- Background overlay shadow for mobile --}}
-        <div class="absolute md:hidden inset-x-0 h-20 z-10 opacity-40 bg-gradient-to-b from-black to-transparent"></div>
-        <div class="bg-gradient-to-r-260 from-red-800 to-gray-700">
+        <div class="-mt-20 md:pt-20 bg-gradient-to-r-270 from-red-800 to-gray-700">
+            {{-- Shadow overlay for mobile --}}
+            <div class="absolute md:hidden top-0 inset-x-0 h-20 opacity-40 bg-gradient-to-b from-black to-transparent z-10"></div>
+
+            {{-- Timelapse --}}
             <div
                 x-data="{
                     dates: {{ json_encode($timelapseImagesDates->map->timestamp) }},
@@ -18,7 +19,7 @@
                         connects: 'connects rounded-none',
                         handle: ' absolute w-16 -right-8 -top-7 focus:outline-none',
                         active: '',
-                        tooltip: ' absolute transform left-1/2 -translate-x-1/2 font-mono text-yellow-200 mt-1 text-2xl',
+                        tooltip: ' absolute transform left-1/2 -translate-x-1/2 font-mono text-yellow-200 mt-1 text-2xl w-48 text-center pt-0.5',
                         pips: ' h-4 inset-0 -mt-4',
                         pipsHorizontal: '',
                         marker: ' absolute h-4 w-2 -ml-1 bg-red-500',
@@ -66,9 +67,9 @@
                     </g>
                     <path fill="rgba(0,0,0,0)" stroke="#a5a5a5" d="M64.386 41.5L33.5 64.071zm-6-9L27.5 55.071zm-7-8L20.5 47.071zm-6-9L14.5 38.071z" data-name="Union 1"/>
                 </svg>
-                <div class="hidden md:flex justify-between px-8 mt-6 font-mono text-2xl">
-                    <div class="text-yellow-400">11/20</div>
-                    <div class="text-gray-400">6/21</div>
+                <div class="hidden md:flex justify-between px-16 mt-6 font-mono text-2xl text-gray-400">
+                    <span>11 NOV 20</span>
+                    <span>6 AUG 21</span>
                 </div>
             </div>
             <div class="container text-center mx-auto md:max-w-screen-md py-8 pt-16 md:pt-8 ">
@@ -81,6 +82,7 @@
                 </h3>
             </div>
         </div>
+
         <h2 class="pt-4 -mb-5 md:-mb-8 tracking-wide font-serif font-bold uppercase text-center text-6xl md:text-8xl text-gray-500">Pridané</h2>
         <div class="relative p-8 bg-gradient-to-r-334 from-red-800 to-gray-700 text-center"
             x-data="calculateCutoutPolygon($el, 'hr')"
@@ -160,7 +162,7 @@
             </div>
 
             <h3 class="text-center mt-8 slab text-xl">
-                <a href="/pridane" class="tracking-wider text-gray-400 underline">Všetky texty</a>
+                <a href="{{ route('research') }}" class="tracking-wider text-gray-400 underline">Všetky texty</a>
             </h3>
         </div>
     </div>

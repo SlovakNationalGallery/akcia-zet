@@ -60,10 +60,6 @@
     @apply underline
   }
 
-  .nav-spacer {
-    @apply h-20
-  }
-
   [x-cloak] {
     display: none;
   }

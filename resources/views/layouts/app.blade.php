@@ -40,7 +40,7 @@
     <body class="antialiased">
         @include('googletagmanager::body')
         <div class="bg-gradient-to-b from-white to-yellow-200">
-            <nav class="absolute inset-x-0 top-0 px-6 pt-4 md:px-8 md:py-4 z-20">
+            <nav class="relative h-20 px-6 pt-4 md:px-8 z-20">
                 {{-- Desktop nav --}}
                 <div class="hidden md:flex justify-between">
                     <a href="{{ route('home') }}" class="text-5xl block text-yellow-400 text-shadow font-mono">AKCIA</a>
@@ -49,19 +49,19 @@
                         $hoverColorClass = request()->routeIs('home') ? 'text-gray-800' : 'text-gray-400';
                     @endphp
 
-                    <ul class="slab flex text-3xl space-x-4 lg:space-x-8 lg:text-4xl {{ $colorClass }} mt-2">
+                    <ul class="slab tracking-wide flex text-3xl space-x-4 lg:space-x-8 lg:text-4xl {{ $colorClass }} mt-2">
                         <li><a class="hover:{{ $hoverColorClass }}{{ request()->routeIs('actors')     ? ' text-gray-400' : '' }}" href="{{ route('actors') }}">Aktéri</a></li>
                         <li><a class="hover:{{ $hoverColorClass }}{{ request()->routeIs('articles.*') ? ' text-gray-400' : '' }}" href="{{ route('articles.index') }}">Pridané</a></li>
                         <li><a class="hover:{{ $hoverColorClass }}{{ request()->routeIs('research')   ? ' text-gray-400' : '' }}" href="{{ route('research') }}">Texty</a></li>
                         <li><a class="hover:{{ $hoverColorClass }}{{ request()->routeIs('about')      ? ' text-gray-400' : '' }}" href="{{ route('about') }}">Prečo</a></li>
                     </ul>
-                    <a href="/" class="text-5xl block text-yellow-400 text-shadow font-mono">ZET</a>
+                    <a href="{{ route('home') }}" class="text-5xl block text-yellow-400 text-shadow font-mono">ZET</a>
                 </div>
 
                 {{-- Mobile nav --}}
                 <div class="md:hidden">
                     <div class="relative flex justify-between">
-                        <a href="/" class="text-5xl block text-yellow-400 text-shadow font-mono">A*Z</a>
+                        <a href="{{ route('home') }}" class="text-5xl block text-yellow-400 text-shadow font-mono">A*Z</a>
                         <div x-data="{ show: false }" x-cloak>
                             <a x-on:click="show = true">
                                 <svg viewBox="0 0 100 120" width="40" height="40" class="inline-block fill-current text-yellow-400 text-5xl mt-3" style="filter: drop-shadow(0.04em -0.02em 0 #ce4369)">
@@ -79,7 +79,9 @@
                                 x-transition:leave-start="opacity-100 transform translate-x-0"
                                 x-transition:leave-end="opacity-0 transform translate-x-full"
                             >
-                                <h3 class="text-5xl text-yellow-200 text-center font-mono">AKCIA ZET</h3>
+                                <h3 class="text-5xl text-yellow-200 text-center font-mono">
+                                    <a href="{{ route('home') }}">AKCIA ZET</a>
+                                </h3>
                                 <ul class="text-center slab text-6xl font-bold text-gray-200 mt-10 space-y-4">
                                     <li><a class="hover:{{ $hoverColorClass }}{{ request()->routeIs('actors')     ? ' text-yellow-400' : '' }}" href="{{ route('actors') }}">Aktéri</a></li>
                                     <li><a class="hover:{{ $hoverColorClass }}{{ request()->routeIs('articles.*') ? ' text-yellow-400' : '' }}" href="{{ route('articles.index') }}">Pridané</a></li>

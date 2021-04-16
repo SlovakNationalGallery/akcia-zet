@@ -5,7 +5,6 @@
 @endphp
 
 <x-app-layout>
-    <div class="nav-spacer"></div>
     {{-- Mobile header --}}
     <div class="px-6 md:hidden">
         <div class="mt-4 text-pink-400 font-semibold flex justify-center flex-wrap">

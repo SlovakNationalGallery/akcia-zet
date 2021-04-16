@@ -1,5 +1,4 @@
 <x-app-layout>
-    <div class="nav-spacer"></div>
     {{-- Mobile header --}}
     <h2 class="md:hidden mt-2 slab text-6xl text-gray-500 tracking-wide leading-tight text-center">Texty</h2>
 

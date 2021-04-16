@@ -1,6 +1,8 @@
 const Flickity = require('flickity-fade')
 const noUiSlider = require('nouislider')
 
+const monthNames = ["JAN", "FEB", "MAR", "APR", "MÁJ", "JÚN", "JÚL", "AUG", "SEP", "OKT", "NOV", "DEC"]
+
 function initFlickity(element, initialIndex) {
     return new Flickity(element, {
         initialIndex,
@@ -23,7 +25,7 @@ function initFlickity(element, initialIndex) {
 function initSlider(target, dates, cssClasses, dispatch) {
     // Set limits for the slider (note these are not actually reachable)
     const range = {
-        min: new Date("2020-12-01").getTime() / 1000,
+        min: new Date("2020-11-01").getTime() / 1000,
         max: new Date("2021-06-30").getTime() / 1000
     }
 
@@ -51,7 +53,7 @@ function initSlider(target, dates, cssClasses, dispatch) {
             from: (val) => val,
             to: (val) => {
                 const date = new Date(val * 1000)
-                return `${date.getMonth() + 1}/${date.getFullYear().toString().substring(2)}`
+                return `${date.getDate()} ${monthNames[date.getMonth()]} ${date.getFullYear().toString().substring(2)}`
             }
         },
         pips: {
