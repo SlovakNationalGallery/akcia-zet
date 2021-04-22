@@ -165,5 +165,8 @@
                 <a href="{{ route('research') }}" class="tracking-wider text-gray-400 underline">Všetky texty</a>
             </h3>
         </div>
+        <div class="bg-gradient-to-r-252 from-red-800 to-gray-700 mt-4 pt-2">
+            <x-footer dark />
+        </div>
     </div>
 </x-app-layout>

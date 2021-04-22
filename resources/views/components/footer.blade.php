@@ -1,5 +1,11 @@
+@props(['dark'])
+@php
+    $textColorClass = $dark ? 'text-white' : 'text-red-800';
+    $pinkTextColorClass = $dark ? 'text-pink-400' : 'text-pink-600'
+@endphp
+
 <div class="px-6 pb-16 max-w-5xl mx-auto">
-    <div class="md:flex text-center md:text-left text-red-800 mt-6 md:mt-12">
+    <div class="md:flex text-center md:text-left mt-6 md:mt-12 {{ $textColorClass }}">
         <div class="order-2">
             <h3 class="slab text-2xl md:text-xl tracking-wide">Partneri projektu</h3>
             <ul class="mt-4 text-sm md:text-lg space-y-4">
@@ -22,7 +28,7 @@
     </div>
 
     <div class="mt-16 max-w-4xl mx-auto text-center">
-        <div class="text-pink-600">
+        <div class="{{ $pinkTextColorClass }}">
             <p class="slab leading-relaxed md:text-lg">
                 „našou motiváciou je presvedčenie, že proti nebezpečenstvu totality vedie iba jedna cesta:
                 cesta skúsenosti a slobodnej diskusie o tom, čoho sa treba vyvarovať“
