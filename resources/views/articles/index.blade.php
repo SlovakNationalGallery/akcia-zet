@@ -49,5 +49,6 @@
         @endforeach
     </div>
     <x-topic-list />
+    @livewire('newsletter-signup-form')
     <x-footer />
 </x-app-layout>
