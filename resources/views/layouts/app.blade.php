@@ -40,7 +40,13 @@
     <body class="antialiased">
         @include('googletagmanager::body')
         <div class="bg-gradient-to-b from-white to-yellow-200">
-            <nav class="relative h-20 px-6 pt-4 md:px-8 z-20">
+            @php
+                $isPopped = request()->routeIs('actors')
+                            || request()->routeIs('articles.index')
+                            || request()->routeIs('research')
+                            || request()->routeIs('about');
+            @endphp
+            <nav class="relative {{ $isPopped ? 'md:h-64' : 'h-20' }} px-6 pt-4 md:px-8 z-20">
                 {{-- Desktop nav --}}
                 <div class="hidden md:flex justify-between">
                     <a href="{{ route('home') }}" class="text-5xl block text-yellow-400 text-shadow font-mono">AKCIA</a>
@@ -50,10 +56,38 @@
                     @endphp
 
                     <ul class="slab tracking-wide flex text-3xl space-x-4 lg:space-x-8 lg:text-4xl {{ $colorClass }} mt-2">
-                        <li><a class="hover:{{ $hoverColorClass }}{{ request()->routeIs('actors')     ? ' text-gray-400' : '' }}" href="{{ route('actors') }}">Aktéri</a></li>
-                        <li><a class="hover:{{ $hoverColorClass }}{{ request()->routeIs('articles.*') ? ' text-gray-400' : '' }}" href="{{ route('articles.index') }}">Pridané</a></li>
-                        <li><a class="hover:{{ $hoverColorClass }}{{ request()->routeIs('research')   ? ' text-gray-400' : '' }}" href="{{ route('research') }}">Texty</a></li>
-                        <li><a class="hover:{{ $hoverColorClass }}{{ request()->routeIs('about')      ? ' text-gray-400' : '' }}" href="{{ route('about') }}">Prečo</a></li>
+                        <li class="{{ request()->routeIs('actors') ? 'transform translate-y-32 scale-300' : '' }}">
+                            @if(request()->routeIs('actors'))
+                                <x-spotlight class="px-3 transform -skew-x-24" />
+                            @endif
+                            <a class="hover:{{ $hoverColorClass }}{{ request()->routeIs('actors') ? ' text-gray-400' : '' }}" href="{{ route('actors') }}">
+                                Aktéri
+                            </a>
+                        </li>
+                        <li class="{{ request()->routeIs('articles.index') ? 'transform translate-y-32 -translate-x-4 scale-300' : '' }}">
+                            @if(request()->routeIs('articles.index'))
+                                <x-spotlight class="px-3 transform -skew-x-12" />
+                            @endif
+                            <a class="hover:{{ $hoverColorClass }}{{ request()->routeIs('articles.*') ? ' text-gray-400' : '' }}" href="{{ route('articles.index') }}">
+                                Pridané
+                            </a>
+                        </li>
+                        <li class="{{ request()->routeIs('research') ? 'transform translate-y-32 -translate-x-4 scale-300' : '' }}">
+                            @if(request()->routeIs('research'))
+                                <x-spotlight class="px-3 pl-4 transform skew-x-12" />
+                            @endif
+                            <a class="hover:{{ $hoverColorClass }}{{ request()->routeIs('research') ? ' text-gray-400' : '' }}" href="{{ route('research') }}">
+                                Texty
+                            </a>
+                        </li>
+                        <li class="{{ request()->routeIs('about') ? 'transform translate-y-32 -translate-x-4 scale-300' : '' }}">
+                            @if(request()->routeIs('about'))
+                                <x-spotlight class="px-3 pl-4 transform skew-x-24" />
+                            @endif
+                            <a class="hover:{{ $hoverColorClass }}{{ request()->routeIs('about') ? ' text-gray-400' : '' }}" href="{{ route('about') }}">
+                                Prečo
+                            </a>
+                        </li>
                     </ul>
                     <a href="{{ route('home') }}" class="text-5xl block text-yellow-400 text-shadow font-mono">ZET</a>
                 </div>

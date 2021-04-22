@@ -70,6 +70,15 @@ module.exports = {
             minHeight: {
                 96: "24rem",
             },
+
+            scale: {
+                '300': '3',
+            },
+
+            skew: {
+                '24': '24deg',
+                '-24': '-24deg',
+            }
         },
     },
     variants: {

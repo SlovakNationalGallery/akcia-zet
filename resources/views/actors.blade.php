@@ -1,5 +1,5 @@
 <x-article-page
-    title="Aktéri"
+    title=""
     :previousArticle="$articles[0]"
     :nextArticle="$articles[1]"
 >
