@@ -82,6 +82,9 @@ module.exports = {
         },
     },
     variants: {
-        backgroundColor: ["responsive", "hover", "focus", "active"],
+        extend: {
+            backgroundColor: ['active', 'disabled'],
+            backgroundImage: ['hover', 'disabled'],
+        }
     },
 };

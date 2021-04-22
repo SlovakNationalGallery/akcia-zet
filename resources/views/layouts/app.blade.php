@@ -36,6 +36,7 @@
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
+        @livewireStyles
     </head>
     <body class="antialiased">
         @include('googletagmanager::body')
@@ -139,6 +140,7 @@
             {{ $slot }}
         </div>
 
+        @livewireScripts
         {{-- Additional scripts --}}
         {{ $scripts ?? '' }}
     </body>
