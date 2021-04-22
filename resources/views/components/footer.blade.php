@@ -1,4 +1,4 @@
-@props(['dark'])
+@props(['dark' => false])
 @php
     $textColorClass = $dark ? 'text-white' : 'text-red-800';
     $pinkTextColorClass = $dark ? 'text-pink-400' : 'text-pink-600'
