@@ -27,7 +27,7 @@
                                                     </div> --}}
                                                     <div class="ml-4">
                                                         <div class="text-md font-medium text-gray-900">
-                                                            {{ $article->title }}
+                                                            <a href="{{ route('admin.articles.edit', $article) }}">{{ $article->title }}</a>
                                                         </div>
                                                         <div class="text-sm  max-w-md text-gray-500 whitespace-normal max-h-20 truncate">
                                                             {!! $article->perex !!}

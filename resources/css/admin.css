@@ -1,6 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import 'fonts';
 
 @layer components {
   .btn {
@@ -16,15 +18,33 @@
 }
 
 @layer base {
-  .trix-content > h1 {
-    @apply text-lg font-bold mt-4 mb-2;
-  }
-  .trix-content > ol,ul {
-    @apply list-disc;
-  }
-
   .ql-video {
     @apply w-full h-96;
+  }
+
+  .slab {
+    @apply font-serif font-bold uppercase;
+  }
+
+  .ql-editor {
+    font-family: Source Sans Pro, sans-serif;
+    font-size: medium;
+  }
+
+  .ql-editor *:first-child {
+    @apply mt-0 !important;
+  }
+
+  .ql-editor h1, .ql-editor h2, .ql-editor h3, .ql-editor h4 {
+    @apply mt-8 slab;
+  }
+
+  .ql-editor p {
+    @apply mt-4
+  }
+
+  .ql-editor a {
+    @apply underline
   }
 }
 

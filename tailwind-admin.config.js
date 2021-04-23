@@ -11,6 +11,7 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+                serif: ['Rockwell Nova Cond', ...defaultTheme.fontFamily.serif],
             },
         },
     },

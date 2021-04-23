@@ -2,40 +2,9 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+@import 'fonts';
+
 @layer base {
-  @font-face {
-    font-family: "Terminal One";
-    src: url("/fonts/Terminal-One.eot");
-    src: url("/fonts/Terminal-One.eot?#iefix") format("embedded-opentype"),
-      url("/fonts/Terminal-One.woff2") format("woff2"),
-      url("/fonts/Terminal-One.woff") format("woff"),
-      url("/fonts/Terminal-One.ttf") format("truetype");
-    font-weight: 400;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "Rockwell Nova Cond";
-    src: url("/fonts/RockwellNova-Cond.eot");
-    src: url("/fonts/RockwellNova-Cond.eot?#iefix") format("embedded-opentype"),
-      url("/fonts/RockwellNova-Cond.woff2") format("woff2"),
-      url("/fonts/RockwellNova-Cond.woff") format("woff"),
-      url("/fonts/RockwellNova-Cond.ttf") format("truetype");
-    font-weight: 400;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "Rockwell Nova Cond";
-    src: url("/fonts/RockwellNova-CondBold.eot");
-    src: url("/fonts/RockwellNova-CondBold.eot?#iefix") format("embedded-opentype"),
-      url("/fonts/RockwellNova-CondBold.woff2") format("woff2"),
-      url("/fonts/RockwellNova-CondBold.woff") format("woff"),
-      url("/fonts/RockwellNova-CondBold.ttf") format("truetype");
-    font-weight: bold;
-    font-style: 700;
-  }
-
   hr {
     border-top-width: 2px;
   }
