@@ -60,5 +60,7 @@ class Article extends Model implements HasMedia
     {
         $this->addMediaCollection('images')
            ->withResponsiveImages();
+
+        $this->addMediaCollection('attachments');
     }
 }

@@ -17,8 +17,9 @@ class Form extends Component
     public Collection $availableTags;
 
     // MediaLibraryPro
-    public $mediaComponentNames = ['images'];
+    public $mediaComponentNames = ['images', 'attachments'];
     public $images;
+    public $attachments;
 
     /**
      * Indicates if user deletion is being confirmed.
@@ -74,6 +75,10 @@ class Form extends Component
         $this->article
             ->syncFromMediaLibraryRequest($this->images)
             ->toMediaCollection('images');
+
+        $this->article
+            ->syncFromMediaLibraryRequest($this->attachments)
+            ->toMediaCollection('attachments');
 
         $this->emit('saved');
 

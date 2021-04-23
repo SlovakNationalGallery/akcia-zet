@@ -60,6 +60,19 @@
                 </div>
 
                 <div class="col-span-6 sm:col-span-4">
+                    <x-jet-label for="attachments" value="Prílohy" class="font-bold text-xl" />
+                    <x-admin.input-hint>Súbory, na ktoré sa dá odkazovať v článku.<br/> (Pravý klik na odkaz "Download" -> skopírovať odkaz)</x-admin.input-hint>
+                    <div class="mt-1">
+                        <x-media-library-collection
+                            id="attachments"
+                            name="attachments"
+                            :model="$article"
+                            collection="attachments"
+                        />
+                    </div>
+                </div>
+
+                <div class="col-span-6 sm:col-span-4">
                     <x-jet-label for="tags" value="Tagy" class="font-bold text-xl" />
                     <x-admin.input-tags id="tags" wire:model.defer="tags" :available-tags="$this->availableTags" />
                     <x-jet-input-error for="tags" class="mt-2" />
