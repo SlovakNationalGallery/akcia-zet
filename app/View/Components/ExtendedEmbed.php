@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Embed\Services\Issuu;
 use App\Embed\Services\Spotify;
 use BenSampo\Embed\ViewComponents\EmbedViewComponent;
 
@@ -26,5 +27,6 @@ class ExtendedEmbed extends EmbedViewComponent
     private function detectServiceByUrl()
     {
         if (Spotify::detect($this->url)) return new Spotify($this->url);
+        if (Issuu::detect($this->url)) return new Issuu($this->url);
     }
 }
