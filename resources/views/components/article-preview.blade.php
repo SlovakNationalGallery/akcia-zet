@@ -5,7 +5,11 @@
         {{ ucfirst($article->published_at->diffForHumans()) }}
     </p>
     <div class="grid grid-cols-{{ $article->embed_url ? '2' : '1' }} gap-4 mt-2">
-        @if($article->embed_url)
+        @if($article->hasTitleImage())
+            <a href="{{ route('articles.show', $article) }}">
+                {{ $article->titleImage->img()->attributes(['class' => 'object-cover object-center h-24']) }}
+            </a>
+        @elseif($article->embed_url)
         <div>
             <x-extended-embed url="{{ $article->embed_url }}" />
         </div>

@@ -18,14 +18,20 @@
                 <a href="{{ route('articles.show', $article)}}">{{ $article->title }}</a>
             </h4>
             <div class="grid md:grid-cols-2 md:mt-8 gap-x-20">
-                @if($article->embed_url)
+                @if($article->hasTitleImage())
+                <div class="mt-6 -mx-8 md:m-0">
+                    <a href="{{ route('articles.show', $article) }}">
+                        {{ $article->titleImage->img()->attributes(['class' => 'object-cover object-center h-60']) }}
+                    </a>
+                </div>
+                @elseif($article->embed_url)
                 <div class="mt-6 -mx-8 md:m-0">
                     <x-extended-embed url="{{ $article->embed_url }}" />
                 </div>
                 @endif
                 <div>
                     <h4 class="hidden md:block text-4xl slab text-red-800 text-center leading-tight">
-                        <a href="{{ route('articles.show', $article)}}">{{ $article->title }}</a>
+                        <a href="{{ route('articles.show', $article) }}">{{ $article->title }}</a>
                     </h4>
                     <p class="mt-8 slab text-red-800 text-center">
                         <a href="{{ route('articles.show', $article) }}">
@@ -38,7 +44,7 @@
                         @endforeach
                     </div>
                 </div>
-                @if(! $article->embed_url)
+                @if(!$article->embed_url)
                 <p class="hidden md:block text-lg">{{ Str::limit(strip_tags($article->content), 400) }}</p>
                 @endif
             </div>

@@ -47,6 +47,14 @@ class Article extends Model implements HasMedia
         return $this->published_at->isFuture();
     }
 
+    public function hasTitleImage(): bool {
+        return $this->hasMedia('title_image');
+    }
+
+    public function getTitleImageAttribute() {
+        return $this->getFirstMedia('title_image');
+    }
+
     // Required for MediaLibraryPro components to show thumbnails of uploaded images
     public function registerMediaConversions(Media $media = null): void
     {
@@ -58,9 +66,16 @@ class Article extends Model implements HasMedia
 
     public function registerMediaCollections(): void
     {
-        $this->addMediaCollection('images')
+        $this
+            ->addMediaCollection('images')
            ->withResponsiveImages();
 
-        $this->addMediaCollection('attachments');
+        $this
+            ->addMediaCollection('attachments');
+
+        $this
+            ->addMediaCollection('title_image')
+            ->withResponsiveImages()
+            ->singleFile();
     }
 }

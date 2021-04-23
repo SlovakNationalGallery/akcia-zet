@@ -20,9 +20,29 @@
                     <textarea class="w-full h-36 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1" wire:model.defer="article.perex"></textarea>
                 </div>
 
+                <div class="col-span-6 sm:col-span-4">
+                    <x-jet-label for="title_image" value="Titulný obrázok" class="font-bold text-xl" />
+                    <x-admin.input-hint>Ak nie je nahratý, bude ako titulka použitý embed (alebo nič)</x-admin.input-hint>
+                    <x-media-library-collection
+                        id="title_image"
+                        name="title_image"
+                        rules="mimes:jpeg,png"
+                        :model="$article"
+                        collection="title_image"
+                        :max-items="1"
+                        :sortable="false"
+                    />
+                </div>
+
                 <div class="col-span-6">
                     <x-jet-label for="content" value="Obsah" class="font-bold text-xl" />
                     <x-admin.quill-editor wire:model.defer="article.content" :value="$article->content" />
+                </div>
+
+                <div class="col-span-6 sm:col-span-4">
+                    <x-jet-label for="tags" value="Tagy" class="font-bold text-xl" />
+                    <x-admin.input-tags id="tags" wire:model.defer="tags" :available-tags="$this->availableTags" />
+                    <x-jet-input-error for="tags" class="mt-2" />
                 </div>
 
                 <div class="col-span-6 sm:col-span-4">
@@ -76,12 +96,6 @@
                             collection="attachments"
                         />
                     </div>
-                </div>
-
-                <div class="col-span-6 sm:col-span-4">
-                    <x-jet-label for="tags" value="Tagy" class="font-bold text-xl" />
-                    <x-admin.input-tags id="tags" wire:model.defer="tags" :available-tags="$this->availableTags" />
-                    <x-jet-input-error for="tags" class="mt-2" />
                 </div>
 
                 {{-- filler --}}
