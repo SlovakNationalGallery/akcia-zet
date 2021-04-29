@@ -44,9 +44,9 @@
                         @endforeach
                     </div>
                 </div>
-                @if(!$article->embed_url)
+                @unless($article->embed_url || $article->hasTitleImage())
                 <p class="hidden md:block text-lg">{{ Str::limit(strip_tags($article->content), 400) }}</p>
-                @endif
+                @endunless
             </div>
 
             @unless($loop->last)
