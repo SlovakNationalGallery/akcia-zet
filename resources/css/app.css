@@ -10,7 +10,7 @@
   }
 
   .slab {
-    @apply font-serif font-bold uppercase;
+    @apply font-serif font-bold uppercase tracking-wide;
   }
 
   .article-content *:first-child {
@@ -22,7 +22,7 @@
   }
 
   .article-content p {
-    @apply mt-4
+    @apply mt-4 md:leading-relaxed
   }
 
   .article-content a {

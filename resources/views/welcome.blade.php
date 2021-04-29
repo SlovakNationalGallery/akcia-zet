@@ -68,28 +68,28 @@
                     <path fill="rgba(0,0,0,0)" stroke="#a5a5a5" d="M64.386 41.5L33.5 64.071zm-6-9L27.5 55.071zm-7-8L20.5 47.071zm-6-9L14.5 38.071z" data-name="Union 1"/>
                 </svg>
                 <div class="hidden md:flex justify-between px-16 mt-6 font-mono text-2xl text-gray-400">
-                    <span>11 NOV 20</span>
-                    <span>6 AUG 21</span>
+                    <span>NOV 20</span>
+                    <span>JÚN 21</span>
                 </div>
             </div>
             <div class="container text-center mx-auto md:max-w-screen-md py-8 pt-16 md:pt-8 ">
-                <p class="text-xl slab text-white leading-relaxed tracking-wider px-6">
+                <p class="text-xl slab text-white leading-relaxed px-6">
                     Vydávame sa na niekoľkomesačnú vzrušujúcu umenovednú výpravu,
                     na&nbsp;ktorej otvoríme dôležité a&nbsp;aktuálne témy
                 </p>
                 <h3 class="text-center mt-4 mb-8 slab text-xl">
-                    <a href="{{ route('about') }}" class="tracking-wider text-gray-400 underline">O projekte</a>
+                    <a href="{{ route('about') }}" class="text-gray-400 underline">O projekte</a>
                 </h3>
             </div>
         </div>
 
-        <h2 class="pt-4 -mb-5 md:-mb-8 tracking-wide font-serif font-bold uppercase text-center text-6xl md:text-8xl text-gray-500">Pridané</h2>
+        <h2 class="pt-4 -mb-5 md:-mb-8 slab tracking-normal text-center text-6xl md:text-8xl text-gray-700">Pridané</h2>
         <div class="relative p-8 bg-gradient-to-r-334 from-red-800 to-gray-700 text-center"
             x-data="calculateCutoutPolygon($el, 'hr')"
             x-on:resize.window.debounce="polygonPoints = calculateCutoutPolygon($el, 'hr').polygonPoints"
             :style="`clip-path: polygon(${polygonPoints.join(',')})`"
             >
-            <h3 class="text-2xl  md:text-3xl font-serif text-yellow-400 font-bold uppercase tracking-wider py-6 md:py-8">
+            <h3 class="text-2xl  md:text-3xl font-serif text-yellow-400 font-bold uppercase tracking-wide py-6 md:py-8">
                 <a href="{{ route('articles.show', $featuredArticle)}}">{{ $featuredArticle->title }}</a>
             </h3>
             <div class="md:w-1/2 mx-auto md:flex gap-12">
@@ -130,11 +130,11 @@
             </div>
 
             <h3 class="text-center mt-8 slab text-xl">
-                <a href="{{ route('articles.index') }}" class="tracking-wider text-gray-400 underline">Všetky príspevky</a>
+                <a href="{{ route('articles.index') }}" class="text-gray-400 underline">Všetky príspevky</a>
             </h3>
         </div>
 
-        <h2 class="pt-4 -mb-5 md:-mb-8 tracking-wide font-serif font-bold uppercase text-center text-6xl md:text-8xl text-gray-500">Texty</h2>
+        <h2 class="pt-4 -mb-5 md:-mb-8 slab tracking-normal text-center text-6xl md:text-8xl text-gray-700">Texty</h2>
         <div
             class="relative p-8 bg-gradient-to-r-252 from-red-800 to-gray-700 text-center py-8"
             x-data="calculateCutoutPolygon($el, '.cutout')"
@@ -148,7 +148,7 @@
                     </div>
                     <div class="md:w-2/3">
                         <h5 class="text-sm text-gray-400">Pripravujeme</h5>
-                        <h3 class="slab tracking-wider text-2xl  md:text-3xl text-white mt-2">Stratený svätý</h3>
+                        <h3 class="slab text-2xl  md:text-3xl text-white mt-2">Stratený svätý</h3>
                         <h4 class="slab tracking-wider text-yellow-200 mt-2 hidden md:block w-3/4">S. Kusá a O. Chrobák v komixe o pátraní po stratenom obraze</h4>
                         <img src="https://placekitten.com/100/100" class="object-cover w-40 mx-auto my-4 md:hidden">
                         <p class="text-sm text-white mt-4 md:w-3/4">Krátka beseda o tom, čo sú hoaxy, na čo sú dobré a čím sa líšía hoaxy dneška od včerajších hoaxov.</p>
@@ -159,7 +159,7 @@
                 <div class="md:w-1/2">
                     <div class="md:w-1/2 mx-auto">
                         <h5 class="text-sm text-gray-400">Prvýkrát zverejnené</h5>
-                        <h3 class="slab tracking-wider text-2xl md:text-3xl text-white mt-2">Výskum</h3>
+                        <h3 class="slab text-2xl md:text-3xl text-white mt-2">Výskum</h3>
                         <h4 class="slab tracking-wider text-yellow-200 mt-2 hidden md:block">Markéta Peringerová v komixe o pátraní po stratenom obraze</h4>
                         <img src="https://placekitten.com/100/100" class="object-cover w-40 mx-auto my-4 md:hidden">
                         <p class="text-center text-sm text-white mt-4">Krátka beseda o tom, čo sú hoaxy, na čo sú dobré a čím sa líšía hoaxy dneška od včerajších hoaxov.</p>
@@ -168,7 +168,7 @@
             </div>
 
             <h3 class="text-center mt-8 slab text-xl">
-                <a href="{{ route('research') }}" class="tracking-wider text-gray-400 underline">Všetky texty</a>
+                <a href="{{ route('research') }}" class="text-gray-400 underline">Všetky texty</a>
             </h3>
         </div>
         @livewire('newsletter-signup-form', ['class' => 'my-5 md:my-0'])

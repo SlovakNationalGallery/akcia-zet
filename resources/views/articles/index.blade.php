@@ -11,13 +11,13 @@
     @endisset
     <div class="p-8 pb-32 max-w-lg md:max-w-5xl mx-auto">
         @foreach($articles as $article)
-            <span class="block text-center uppercase font-mono text-gray-300 text-2xl">
+            <span class="block text-center uppercase font-mono text-gray-300 text-3xl">
                 {{ $article->published_at->format('d M y') }}
             </span>
-            <h4 class="mt-6 md:hidden text-4xl slab text-red-800 text-center leading-tight">
+            <h4 class="mt-8 md:hidden text-4xl slab text-red-800 text-center leading-tight tracking-normal">
                 <a href="{{ route('articles.show', $article)}}">{{ $article->title }}</a>
             </h4>
-            <div class="grid md:grid-cols-2 md:mt-8 gap-x-20">
+            <div class="grid md:grid-cols-2 md:mt-10 gap-x-20">
                 @if($article->hasTitleImage())
                 <div class="mt-6 -mx-8 md:m-0">
                     <a href="{{ route('articles.show', $article) }}">
@@ -30,7 +30,7 @@
                 </div>
                 @endif
                 <div>
-                    <h4 class="hidden md:block text-4xl slab text-red-800 text-center leading-tight">
+                    <h4 class="hidden md:block text-4xl slab text-red-800 text-center leading-tight tracking-normal">
                         <a href="{{ route('articles.show', $article) }}">{{ $article->title }}</a>
                     </h4>
                     <p class="mt-8 slab text-red-800 text-center">
@@ -38,7 +38,7 @@
                             {{ $article->perex }}
                         </a>
                     </p>
-                    <div class="mt-6 font-bold text-pink-400 text-center md:text-lg md:font-normal">
+                    <div class="mt-6 text-pink-400 text-center">
                         @foreach($article->tags as $tag)
                             <a href="{{ route('articles.index', ['tag' => $tag->name]) }}" class="mr-1">#{{ $tag->name }}</a>
                         @endforeach
@@ -50,7 +50,7 @@
             </div>
 
             @unless($loop->last)
-                <hr class="my-6 md:mt-12 max-w-sm mx-auto">
+                <hr class="my-6 md:mt-14 max-w-sm mx-auto">
             @endunless
         @endforeach
     </div>

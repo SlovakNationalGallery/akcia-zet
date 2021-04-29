@@ -7,12 +7,12 @@
 <x-app-layout>
     {{-- Mobile header --}}
     <div class="px-6 md:hidden">
-        <div class="mt-4 text-pink-400 font-semibold flex justify-center flex-wrap">
+        <div class="mt-4 text-pink-400 flex justify-center flex-wrap">
             @foreach($tags as $tag)
                 <a href="{{ route('articles.index', ['tag' => $tag]) }}" class="px-2">#{{ $tag }}</a>
             @endforeach
         </div>
-        <h2 class="mt-4 slab text-4xl text-red-800 tracking-wide leading-tight text-center">{{ $title }}</h2>
+        <h2 class="mt-4 slab text-4xl text-red-800 tracking-normal leading-tight text-center">{{ $title }}</h2>
         <p class="mt-4 text-gray-400 text-center">
            {{ $meta }}
         </p>
@@ -28,16 +28,16 @@
         <div class="md:mt-24"></div>
     @endisset
     <div class="px-6 max-w-5xl mx-auto">
-        <h2 class="mt-10 hidden md:block slab text-5xl text-red-800 tracking-wide leading-tight text-center">{{ $title }}</h2>
+        <h2 class="mt-10 hidden md:block slab text-5xl text-red-800 tracking-normal leading-tight text-center">{{ $title }}</h2>
         <p class="mt-8 max-w-2xl mx-auto slab font-bold tracking-wide text-red-800 text-center leading-relaxed md:text-lg md:leading-7">
             {{ $perex ?? '' }}
         </p>
-        <div class="mt-4 md:mt-12 md:grid md:grid-cols-3 gap-x-8 md:text-lg ">
+        <div class="mt-4 md:mt-12 md:grid md:grid-cols-3 gap-x-8">
             <div class="hidden md:block">
                 <p class="text-gray-400 ">
                     {{ $meta }}
                 </p>
-                <ul class="mt-8 text-pink-400 font-semibold space-y-2">
+                <ul class="mt-8 text-pink-400 space-y-2">
                     @foreach($tags as $tag)
                         <li><a href="{{ route('articles.index', ['tag' => $tag]) }}">#{{ $tag }}</a></li>
                     @endforeach
@@ -48,7 +48,7 @@
             </div>
         </div>
 
-        <div class="mt-6 md:hidden text-pink-400 font-semibold flex justify-center flex-wrap">
+        <div class="mt-6 md:hidden text-pink-400 flex justify-center flex-wrap">
             @foreach($tags as $tag)
                 <a href="{{ route('articles.index', ['tag' => $tag]) }}" class="px-2">#{{ $tag }}</a>
             @endforeach

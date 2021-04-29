@@ -24,7 +24,7 @@
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,600&display=swap" rel="stylesheet">
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
@@ -53,10 +53,11 @@
                     @php
                         $colorClass = request()->routeIs('home') ? 'text-gray-400' : 'text-red-800';
                         $hoverColorClass = request()->routeIs('home') ? 'text-gray-800' : 'text-gray-400';
+                        $activeClass = ''
                     @endphp
 
                     <ul class="slab tracking-wide flex text-3xl space-x-4 lg:space-x-8 lg:text-4xl {{ $colorClass }} mt-2">
-                        <li class="{{ request()->routeIs('actors') ? 'transform translate-y-32 scale-300' : '' }}">
+                        <li class="{{ request()->routeIs('actors') ? 'transform translate-y-24 scale-220 tracking-normal' : '' }}">
                             @if(request()->routeIs('actors'))
                                 <x-spotlight class="px-3 transform -skew-x-24" />
                             @endif
@@ -64,7 +65,7 @@
                                 Aktéri
                             </a>
                         </li>
-                        <li class="{{ request()->routeIs('articles.index') ? 'transform translate-y-32 -translate-x-4 scale-300' : '' }}">
+                        <li class="{{ request()->routeIs('articles.index') ? 'transform translate-y-24 -translate-x-4 scale-220  tracking-normal' : '' }}">
                             @if(request()->routeIs('articles.index'))
                                 <x-spotlight class="px-3 transform -skew-x-12" />
                             @endif
@@ -72,7 +73,7 @@
                                 Pridané
                             </a>
                         </li>
-                        <li class="{{ request()->routeIs('research') ? 'transform translate-y-32 -translate-x-4 scale-300' : '' }}">
+                        <li class="{{ request()->routeIs('research') ? 'transform translate-y-24 -translate-x-4 scale-220  tracking-normal' : '' }}">
                             @if(request()->routeIs('research'))
                                 <x-spotlight class="px-3 pl-4 transform skew-x-12" />
                             @endif
@@ -80,7 +81,7 @@
                                 Texty
                             </a>
                         </li>
-                        <li class="{{ request()->routeIs('about') ? 'transform translate-y-32 -translate-x-4 scale-300' : '' }}">
+                        <li class="{{ request()->routeIs('about') ? 'transform translate-y-24 -translate-x-4 scale-220  tracking-normal' : '' }}">
                             @if(request()->routeIs('about'))
                                 <x-spotlight class="px-3 pl-4 transform skew-x-24" />
                             @endif

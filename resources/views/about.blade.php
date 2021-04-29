@@ -1,5 +1,5 @@
 <x-article-page
-    perex="Od novembra 2020 maľuje v átriu SNG výtvarník Marcel Mališ autorskú repliku strateného diela - svoj nový obraz s pozmeneným názvom VďakyZdanie československého ľudu. Ako verne k úlohe pristúpi, bude na jeho rozhodnutí."
+    perex="Od novembra 2020 maľuje v átriu SNG výtvarník Marcel Mališ autorskú repliku strateného diela — svoj nový obraz s pozmeneným názvom VďakyZdanie československého ľudu. Ako verne k úlohe pristúpi, bude na jeho rozhodnutí."
     embedUrl="https://www.youtube.com/watch?v=T0_VkpfCtlk"
     :tags="['propaganda', 'socialistický realizmus', 'hoax', 'strach', 'autorstvo', 'kult osobnosti', 'monumentálna maľba']"
     :previousArticle="$articles[0]"
@@ -18,7 +18,7 @@
     <x-slot name="content">
         <p>
             Pre maliara bude galéria „pracovňou“ a obraz tak bude pribúdať pred zrakmi verejnosti.
-            Maliarska akcia je východiskom pre nový experimentálny žáner - umenovednú výpravu, ktorá zrkadlí
+            Maliarska akcia je východiskom pre nový experimentálny žáner — umenovednú výpravu, ktorá zrkadlí
             naše premýšľanie o postavení národnej galérie ako vzdelávacej inštitúcie dnes. Je to miesto kladenia otázok a hľadania odpovedí.
         </p>
         <p class="mt-4 italic">

@@ -8,7 +8,7 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ["Source Sans Pro", ...defaultTheme.fontFamily.sans],
+                sans: ["Noto Sans", ...defaultTheme.fontFamily.sans],
                 serif: ["Rockwell Nova Cond", ...defaultTheme.fontFamily.serif],
                 mono: ["Terminal One", ...defaultTheme.fontFamily.mono],
             },
@@ -72,7 +72,7 @@ module.exports = {
             },
 
             scale: {
-                '300': '3',
+                '220': '2.2',
             },
 
             skew: {
