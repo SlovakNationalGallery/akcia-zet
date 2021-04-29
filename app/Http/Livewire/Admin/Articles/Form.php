@@ -71,6 +71,9 @@ class Form extends Component
             $this->validate(['article.slug' => 'required|string',]);
         }
 
+        // https://github.com/livewire/livewire/issues/823#issuecomment-651324921
+        if($this->article->embed_url === '') $this->article->embed_url = null;
+
         $this->article->save();
 
         $this->article
