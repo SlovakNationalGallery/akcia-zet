@@ -1,11 +1,14 @@
 <x-article-page
-    title="Akcia ZET umenovedná výprava"
-    perex="Od novembra tohto roku maľuje v átriu SNG výtvarník Marcel Mališ autorskú repliku strateného diela - svoj nový obraz s pozmeneným názvom VďakyZdanie československého ľudu. Ako verne k úlohe pristúpi, bude na jeho rozhodnutí."
-    embedUrl="https://www.youtube.com/embed/OYotvmEHqsw"
-    :tags="['propaganda', 'článok', 'video']"
+    perex="Od novembra 2020 maľuje v átriu SNG výtvarník Marcel Mališ autorskú repliku strateného diela - svoj nový obraz s pozmeneným názvom VďakyZdanie československého ľudu. Ako verne k úlohe pristúpi, bude na jeho rozhodnutí."
+    embedUrl="https://www.youtube.com/watch?v=T0_VkpfCtlk"
+    :tags="['propaganda', 'socialistický realizmus', 'hoax', 'strach', 'autorstvo', 'kult osobnosti', 'monumentálna maľba']"
     :previousArticle="$articles[0]"
     :nextArticle="$articles[1]"
 >
+
+    <x-slot name="title">
+        Akcia ZET<br/> umenovedná výprava
+    </x-slot>
     <x-slot name="meta">
         19. Novembra 2020 — 27. Júna 2021 Esterházyho palác, Bratislava
         <br/>
