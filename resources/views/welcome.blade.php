@@ -78,7 +78,7 @@
                     na&nbsp;ktorej otvoríme dôležité a&nbsp;aktuálne témy
                 </p>
                 <h3 class="text-center mt-4 mb-8 slab text-xl">
-                    <a href="/o-projekte" class="tracking-wider text-gray-400 underline">O projekte</a>
+                    <a href="{{ route('about') }}" class="tracking-wider text-gray-400 underline">O projekte</a>
                 </h3>
             </div>
         </div>
