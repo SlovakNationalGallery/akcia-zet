@@ -97,6 +97,12 @@
                     <div class="-mx-8 md:text-right md:w-1/2">
                         <x-extended-embed url="{{ $featuredArticle->embed_url }}" />
                     </div>
+                @elseif($featuredArticle->hasTitleImage())
+                    <div class="-mx-8 md:text-right md:w-1/2">
+                        <a href="{{ route('articles.show', $featuredArticle) }}">
+                            {{ $featuredArticle->titleImage->img()->attributes(['class' => 'object-cover object-center h-60']) }}
+                        </a>
+                    </div>
                 @endif
                 <div class="md:w-1/2 mx-auto">
                     <p class="text-sm text-gray-400 my-5">
