@@ -21,7 +21,7 @@ class NewsletterSignupForm extends Component
         $this->success = false;
         $this->validate();
 
-        Newsletter::subscribe(
+        Newsletter::subscribePending(
             $this->email,
             [], // no merge fields
             '', // use default list defined in MAILCHIMP_LIST_ID env var
