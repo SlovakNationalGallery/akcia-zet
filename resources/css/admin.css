@@ -15,12 +15,6 @@
   .btn-danger {
     @apply btn-secondary text-red-600 border-red-600 hover:bg-red-500 hover:text-white
   }
-}
-
-@layer base {
-  .ql-video {
-    @apply w-full h-96;
-  }
 
   .slab {
     @apply font-serif font-bold uppercase;
@@ -31,12 +25,11 @@
 @import "trix/dist/trix";
 @import "quill/dist/quill.snow";
 @import "media-library-pro-styles";
-/*! purgecss end ignore */
 
 
 .ql-editor {
   font-family: Noto Sans, sans-serif;
-  font-size: medium;
+  font-size: 1rem;
 }
 
 .ql-editor *:first-child {
@@ -54,3 +47,9 @@
 .ql-editor a {
   @apply underline
 }
+
+.ql-video {
+  @apply w-full h-96;
+}
+
+/*! purgecss end ignore */
