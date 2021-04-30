@@ -30,7 +30,7 @@
     <p class="text-yellow-200 mt-4">
         <span wire:loading>Moment...</span>
         <span wire:loading.remove>
-            @if($success) Ďakujeme. Do vašej schránky príde potvrdzovacia správa @endif
+            @if($success) Ďakujeme. Vaša e-mailová adresa bola pridaná @endif
             @if($errors->any()) Ľutujeme, ale vyskytla sa neočakáná chyba @endif
         </span>
     </p>

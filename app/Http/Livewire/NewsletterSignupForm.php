@@ -21,7 +21,12 @@ class NewsletterSignupForm extends Component
         $this->success = false;
         $this->validate();
 
-        Newsletter::subscribe($this->email);
+        Newsletter::subscribe(
+            $this->email,
+            [], // no merge fields
+            '', // use default list defined in MAILCHIMP_LIST_ID env var
+            [ 'interests' =>[ env('MAILCHIMP_INTEREST_ID') => true ] ]
+        );
 
         if (!Newsletter::lastActionSucceeded()) {
             $this->addError('subscription', Newsletter::getLastError());
