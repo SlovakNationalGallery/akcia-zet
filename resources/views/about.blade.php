@@ -41,5 +41,18 @@
             monumentálnej tvorbe, umeniu na zákazku, mecenášstvu či vnímaniu a chápaniu problematických úsekov našich dejín.
             Ukončenie projektu sme naplánovali na 27. júna 2021, symbolicky na výročie popravy Milady Horákovej.
         </p>
+
+        <hr class="my-8">
+
+        <h3>Press</h3>
+        <p>
+            Kontakt: Klára Hudáková (<a href="mailto:Klara.Hudakova@sng.sk">Klara.Hudakova@sng.sk</a>)
+            <br/>
+            Press kit s tlačovou správou a fotografiami <a href="https://www.sng.sk/download.tom?hash=2MpCjbPO8yJIlhLtJC7xKnJWxNlym8QY&ID=1596">nájdete tu</a>.
+        </p>
+        <p class="mt-2">
+
+        </p>
+
     </x-slot>
 </x-article-page>

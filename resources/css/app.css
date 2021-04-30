@@ -18,7 +18,7 @@
   }
 
   .article-content h1, .article-content h2, .article-content h3, .article-content h4 {
-    @apply mt-8 slab
+    @apply mt-8 slab md:text-lg text-red-800
   }
 
   .article-content p {
