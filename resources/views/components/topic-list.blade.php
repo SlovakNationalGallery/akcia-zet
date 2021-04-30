@@ -7,22 +7,22 @@
             <x-topic-list-section
                 title="Aktéri"
                 class="text-white md:border-r-2"
-                :tags="['propaganda-a-asdasd', 'článok', 'video']"
+                :tags="['ateliér', 'autorstvo', 'originál']"
             />
             <x-topic-list-section
                 title="Artefakt"
                 class="text-yellow-200 md:border-r-2"
-                :tags="['propaganda', 'článok', 'video']"
+                :tags="['maľba', 'happening', 'autorská kópia']"
             />
             <x-topic-list-section
                 title="Monument"
                 class="text-yellow-400 md:border-r-2"
-                :tags="['propaganda', 'článok', 'video']"
+                :tags="['pamäť', 'video', 'monumentálna maľba']"
             />
             <x-topic-list-section
                 title="Propaganda"
                 class="text-yellow-600"
-                :tags="['propaganda', 'článok', 'video']"
+                :tags="['kritické myslenie', 'totalitarizmus', 'médiá',]"
             />
         </div>
     </div>
