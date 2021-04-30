@@ -22,21 +22,21 @@
     </div>
     @endisset
 
-    <div class="hidden md:block md:text-lg">
+    <div class="hidden md:block">
         <p class="text-gray-400 ">
             {{ $meta }}
         </p>
-        <ul class="mt-8 text-pink-400 font-semibold space-y-2">
+        <ul class="mt-8 text-pink-400 space-y-2">
             @foreach($tags as $tag)
                 <li><a href="{{ route('articles.index', ['tag' => $tag]) }}">#{{ $tag }}</a></li>
             @endforeach
         </ul>
     </div>
-    <div class="mt-8 md:mt-0 md:text-lg text-gray-800 col-span-2 article-content">
+    <div class="mt-8 md:mt-0 md:leading-relaxed text-gray-800 col-span-2 article-content">
         {!! $content !!}
     </div>
 
-    <div class="mt-6 md:hidden text-pink-400 font-semibold flex justify-center flex-wrap underline">
+    <div class="mt-6 md:hidden text-pink-400 flex justify-center flex-wrap underline">
         @foreach($tags as $tag)
             <a href="{{ route('articles.index', ['tag' => $tag]) }}" class="px-2">#{{ $tag }}</a>
         @endforeach

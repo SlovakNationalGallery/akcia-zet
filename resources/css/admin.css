@@ -32,20 +32,16 @@
   font-size: 1rem;
 }
 
-.ql-editor *:first-child {
-  @apply mt-0 !important;
-}
-
 .ql-editor h1, .ql-editor h2, .ql-editor h3, .ql-editor h4 {
   @apply mt-8 slab;
 }
 
-.ql-editor p {
-  @apply mt-4
-}
-
 .ql-editor a {
   @apply underline
+}
+
+.article-content p {
+  @apply md:leading-relaxed
 }
 
 .ql-video {

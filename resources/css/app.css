@@ -22,7 +22,7 @@
   }
 
   .article-content p {
-    @apply mt-4 md:leading-relaxed
+    @apply md:leading-relaxed
   }
 
   .article-content a {

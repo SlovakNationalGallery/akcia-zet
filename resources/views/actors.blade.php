@@ -68,7 +68,7 @@
 
         <p><strong>Kolektív Č. S. Č (Armádne výtvarné štúdio Praha)</strong> – autori maľby Díkuvdáni českého a slovenského lidu
             generalissimu Stalinovi (1952)</p>
-
+        <p><br/></p>
         <p>
             <strong>Jan Čumpelík (1895 – 1965)</strong> bol konvenčným maliarom realistickej orientácie, ktorý vyštudoval v
             rokoch 1920 – 1924 na AVU u profesora Vratislava Nechlebu. Absolvoval niekoľko študijných pobytov v Paríži a venoval
@@ -78,6 +78,7 @@
             a po odsúdení kultu osobnosti zapadla celkom – do milosrdného zabudnutia. Maliar sa stal príkladom mechanizmu
             dobovej propagandy, najprv na nej spolupracoval, a potom sa stal jej obeťou.
         </p>
+        <p><br/></p>
         <p>
             <strong>Alena Čermáková (1926–2009)</strong> vyštudovala u profesora Jakuba Obrovského a Karla Mináře na AVU. Ako
             mladé dievča, jedináčik stratila otca – kapitána Čermáka, ktorého ako veliteľa vojensko-sokolského odboja proti
@@ -85,11 +86,13 @@
             mladé dievča o správnosti komunistickej cesty, ktorá stavala na antifašistickom základe. Do Armádneho výtvarného
             štúdia nastúpila po jeho založení v roku 1953 a odišla v roku 1960, aby sa mohla venovať maľbe vidieckych námetov.
         </p>
+        <p><br/></p>
         <p>
             <strong>Jaromír Schoř (1912–1992)</strong> vyštudoval u profesora Karla Mináře na AVU, kde pravdepodobne poznal
             Čermákovú. S Čumpelíkom sa poznali z výmaľby závodu v Českej Lípe. Do Armádneho výtvarného štúdia nastúpil po jeho
             založení v roku 1953 a zostal jeho členom až do dôchodku a venoval sa témam z vojenského prostredia.
         </p>
+        <p><br/></p>
         <p>
             <strong>Armádne výtvarné štúdio v Prahe</strong> bola organizácia pri Československej armáde, ako súčasť tzv.
             centrálnych umeleckých telies armády. Uzavreté organizované centrum socialistického realizmu bolo založené podľa
@@ -98,9 +101,5 @@
             československej armády, na Ministerstve obrany, používali sa pri výzdobe vojenských učilíšť, útvarov a
             kultúrno-osvetových centier.
         </p>
-
-
-
-
     </x-slot>
 </x-article-page>
