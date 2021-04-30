@@ -93,8 +93,13 @@ Route::prefix('preview')->middleware(['auth:sanctum', 'verified'])->group(functi
     })->name('articles.show');
 
     Route::get('/texty', function () {
-        return view('research-articles.index');
-    })->name('research');
+        $articles = Article::research()->orderBy('published_at')->get();
+        return view('research-articles.index', compact('articles'));
+    })->name('research-articles.index');
+
+    Route::get('/texty/{article:slug}', function (Article $article) {
+        return view('research-articles.show', compact('article'));
+    })->name('research-articles.show');
 
     Route::get('/preco', function () {
         $articles = Article::published()->orderBy('published_at', 'desc')->take(2)->get();

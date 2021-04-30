@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Str;
 use Spatie\Image\Manipulations;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -24,9 +25,25 @@ class Article extends Model implements HasMedia
         'published_at' => 'datetime:Y-m-d', // Requied by <input type="date">
     ];
 
+    // Used to distinguish 'Pridane' articles from 'Texty' articles
+    private $researchArticlesSlugs = [
+        'cold-revolution',
+        'z-vyskumu-obrazu',
+        'ztraceny-svaty',
+        'prerusena-piesen',
+    ];
+
     public function scopePublished($query)
     {
-        return $query->where('published_at', '<', Carbon::now());
+        return $query
+            ->where('published_at', '<', Carbon::now())
+            ->whereNotIn('slug', $this->researchArticlesSlugs);
+    }
+
+    public function scopeResearch($query)
+    {
+        return $query
+            ->whereIn('slug', $this->researchArticlesSlugs);
     }
 
     public function getSlugOptions(): SlugOptions
@@ -57,6 +74,14 @@ class Article extends Model implements HasMedia
 
     public function getTitleImageAttribute() {
         return $this->getFirstMedia('title_image');
+    }
+
+    public function getFirstContentParagraphAttribute() {
+        if (!$this->content) return;
+
+        $start = strpos($this->content, '<p>');
+        $end = strpos($this->content, '</p>', $start);
+        return substr($this->content, $start, $end - $start + Str::length('</p>'));
     }
 
     // Required for MediaLibraryPro components to show thumbnails of uploaded images

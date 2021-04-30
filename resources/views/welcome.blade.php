@@ -168,7 +168,7 @@
             </div>
 
             <h3 class="text-center mt-8 slab text-xl">
-                <a href="{{ route('research') }}" class="text-gray-400 underline">Všetky texty</a>
+                <a href="{{ route('research-articles.index') }}" class="text-gray-400 underline">Všetky texty</a>
             </h3>
         </div>
         @livewire('newsletter-signup-form', ['class' => 'my-5 md:my-0'])

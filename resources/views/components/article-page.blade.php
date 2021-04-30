@@ -14,7 +14,7 @@
         </div>
         <h2 class="mt-4 slab text-4xl text-red-800 tracking-normal leading-tight text-center">{{ $title }}</h2>
         <p class="mt-4 text-gray-400 text-center">
-           {{ $meta }}
+           {{ $meta ?? '' }}
         </p>
     </div>
     @isset($embedUrl)
@@ -27,17 +27,19 @@
     @else
         <div class="md:mt-24"></div>
     @endisset
-    <div class="px-6 max-w-5xl mx-auto">
+    <div class="px-6 max-w-5xl mx-auto mb-12">
         <h2 class="mt-10 hidden md:block slab text-5xl text-red-800 tracking-normal leading-tight text-center">{{ $title }}</h2>
         <p class="mt-8 max-w-2xl mx-auto slab font-bold tracking-wide text-red-800 text-center leading-relaxed md:text-lg md:leading-7">
             {{ $perex ?? '' }}
         </p>
         <div class="mt-4 md:mt-12 md:grid md:grid-cols-3 gap-x-8">
             <div class="hidden md:block">
-                <p class="text-gray-400 ">
+                @isset($meta)
+                <p class="text-gray-400 mb-8">
                     {{ $meta }}
                 </p>
-                <ul class="mt-8 text-pink-400 space-y-2">
+                @endisset
+                <ul class="text-pink-400 space-y-2">
                     @foreach($tags as $tag)
                         <li><a href="{{ route('articles.index', ['tag' => $tag]) }}">#{{ $tag }}</a></li>
                     @endforeach
@@ -55,7 +57,7 @@
         </div>
     </div>
     @if(isset($previousArticle) && isset($nextArticle))
-    <div class="mt-12 p-6 md:p-24 md:pb-10 bg-gradient-to-r-334 from-red-800 to-gray-700 shadow-lg">
+    <div class="p-6 md:p-24 md:pb-10 bg-gradient-to-r-334 from-red-800 to-gray-700 shadow-lg">
         <div class="max-w-screen-2xl mx-auto grid lg:grid-cols-2 gap-x-16">
             <div class="flex items-center">
                 <svg class="h-44 lg:h-60 mr-8 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.813 300.578">

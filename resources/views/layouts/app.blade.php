@@ -43,7 +43,7 @@
             @php
                 $isPopped = request()->routeIs('actors')
                             || request()->routeIs('articles.index')
-                            || request()->routeIs('research')
+                            || request()->routeIs('research-articles.index')
                             || request()->routeIs('about');
             @endphp
             <nav class="relative {{ $isPopped ? 'md:h-64' : 'h-20' }} px-6 pt-4 md:px-8 z-20">
@@ -73,11 +73,11 @@
                                 Pridané
                             </a>
                         </li>
-                        <li class="{{ request()->routeIs('research') ? 'transform translate-y-24 -translate-x-4 scale-220  tracking-normal' : '' }}">
-                            @if(request()->routeIs('research'))
+                        <li class="{{ request()->routeIs('research-articles.index') ? 'transform translate-y-24 -translate-x-4 scale-220  tracking-normal' : '' }}">
+                            @if(request()->routeIs('research-articles.index'))
                                 <x-spotlight class="px-3 pl-4 transform skew-x-12" />
                             @endif
-                            <a class="hover:{{ $hoverColorClass }}{{ request()->routeIs('research') ? ' text-gray-400' : '' }}" href="{{ route('research') }}">
+                            <a class="hover:{{ $hoverColorClass }}{{ request()->routeIs('research-articles.*') ? ' text-gray-400' : '' }}" href="{{ route('research-articles.index') }}">
                                 Texty
                             </a>
                         </li>
@@ -120,7 +120,7 @@
                                 <ul class="text-center slab text-6xl font-bold text-gray-200 mt-10 space-y-4">
                                     <li><a class="hover:{{ $hoverColorClass }}{{ request()->routeIs('actors')     ? ' text-yellow-400' : '' }}" href="{{ route('actors') }}">Aktéri</a></li>
                                     <li><a class="hover:{{ $hoverColorClass }}{{ request()->routeIs('articles.*') ? ' text-yellow-400' : '' }}" href="{{ route('articles.index') }}">Pridané</a></li>
-                                    <li><a class="hover:{{ $hoverColorClass }}{{ request()->routeIs('research')   ? ' text-yellow-400' : '' }}" href="{{ route('research') }}">Texty</a></li>
+                                    <li><a class="hover:{{ $hoverColorClass }}{{ request()->routeIs('research')   ? ' text-yellow-400' : '' }}" href="{{ route('research-articles.index') }}">Texty</a></li>
                                     <li><a class="hover:{{ $hoverColorClass }}{{ request()->routeIs('about')      ? ' text-yellow-400' : '' }}" href="{{ route('about') }}">Prečo</a></li>
                                 </ul>
                                 <div class="text-right">
