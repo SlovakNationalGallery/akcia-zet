@@ -16,6 +16,8 @@ class NewsletterSignupForm extends Component
         'email' => 'required|email',
     ];
 
+    const AKCIA_ZET_INTEREST_ID = 'fb9f031d97';
+
     public function subscribe()
     {
         $this->success = false;
@@ -25,7 +27,7 @@ class NewsletterSignupForm extends Component
             $this->email,
             [], // no merge fields
             '', // use default list defined in MAILCHIMP_LIST_ID env var
-            [ 'interests' =>[ env('MAILCHIMP_INTEREST_ID') => true ] ]
+            [ 'interests' =>[ self::AKCIA_ZET_INTEREST_ID => true ] ]
         );
 
         if (!Newsletter::lastActionSucceeded()) {
