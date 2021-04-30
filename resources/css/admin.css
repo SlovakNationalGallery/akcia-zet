@@ -25,27 +25,6 @@
   .slab {
     @apply font-serif font-bold uppercase;
   }
-
-  .ql-editor {
-    font-family: Source Sans Pro, sans-serif;
-    font-size: medium;
-  }
-
-  .ql-editor *:first-child {
-    @apply mt-0 !important;
-  }
-
-  .ql-editor h1, .ql-editor h2, .ql-editor h3, .ql-editor h4 {
-    @apply mt-8 slab;
-  }
-
-  .ql-editor p {
-    @apply mt-4
-  }
-
-  .ql-editor a {
-    @apply underline
-  }
 }
 
 /*! purgecss start ignore */
@@ -53,3 +32,25 @@
 @import "quill/dist/quill.snow";
 @import "media-library-pro-styles";
 /*! purgecss end ignore */
+
+
+.ql-editor {
+  font-family: Source Sans Pro, sans-serif;
+  font-size: medium;
+}
+
+.ql-editor *:first-child {
+  @apply mt-0 !important;
+}
+
+.ql-editor h1, .ql-editor h2, .ql-editor h3, .ql-editor h4 {
+  @apply mt-8 slab;
+}
+
+.ql-editor p {
+  @apply mt-4
+}
+
+.ql-editor a {
+  @apply underline
+}
