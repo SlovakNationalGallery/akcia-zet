@@ -17,7 +17,7 @@
                         target: 'target bg-gray-400 border-0 rounded-none shadow-none h-4',
                         connect: 'connect bg-yellow-500',
                         connects: 'connects rounded-none',
-                        handle: ' absolute w-16 -right-8 -top-7 focus:outline-none',
+                        handle: ' absolute w-16 -right-8 -top-5 focus:outline-none',
                         active: '',
                         tooltip: ' absolute transform left-1/2 -translate-x-1/2 font-mono text-yellow-200 mt-1 text-2xl w-48 text-center pt-0.5',
                         pips: ' h-4 inset-0 -mt-4',
@@ -52,7 +52,7 @@
                     @endforeach
                 </div>
                 <div x-ref="slider"></div>
-                <svg x-ref="handle" x-cloak class="fill-current text-yellow-200 hover:text-yellow-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 78">
+                <svg x-ref="handle" x-cloak class="fill-current text-yellow-200 hover:text-yellow-500 w-10/12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 78">
                     <defs>
                         <filter id="a" width="80" height="78" x="0" y="0" filterUnits="userSpaceOnUse">
                         <feOffset dy="3"/>

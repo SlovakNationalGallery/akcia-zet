@@ -6,7 +6,9 @@
 
 <div class="p-8 max-w-5xl mx-auto md:grid md:grid-cols-3 gap-x-8">
     <div class="md:col-span-3">
-        <h2 class="slab text-4xl text-red-800 tracking-wide leading-tight text-center">{{ $article->title }}</h2>
+        <h2 class="slab text-4xl text-red-800 tracking-wide leading-tight text-center">
+            <a href="{{ route('research-articles.show', $article) }}">{{ $article->title }}</a>
+        </h2>
         @isset($meta)
         <p class="mt-6 mb-8 md:hidden text-gray-400 text-center">
             {{ $meta }}
@@ -16,12 +18,16 @@
             {{ $article->perex }}
         </p>
     </div>
-    <div class="mt-10 -mx-8 md:mx-0 md:mb-12 md:col-start-2 md:col-span-2">
-        @isset($article->embedUrl)
+    <div class="mt-10 -mx-8 md:mb-12 md:col-span-3 max-w-3xl md:mx-auto ">
+        @if(isset($article->embedUrl))
         <div class="max-w-sm">
             <x-extended-embed url="{{ $article->embedUrl }}" />
         </div>
-        @endisset
+        @elseif($article->hasTitleImage())
+        <a href="{{ route('research-articles.show', $article) }}" class="">
+            {{ $article->titleImage->img()->attributes(['class' => 'object-contain max-h-64 md:max-h-96']) }}
+        </a>
+        @endif
     </div>
 
     <div class="hidden md:block">
@@ -36,10 +42,12 @@
             @endforeach
         </ul>
     </div>
-    <div class="mt-8 md:mt-0 md:leading-relaxed text-gray-800 col-span-2 article-content">
-        {!! $content !!}
-        <p class="mt-8">
-            <a href="{{ route('research-articles.show', $article) }}">Čítať viac</a>
+    <div class="col-span-2">
+        <div class="mt-8 md:mt-0 md:leading-relaxed text-gray-800  article-content">
+            {!! $content !!}
+        </div>
+        <p class="mt-8 font-mono uppercase text-2xl text-gray-400 hover:text-pink-400">
+            <a href="{{ route('research-articles.show', $article) }}">Viac ></a>
         </p>
     </div>
 

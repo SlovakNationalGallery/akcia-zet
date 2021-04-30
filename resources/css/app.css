@@ -6,7 +6,7 @@
 
 @layer base {
   hr {
-    border-top-width: 2px;
+    border-top-width: 1px;
   }
 
   .slab {
@@ -36,8 +36,11 @@
 
 @layer utilities {
   @responsive {
-    .text-shadow {
-      text-shadow: -0.04em -0.02em #ce4369;
+    .text-shadow-left {
+      text-shadow: -0.04em -0.04em #ce4369;
+    }
+    .text-shadow-right {
+      text-shadow: 0.04em -0.04em #ce4369;
     }
     .text-shadow-none {
       text-shadow: none;

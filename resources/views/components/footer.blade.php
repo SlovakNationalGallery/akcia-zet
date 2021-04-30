@@ -9,8 +9,8 @@
         <div class="order-2">
             <h3 class="slab text-2xl md:text-xl tracking-wide">Partneri projektu</h3>
             <ul class="mt-4 text-sm md:text-base space-y-4">
-                <li><a href="https://www.ustrcr.cz/" class="font-bold underline">Ústav pro studium totalitních režimů v Prahe</a></li>
-                <li><a href="https://historickarevue.sme.sk/t/5318/dejiny-tyzdenny-historicky-podcast" class="font-bold underline">Denník SME – podcast Dejiny a Jaroslav Valent</a></li>
+                <li><a href="https://www.ustrcr.cz/" class="font-bold underline">Ústav pro studium totalitních <span class="sm:hidden"><br /></span> režimů v Prahe</a></li>
+                <li><a href="https://historickarevue.sme.sk/t/5318/dejiny-tyzdenny-historicky-podcast" class="font-bold underline">Denník SME – podcast Dejiny <span class="sm:hidden"><br /></span>a Jaroslav Valent</a></li>
                 <li><a href="https://snd.sk/" class="font-bold underline">Slovenské národné divadlo</a></li>
                 <li>
                     Špeciálne poďakovanie za umožnenie prístupu k archívnym materiálom patrí Vojenskému historickému ústavu v Prahe.

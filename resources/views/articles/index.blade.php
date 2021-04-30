@@ -1,20 +1,28 @@
 <x-app-layout>
     {{-- Mobile header --}}
     <h2 class="md:hidden mt-2 slab text-6xl text-gray-500 tracking-wide leading-tight text-center">Pridané</h2>
-    @isset($tag)
+    @if(isset($tag))
     <div class="p-8 pb-4 max-w-lg mx-auto text-center">
         <span class="slab text-gray-300">Články označené ako</span>
         <h1 class="mt-2 slab text-4xl text-red-800">#{{ $tag }}</h1>
         <hr class="my-4" />
         <a href="{{ route('articles.index') }}" class="text-pink-400">× Zrušiť filter</a>
     </div>
+    @elseif(isset($comingSoon))
+    <div class="p-8 pb-4 max-w-lg mx-auto text-center">
+        <h2 class="mt-2 slab text-4xl text-red-800">Pripravujeme</h2>
+        <div class="mt-8 mb-4 article-content">
+        {!! $comingSoon !!}
+        </div>
+        <hr class="mt-8 mb-4" />
+    </div>
     @endisset
     <div class="p-8 pb-32 max-w-lg md:max-w-5xl mx-auto">
         @foreach($articles as $article)
-            <span class="block text-center uppercase font-mono text-gray-300 text-3xl">
+            <span class="block text-center uppercase font-mono text-gray-400 text-3xl">
                 {{ $article->published_at->format('d M y') }}
             </span>
-            <h4 class="mt-8 md:hidden text-4xl slab text-red-800 text-center leading-tight tracking-normal">
+            <h4 class="mt-8 md:hidden text-3xl slab text-red-800 text-center leading-tight tracking-normal">
                 <a href="{{ route('articles.show', $article)}}">{{ $article->title }}</a>
             </h4>
             <div class="grid md:grid-cols-2 md:mt-10 gap-x-20">

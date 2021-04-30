@@ -46,18 +46,18 @@
                             || request()->routeIs('research-articles.index')
                             || request()->routeIs('about');
             @endphp
-            <nav class="relative {{ $isPopped ? 'md:h-64' : 'h-20' }} px-6 pt-4 md:px-8 z-20">
+            <nav class="relative {{ $isPopped ? 'md:h-48' : 'h-20' }} px-6 pt-4 md:px-8 z-20">
                 {{-- Desktop nav --}}
                 <div class="hidden md:flex justify-between">
-                    <a href="{{ route('home') }}" class="text-5xl block text-yellow-400 text-shadow font-mono">AKCIA</a>
+                    <a href="{{ route('home') }}" class="text-4xl lg:text-5xl block text-yellow-400 text-shadow-left font-mono">AKCIA</a>
                     @php
                         $colorClass = request()->routeIs('home') ? 'text-gray-400' : 'text-red-800';
                         $hoverColorClass = request()->routeIs('home') ? 'text-gray-800' : 'text-gray-400';
                         $activeClass = ''
                     @endphp
 
-                    <ul class="slab tracking-wide flex text-3xl space-x-4 lg:space-x-8 lg:text-4xl {{ $colorClass }} mt-2">
-                        <li class="{{ request()->routeIs('actors') ? 'transform translate-y-24 scale-220 tracking-normal' : '' }}">
+                    <ul class="slab tracking-wide flex md:text-2xl space-x-4 lg:space-x-8 xl:text-4xl {{ $colorClass }} mt-2">
+                        <li class="{{ request()->routeIs('actors') ? 'transform translate-y-20 scale-200 tracking-normal' : '' }}">
                             @if(request()->routeIs('actors'))
                                 <x-spotlight class="px-3 transform -skew-x-24" />
                             @endif
@@ -65,7 +65,12 @@
                                 Aktéri
                             </a>
                         </li>
-                        <li class="{{ request()->routeIs('articles.index') ? 'transform translate-y-24 -translate-x-4 scale-220  tracking-normal' : '' }}">
+                        <li>
+                            <a class="hover:{{ $hoverColorClass }}{{ request()->routeIs('home') ? ' text-gray-400' : '' }}" href="{{ route('home') }}">
+                                Artefakt
+                            </a>
+                        </li>
+                        <li class="{{ request()->routeIs('articles.index') ? 'transform translate-y-20 -translate-x-4 scale-200  tracking-normal' : '' }}">
                             @if(request()->routeIs('articles.index'))
                                 <x-spotlight class="px-3 transform -skew-x-12" />
                             @endif
@@ -73,7 +78,7 @@
                                 Pridané
                             </a>
                         </li>
-                        <li class="{{ request()->routeIs('research-articles.index') ? 'transform translate-y-24 -translate-x-4 scale-220  tracking-normal' : '' }}">
+                        <li class="{{ request()->routeIs('research-articles.index') ? 'transform translate-y-20 -translate-x-4 scale-200  tracking-normal' : '' }}">
                             @if(request()->routeIs('research-articles.index'))
                                 <x-spotlight class="px-3 pl-4 transform skew-x-12" />
                             @endif
@@ -81,7 +86,7 @@
                                 Texty
                             </a>
                         </li>
-                        <li class="{{ request()->routeIs('about') ? 'transform translate-y-24 -translate-x-4 scale-220  tracking-normal' : '' }}">
+                        <li class="{{ request()->routeIs('about') ? 'transform translate-y-20 -translate-x-4 scale-200  tracking-normal' : '' }}">
                             @if(request()->routeIs('about'))
                                 <x-spotlight class="px-3 pl-4 transform skew-x-24" />
                             @endif
@@ -90,13 +95,13 @@
                             </a>
                         </li>
                     </ul>
-                    <a href="{{ route('home') }}" class="text-5xl block text-yellow-400 text-shadow font-mono">ZET</a>
+                    <a href="{{ route('home') }}" class="text-4xl lg:text-5xl block text-yellow-400 text-shadow-right font-mono">ZET</a>
                 </div>
 
                 {{-- Mobile nav --}}
                 <div class="md:hidden">
                     <div class="relative flex justify-between">
-                        <a href="{{ route('home') }}" class="text-5xl block text-yellow-400 text-shadow font-mono">A*Z</a>
+                        <a href="{{ route('home') }}" class="text-5xl block text-yellow-400 text-shadow-left font-mono">A*Z</a>
                         <div x-data="{ show: false }" x-cloak>
                             <a x-on:click="show = true">
                                 <svg viewBox="0 0 100 120" width="40" height="40" class="inline-block fill-current text-yellow-400 text-5xl mt-3" style="filter: drop-shadow(0.04em -0.02em 0 #ce4369)">
@@ -119,6 +124,7 @@
                                 </h3>
                                 <ul class="text-center slab text-6xl font-bold text-gray-200 mt-10 space-y-4">
                                     <li><a class="hover:{{ $hoverColorClass }}{{ request()->routeIs('actors')     ? ' text-yellow-400' : '' }}" href="{{ route('actors') }}">Aktéri</a></li>
+                                    <li><a class="hover:{{ $hoverColorClass }}" href="{{ route('home') }}">Artefakt</a></li>
                                     <li><a class="hover:{{ $hoverColorClass }}{{ request()->routeIs('articles.*') ? ' text-yellow-400' : '' }}" href="{{ route('articles.index') }}">Pridané</a></li>
                                     <li><a class="hover:{{ $hoverColorClass }}{{ request()->routeIs('research')   ? ' text-yellow-400' : '' }}" href="{{ route('research-articles.index') }}">Texty</a></li>
                                     <li><a class="hover:{{ $hoverColorClass }}{{ request()->routeIs('about')      ? ' text-yellow-400' : '' }}" href="{{ route('about') }}">Prečo</a></li>

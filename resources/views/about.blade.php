@@ -2,8 +2,8 @@
     perex="Od novembra 2020 maľuje v átriu SNG výtvarník Marcel Mališ autorskú repliku strateného diela — svoj nový obraz s pozmeneným názvom VďakyZdanie československého ľudu. Ako verne k úlohe pristúpi, bude na jeho rozhodnutí."
     embedUrl="https://www.youtube.com/watch?v=T0_VkpfCtlk"
     :tags="['propaganda', 'socialistický realizmus', 'hoax', 'strach', 'autorstvo', 'kult osobnosti', 'monumentálna maľba']"
-    :previousArticle="$articles[0]"
-    :nextArticle="$articles[1]"
+    :previousArticle="Arr::get($articles, 0)"
+    :nextArticle="Arr::get($articles, 1)"
 >
 
     <x-slot name="title">
@@ -51,7 +51,6 @@
             Press kit s tlačovou správou a fotografiami <a href="https://www.sng.sk/download.tom?hash=2MpCjbPO8yJIlhLtJC7xKnJWxNlym8QY&ID=1596">nájdete tu</a>.
         </p>
         <p class="mt-2">
-
         </p>
 
     </x-slot>

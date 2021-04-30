@@ -1,4 +1,4 @@
-<div class="bg-pink-600 text-center py-6 md:py-12 {{ $class }}">
+<div class="bg-pink-600 text-center pt-6 pb-4 md:pt-12 md:pb-8 {{ $class }}">
     <h3 class="slab text-yellow-400 text-3xl md:text-5xl tracking-wide">Newsletter A*Z</h3>
     <form wire:submit.prevent="subscribe">
         <div class="md:flex mt-4 max-w-xl mx-auto">

@@ -72,7 +72,7 @@ module.exports = {
             },
 
             scale: {
-                '220': '2.2',
+                '200': '2',
             },
 
             skew: {

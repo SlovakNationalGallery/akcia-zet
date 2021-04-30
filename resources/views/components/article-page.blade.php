@@ -28,7 +28,7 @@
         <div class="md:mt-24"></div>
     @endisset
     <div class="px-6 max-w-5xl mx-auto mb-12">
-        <h2 class="mt-10 hidden md:block slab text-5xl text-red-800 tracking-normal leading-tight text-center">{{ $title }}</h2>
+        <h2 class="mt-10 hidden md:block slab text-4xl text-red-800 tracking-normal leading-tight text-center">{{ $title }}</h2>
         <p class="mt-8 max-w-2xl mx-auto slab font-bold tracking-wide text-red-800 text-center leading-relaxed md:text-lg md:leading-7">
             {{ $perex ?? '' }}
         </p>
