@@ -51,7 +51,9 @@ Route::prefix('preview')->middleware(['auth:sanctum', 'verified'])->group(functi
         $timelapseImagesDates = $timelapseImages
             ->map(fn ($image) => Carbon::parse($image->getCustomProperty('date')));
 
-        return view('welcome', compact('articles', 'featuredArticle', 'timelapseImages', 'timelapseImagesDates'));
+        $researchArticles = Article::whereIn('slug', ['ztraceny-svaty', 'z-vyskumu-obrazu'])->get();
+
+        return view('welcome', compact('articles', 'featuredArticle', 'timelapseImages', 'timelapseImagesDates', 'researchArticles'));
     })->name('home');
 
     Route::get('/akteri', function () {

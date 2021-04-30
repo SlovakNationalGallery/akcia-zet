@@ -142,29 +142,21 @@
             :style="`clip-path: polygon(${polygonPoints.join(',')})`"
             >
             <div class="md:flex md:max-w-5xl mx-auto">
-                <div class="md:text-left md:flex md:w-1/2">
-                    <div class="hidden md:w-1/3 md:block mr-8 mt-8">
-                        <img src="https://placekitten.com/100/100" class="object-cover w-40 mx-auto my-4">
-                    </div>
-                    <div class="md:w-2/3">
-                        <h5 class="text-sm text-gray-400">Pripravujeme</h5>
-                        <h3 class="slab text-2xl  md:text-3xl text-white mt-2">Stratený svätý</h3>
-                        <h4 class="slab tracking-wider text-yellow-200 mt-2 hidden md:block w-3/4">S. Kusá a O. Chrobák v komixe o pátraní po stratenom obraze</h4>
-                        <img src="https://placekitten.com/100/100" class="object-cover w-40 mx-auto my-4 md:hidden">
-                        <p class="text-sm text-white mt-4 md:w-3/4">Krátka beseda o tom, čo sú hoaxy, na čo sú dobré a čím sa líšía hoaxy dneška od včerajších hoaxov.</p>
-                    </div>
-                    <hr class="my-6 border-t-2 border-gray-300 md:hidden cutout">
-                </div>
-                <div class="h-60 cutout hidden md:block" style="width:2px"></div>
-                <div class="md:w-1/2">
-                    <div class="md:w-1/2 mx-auto">
-                        <h5 class="text-sm text-gray-400">Prvýkrát zverejnené</h5>
-                        <h3 class="slab text-2xl md:text-3xl text-white mt-2">Výskum</h3>
-                        <h4 class="slab tracking-wider text-yellow-200 mt-2 hidden md:block">Markéta Peringerová v komixe o pátraní po stratenom obraze</h4>
-                        <img src="https://placekitten.com/100/100" class="object-cover w-40 mx-auto my-4 md:hidden">
-                        <p class="text-center text-sm text-white mt-4">Krátka beseda o tom, čo sú hoaxy, na čo sú dobré a čím sa líšía hoaxy dneška od včerajších hoaxov.</p>
-                    </div>
-                </div>
+
+                <x-research-article-small-preview
+                    class="mt-4 md:w-1/2"
+                    :article="$researchArticles[0]"
+                    :perex="$researchArticles[0]->perex"
+                />
+
+                <hr class="my-6 border-t-2 border-gray-300 md:hidden cutout">
+                <div class="h-60 cutout hidden md:block mx-8" style="width:2px"></div>
+
+                <x-research-article-small-preview
+                    class="mt-4 md:w-1/2"
+                    :article="$researchArticles[1]"
+                    perex="Mária Peringerová o výskume pôvodného diela Vďakyvzdanie z roku 1952."
+                />
             </div>
 
             <h3 class="text-center mt-8 slab text-xl">
