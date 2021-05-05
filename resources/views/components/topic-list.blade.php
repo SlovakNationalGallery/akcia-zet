@@ -12,7 +12,7 @@
             <x-topic-list-section
                 title="Artefakt"
                 class="text-yellow-200 md:border-r-2"
-                :tags="['maľba', 'happening', 'autorská kópia']"
+                :tags="['maľba', 'sorela', 'autorská kópia']"
             />
             <x-topic-list-section
                 title="Monument"
