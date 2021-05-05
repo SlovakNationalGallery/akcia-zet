@@ -32,8 +32,8 @@
   font-size: 1rem;
 }
 
-.ql-editor h1, .ql-editor h2, .ql-editor h3, .ql-editor h4 {
-  @apply mt-8 slab;
+.ql-snow .ql-editor h1, .ql-snow .ql-editor h2 {
+  @apply mt-8 slab text-lg;
 }
 
 .ql-editor a {
