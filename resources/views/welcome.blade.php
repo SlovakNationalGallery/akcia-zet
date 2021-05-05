@@ -89,8 +89,9 @@
             x-on:resize.window.debounce="polygonPoints = calculateCutoutPolygon($el, 'hr').polygonPoints"
             :style="`clip-path: polygon(${polygonPoints.join(',')})`"
             >
+            @isset($featuredArticle)
             <h3 class="text-2xl md:text-3xl font-serif text-yellow-400 font-bold uppercase tracking-wide py-6 md:py-8">
-                <a href="{{ route('articles.show', $featuredArticle)}}">{{ $featuredArticle->title }}</a>
+                <a href="{{ route('articles.show', $featuredArticle) }}">{{ $featuredArticle->title }}</a>
             </h3>
             <div class="md:w-1/2 mx-auto md:flex gap-12">
                 @if($featuredArticle->embed_url)
@@ -119,6 +120,7 @@
                     </div>
                 </div>
             </div>
+            @endisset
 
             <div class="text-left text-sm md:text-center md:flex md:gap-12 md:max-w-5xl md:mx-auto">
                 @foreach($articles as $article)
@@ -142,7 +144,7 @@
             :style="`clip-path: polygon(${polygonPoints.join(',')})`"
             >
             <div class="md:flex md:max-w-5xl mx-auto">
-
+                @if($researchArticles->count() === 2)
                 <x-research-article-small-preview
                     class="mt-4 md:w-1/2"
                     :article="$researchArticles->firstWhere('slug', 'ztraceny-svaty')"
@@ -157,6 +159,7 @@
                     :article="$researchArticles->firstWhere('slug', 'z-vyskumu-obrazu')"
                     perex="Česko-slovenský detektívny príbeh s kunsthistorickou zápletkou, komiksom a historickým ponaučením"
                 />
+                @endif
             </div>
 
             <h3 class="text-center mt-8 slab text-xl">
