@@ -89,7 +89,7 @@
             x-on:resize.window.debounce="polygonPoints = calculateCutoutPolygon($el, 'hr').polygonPoints"
             :style="`clip-path: polygon(${polygonPoints.join(',')})`"
             >
-            <h3 class="text-2xl  md:text-3xl font-serif text-yellow-400 font-bold uppercase tracking-wide py-6 md:py-8">
+            <h3 class="text-2xl md:text-3xl font-serif text-yellow-400 font-bold uppercase tracking-wide py-6 md:py-8">
                 <a href="{{ route('articles.show', $featuredArticle)}}">{{ $featuredArticle->title }}</a>
             </h3>
             <div class="md:w-1/2 mx-auto md:flex gap-12">

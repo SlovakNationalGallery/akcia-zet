@@ -10,7 +10,7 @@
                 {{ $article->titleImage->img()->attributes(['class' => 'object-cover object-center h-24']) }}
             </a>
         @endif
-        <h3 class="text-lg text-yellow-200 tracking-wide slab {{ $article->hasTitleMedia() ? 'md:text-left' : ''}}"><a href="{{ route('articles.show', $article)}}">{{ $article->title }}</a></h3>
+        <h3 class="text-lg text-yellow-200 tracking-wide slab {{ $article->hasTitleImage() ? 'md:text-left' : ''}}"><a href="{{ route('articles.show', $article)}}">{{ $article->title }}</a></h3>
     </div>
     <p class="text-white text-sm mt-2 tracking-wide leading-relaxed">
         {{ $article->perex }}

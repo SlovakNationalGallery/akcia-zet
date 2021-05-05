@@ -68,10 +68,6 @@ class Article extends Model implements HasMedia
         return $this->hasMedia('title_image');
     }
 
-    public function hasTitleMedia(): bool {
-        return !empty($this->embed_url) || $this->hasMedia('title_image');
-    }
-
     public function getTitleImageAttribute() {
         return $this->getFirstMedia('title_image');
     }
