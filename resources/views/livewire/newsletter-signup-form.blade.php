@@ -11,7 +11,7 @@
                 </svg>
                 <input type="email"
                     placeholder="Vaša e-mailová adresa"
-                    class="bg-transparent h-full w-full text-center text-lg"
+                    class="bg-transparent h-full w-full text-center"
                     required
                     wire:model.defer="email"
                 />
