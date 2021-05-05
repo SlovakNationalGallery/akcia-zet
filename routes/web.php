@@ -95,7 +95,16 @@ Route::prefix('preview')->middleware(['auth:sanctum', 'verified'])->group(functi
     })->name('articles.show');
 
     Route::get('/texty', function () {
-        $articles = Article::research()->orderBy('published_at')->get();
+        $articles = Article::research()->get();
+
+        // Re-order articles
+        $articles = collect([
+            $articles->firstWhere('slug', 'ztraceny-svaty'),
+            $articles->firstWhere('slug', 'cold-revolution'),
+            $articles->firstWhere('slug', 'z-vyskumu-obrazu'),
+            $articles->firstWhere('slug', 'prerusena-piesen'),
+        ])->filter();
+
         return view('research-articles.index', compact('articles'));
     })->name('research-articles.index');
 
