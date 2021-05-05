@@ -22,7 +22,7 @@
                         tooltip: ' absolute transform left-1/2 -translate-x-1/2 font-mono text-yellow-200 mt-1 text-2xl w-48 text-center pt-0.5',
                         pips: ' h-4 inset-0 -mt-4',
                         pipsHorizontal: '',
-                        marker: ' absolute h-4 w-2 -ml-1 bg-red-500',
+                        marker: ' absolute h-4 w-1 -ml-0.5 bg-red-500',
                         markerLarge: ' h-4 bg-pink-600',
                         valueLarge: ' hidden'
                     },
