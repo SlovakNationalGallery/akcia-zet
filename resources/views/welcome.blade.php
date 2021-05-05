@@ -145,8 +145,8 @@
 
                 <x-research-article-small-preview
                     class="mt-4 md:w-1/2"
-                    :article="$researchArticles[0]"
-                    :perex="$researchArticles[0]->perex"
+                    :article="$researchArticles->firstWhere('slug', 'ztraceny-svaty')"
+                    perex="Mária Peringerová o výskume pôvodného diela Vďakyvzdanie z roku 1952"
                 />
 
                 <hr class="my-6 border-t-2 border-gray-300 md:hidden cutout">
@@ -154,8 +154,8 @@
 
                 <x-research-article-small-preview
                     class="mt-4 md:w-1/2"
-                    :article="$researchArticles[1]"
-                    perex="Mária Peringerová o výskume pôvodného diela Vďakyvzdanie z roku 1952."
+                    :article="$researchArticles->firstWhere('slug', 'z-vyskumu-obrazu')"
+                    perex="Česko-slovenský detektívny príbeh s kunsthistorickou zápletkou, komiksom a historickým ponaučením"
                 />
             </div>
 
