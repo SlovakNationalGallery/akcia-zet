@@ -1,7 +1,6 @@
 <x-article-page
-    title=""
-    :previousArticle="Arr::get($articles, 0)"
-    :nextArticle="Arr::get($articles, 1)"
+    title="Aktéri"
+    hiddenTitle
 >
     <x-slot name="meta">
         <strong>Námet:</strong> Alexandra Kusá

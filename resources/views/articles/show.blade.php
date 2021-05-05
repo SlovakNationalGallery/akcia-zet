@@ -3,6 +3,7 @@
     :perex="$article->perex"
     :content="$article->content"
     :embedUrl="$article->embed_url"
+    :titleImage="$article->title_image"
     :tags="$article->tags->pluck('name')"
     :previousArticle="$prevArticle"
     :nextArticle="$nextArticle"

@@ -1,10 +1,19 @@
-@props(['title', 'perex', 'tags', 'meta', 'embedUrl', 'previousArticle', 'nextArticle', 'content'])
+@props(['title', 'hiddenTitle', 'perex', 'tags', 'meta', 'embedUrl', 'titleImage', 'previousArticle', 'nextArticle', 'content'])
 
 @php
     $tags = $tags ?? [];
 @endphp
 
 <x-app-layout>
+    <x-slot name="title">{{ strip_tags($title) }}</x-slot>
+    <x-slot name="ogType">article</x-slot>
+    @isset($perex)
+        <x-slot name="description">{{ $perex }}</x-slot>
+    @endisset
+    @isset($titleImage)
+        <x-slot name="ogImage">{{ $titleImage->getFullUrl() }}</x-slot>
+    @endisset
+
     {{-- Mobile header --}}
     <div class="px-6 md:hidden">
         <div class="mt-4 text-pink-400 flex justify-center flex-wrap">
@@ -12,7 +21,9 @@
                 <a href="{{ route('articles.index', ['tag' => $tag]) }}" class="px-2">#{{ $tag }}</a>
             @endforeach
         </div>
+        @empty($hiddenTitle)
         <h2 class="mt-4 slab text-4xl text-red-800 tracking-normal leading-tight text-center">{{ $title }}</h2>
+        @endempty
         <p class="mt-4 text-gray-400 text-center">
            {{ $meta ?? '' }}
         </p>
@@ -28,7 +39,9 @@
         <div class="md:mt-24"></div>
     @endisset
     <div class="px-6 max-w-5xl mx-auto mb-12">
+        @empty($hiddenTitle)
         <h2 class="mt-10 hidden md:block slab text-4xl text-red-800 tracking-normal leading-tight text-center">{{ $title }}</h2>
+        @endempty
         <p class="mt-8 max-w-2xl mx-auto slab font-bold tracking-wide text-red-800 text-center leading-relaxed md:text-lg md:leading-7">
             {{ $perex ?? '' }}
         </p>

@@ -4,14 +4,14 @@
         @include('googletagmanager::head')
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Umenie × propaganda, hoax, kult osobnosti a iné dôležité témy v podcastoch, videách, článkoch a ďalších formátoch">
+        <meta name="description" content="{{ $description ?? 'Umenie × propaganda, hoax, kult osobnosti a iné dôležité témy v podcastoch, videách, článkoch a ďalších formátoch' }}">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta property="og:title" content="Akcia ZET — umenovedná výprava" />
-        <meta property="og:description" content="Umenie × propaganda, hoax, kult osobnosti a iné dôležité témy v podcastoch, videách, článkoch a ďalších formátoch" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://akciazet.sng.sk/" />
-        <meta property="og:image" content="https://akciazet.sng.sk/img/og_image.png" />
-        <title>Akcia ZET — umenovedná výprava</title>
+        <meta property="og:title" content="{{ $title ?? 'Akcia ZET — umenovedná výprava' }}" />
+        <meta property="og:description" content="{{ $description ?? 'Umenie × propaganda, hoax, kult osobnosti a iné dôležité témy v podcastoch, videách, článkoch a ďalších formátoch' }}" />
+        <meta property="og:type" content="{{ $ogType ?? 'website' }}" />
+        <meta property="og:url" content="https://akciazet.sng.sk/{{ request()->path() }}" />
+        <meta property="og:image" content="{{ $ogImage ?? 'https://akciazet.sng.sk/img/og_image.png' }}" />
+        <title>{{ isset($title) ? "$title — Akcia ZET — umenovedná výprava" : 'Akcia ZET — umenovedná výprava' }}</title>
 
         {{-- Favicons --}}
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
