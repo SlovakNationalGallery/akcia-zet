@@ -65,7 +65,7 @@
 
         <hr class="my-8">
 
-        <p><strong>Kolektív Č. S. Č (Armádne výtvarné štúdio Praha)</strong> – autori maľby Díkuvdáni českého a slovenského lidu
+        <p><strong>Kolektív Č. S. Č (Armádne výtvarné štúdio Praha)</strong> – autori maľby Díkuvzdání českého a slovenského lidu
             generalissimu Stalinovi (1952)</p>
         <p><br/></p>
         <p>
