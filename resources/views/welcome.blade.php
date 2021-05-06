@@ -22,7 +22,7 @@
                         tooltip: ' absolute transform left-1/2 -translate-x-1/2 font-mono text-yellow-200 mt-1 text-2xl w-48 text-center pt-0.5',
                         pips: ' h-4 inset-0 -mt-4',
                         pipsHorizontal: '',
-                        marker: ' absolute h-4 w-1 -ml-0.5 bg-red-500',
+                        marker: ' absolute h-4 w-1 -ml-0.5 pointer-events-none bg-red-500',
                         markerLarge: ' h-4 bg-pink-600',
                         valueLarge: ' hidden'
                     },
@@ -52,7 +52,7 @@
                     @endforeach
                 </div>
                 <div x-ref="slider"></div>
-                <svg x-ref="handle" x-cloak class="fill-current text-yellow-200 hover:text-yellow-500 w-10/12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 78">
+                <svg x-ref="handle" x-cloak class="fill-current text-yellow-200 hover:text-yellow-500 cursor-pointer w-10/12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 78">
                     <defs>
                         <filter id="a" width="80" height="78" x="0" y="0" filterUnits="userSpaceOnUse">
                         <feOffset dy="3"/>

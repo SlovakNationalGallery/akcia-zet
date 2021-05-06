@@ -4,7 +4,7 @@
     <p class="text-gray-400 text-sm">
         {{ ucfirst($article->published_at->diffForHumans()) }}
     </p>
-    <div class="grid grid-cols-{{ $article->hasTitleImage() ? '2' : '1' }} gap-4 mt-2">
+    <div class="grid {{ $article->hasTitleImage() ? 'grid-cols-2' : 'grid-cols-1' }} gap-4 mt-2">
         @if($article->hasTitleImage())
             <a href="{{ route('articles.show', $article) }}">
                 {{ $article->titleImage->img()->attributes(['class' => 'object-cover object-center h-24']) }}
