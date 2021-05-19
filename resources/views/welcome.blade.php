@@ -157,7 +157,7 @@
                 <x-research-article-small-preview
                     class="mt-4 md:w-1/2"
                     :article="$researchArticles->firstWhere('slug', 'z-vyskumu-obrazu')"
-                    perex="Mária Peringerová o výskume pôvodného diela Vďakyvzdanie z roku 1952"
+                    perex="Markéta Peringerová o výskume pôvodného diela Vďakyvzdanie z roku 1952"
                 />
                 @endif
             </div>
