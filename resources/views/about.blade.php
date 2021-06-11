@@ -10,7 +10,9 @@
         Akcia ZET<br/> umenovedná výprava
     </x-slot>
     <x-slot name="meta">
-        19. Novembra 2020 — 27. Júna 2021 Esterházyho palác, Bratislava
+        November 2020 — December 2021
+        <br/>
+        Esterházyho palác, Bratislava
         <br/>
         Námet: Alexandra Kusá
     </x-slot>
@@ -39,7 +41,6 @@
             Okrem situácie v 50. rokoch 20. storočia sa budeme venovať aj vzťahu propagandy a umenia, hoaxom,
             budovaniu kultu osobnosti či téme strachu, vzťahu originálu a kópie, problematike autorstva,
             monumentálnej tvorbe, umeniu na zákazku, mecenášstvu či vnímaniu a chápaniu problematických úsekov našich dejín.
-            Ukončenie projektu sme naplánovali na 27. júna 2021, symbolicky na výročie popravy Milady Horákovej.
         </p>
 
         <hr class="my-8">
