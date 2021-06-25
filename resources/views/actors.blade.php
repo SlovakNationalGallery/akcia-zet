@@ -10,6 +10,13 @@
     </x-slot>
 
     <x-slot name="content">
+        <h4 class="mt-0">Alexandra Kusá</h4>
+        <p>
+            Kurátorka a historička umenia, ktorá sa téme umenia 50. rokov sa dlhodobo venuje a dúfa, že názov sorela už opäť
+            zdomácnel. V roku 2012 pripravila dekádovú výstavu o tejto téme pre Slovenskú národnú galériu – Prerušená pieseň,
+            jej súčasťou bola re-interpretácia sochy Stalina, ktorá vzbudila neočakávanú kontroverziu. Záujem o tému potvrdila
+            vydaním <a href="https://www.sng.sk/sk/eshop/205-prerusena-piesen">rovnomennej knihy</a>.
+        </p>
         <h4 class="mt-0">Marcel Mališ</h4>
         <p>
             Na výtvarnú scénu vstúpil kritickou hyperrealistickou maľbou.Túto techniku využíva na sprostredkovanie
