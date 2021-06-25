@@ -19,7 +19,7 @@
                         connects: 'connects rounded-none',
                         handle: ' absolute w-16 -right-8 -top-5 focus:outline-none',
                         active: '',
-                        tooltip: ' absolute transform left-1/2 -translate-x-1/2 font-mono text-yellow-200 mt-1 text-2xl w-48 text-center pt-0.5',
+                        tooltip: ' absolute transform left-1/2 -translate-x-1/2 font-mono text-yellow-200 mt-1.5 text-2xl w-48 text-center pt-0.5',
                         pips: ' h-4 inset-0 -mt-4',
                         pipsHorizontal: '',
                         marker: ' absolute h-4 w-1 -ml-0.5 pointer-events-none bg-red-500',
@@ -68,8 +68,8 @@
                     <path fill="rgba(0,0,0,0)" stroke="#a5a5a5" d="M64.386 41.5L33.5 64.071zm-6-9L27.5 55.071zm-7-8L20.5 47.071zm-6-9L14.5 38.071z" data-name="Union 1"/>
                 </svg>
                 <div class="hidden md:flex justify-between px-16 mt-6 font-mono text-2xl text-gray-400">
-                    <span>NOV 20</span>
-                    <span>JÚN 21</span>
+                    <span class="hidden xl:block">NOV 20</span>
+                    <span class="hidden xl:block">JÚL 21</span>
                 </div>
             </div>
             <div class="container text-center mx-auto md:max-w-screen-md py-8 pt-16 md:pt-8 ">
