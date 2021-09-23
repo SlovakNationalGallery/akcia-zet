@@ -69,7 +69,7 @@
                 </svg>
                 <div class="hidden md:flex justify-between px-16 mt-6 font-mono text-2xl text-gray-400">
                     <span class="hidden xl:block">NOV 20</span>
-                    <span class="hidden xl:block">JÚL 21</span>
+                    <span class="hidden xl:block">AUG 21</span>
                 </div>
             </div>
             <div class="container text-center mx-auto md:max-w-screen-md py-8 pt-16 md:pt-8 ">
