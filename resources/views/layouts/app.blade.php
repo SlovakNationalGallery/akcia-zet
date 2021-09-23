@@ -149,5 +149,13 @@
         @livewireScripts
         {{-- Additional scripts --}}
         {{ $scripts ?? '' }}
+
+        @if (session('kiosk'))
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    Kiosk.init()
+                });
+            </script>
+        @endif
     </body>
 </html>

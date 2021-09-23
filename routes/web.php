@@ -31,6 +31,12 @@ Route::get('/', function () {
     return view('welcome', compact('articles', 'featuredArticle', 'timelapseImages', 'timelapseImagesDates', 'researchArticles'));
 })->name('home');
 
+Route::get('/kiosk', function (Request $request) {
+    $request->session()->put('kiosk', true);
+
+    return redirect()->route('home');
+});
+
 Route::get('/akteri', function () {
     $articles = Article::published()->orderBy('published_at', 'desc')->take(2)->get();
     return view('actors', compact('articles'));

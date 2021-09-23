@@ -25,7 +25,7 @@
     @apply md:leading-relaxed
   }
 
-  .article-content a {
+  .article-content a:not(.external) {
     @apply underline
   }
 
