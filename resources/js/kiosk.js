@@ -14,7 +14,7 @@ function disableExternalLinks() {
 // Moves to front page after inactivity
 function initIdleTimer() {
     const fiveMinutes = 1000 * 60 * 5
-    const redirectUrl = '/kiosk'
+    const redirectUrl = '/?kiosk'
 
     let idleTimeout
 

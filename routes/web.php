@@ -18,7 +18,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function (Request $request) {
+    // Mark session as kiosk when ?kiosk is passed
+    if ($request->has('kiosk')) $request->session()->put('kiosk', true);
+
     $articles = Article::published()->orderBy('published_at', 'desc')->take(4)->get();
     $featuredArticle = $articles->shift();
 
@@ -30,12 +33,6 @@ Route::get('/', function () {
 
     return view('welcome', compact('articles', 'featuredArticle', 'timelapseImages', 'timelapseImagesDates', 'researchArticles'));
 })->name('home');
-
-Route::get('/kiosk', function (Request $request) {
-    $request->session()->put('kiosk', true);
-
-    return redirect()->route('home');
-});
 
 Route::get('/akteri', function () {
     $articles = Article::published()->orderBy('published_at', 'desc')->take(2)->get();

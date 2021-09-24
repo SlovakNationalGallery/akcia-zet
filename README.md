@@ -4,7 +4,7 @@
 https://akciazet.sng.sk/
 
 ## Kiosk Mode
-This app comes with a kiosk mode. Simply navigate to `/kiosk` and you'll get a session
+This app comes with a kiosk mode. Simply navigate to `/?kiosk` and you'll get a session
 with disabled external links and a 5-minute idle timer (which navigates back to `/`).
 
 ## Development
