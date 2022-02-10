@@ -99,7 +99,7 @@ return [
         'application' => env('APP_NAME', 'Laravel'),
         'repository' => 'git@github.com:SlovakNationalGallery/akcia-zet.git',
         'bin/php' => 'php7.4',
-        'bin/composer' => 'php7.4 $(which composer)',
+        'bin/composer' => 'php7.4 $(which composer2)',
         'php_fpm_service' => 'php7.4-fpm',
         'shared_files' => [
             '.env',
