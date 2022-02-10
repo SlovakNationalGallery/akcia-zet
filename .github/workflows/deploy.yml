@@ -66,6 +66,9 @@ jobs:
         key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
         restore-keys: |
           ${{ runner.os }}-composer-
+    - run: echo $COMPOSAER_AUTH
+      env:
+        COMPOSER_AUTH: "{\"github-oauth\": {\"github.com\": \"${{ secrets.REPO_TOKEN_MEDIA_LIBRARY_PRO }}\"}}"
     - run: composer install --no-progress --no-interaction
       env:
         COMPOSER_AUTH: "{\"github-oauth\": {\"github.com\": \"${{ secrets.REPO_TOKEN_MEDIA_LIBRARY_PRO }}\"}}"
