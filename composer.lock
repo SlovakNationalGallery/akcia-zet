@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6146f7a2ef073fea1e85370abb6a338e",
+    "content-hash": "2421be088822f597aa6c7ef4a23572b0",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3943,14 +3943,14 @@
             "version": "1.12.17",
             "source": {
                 "type": "git",
-                "url": "git@github.com:spatie/laravel-medialibrary-pro.git",
-                "reference": "5fa7787fddc2c0ef2e4b90f9a463cbedf5771eb4"
+                "url": "git@github.com:SlovakNationalGallery/laravel-medialibrary-pro.git",
+                "reference": "0cc34f8ec70da23a78550caaaac7133730e2d71c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.spatie.be/dist/spatie/laravel-medialibrary-pro/spatie-laravel-medialibrary-pro-5fa7787fddc2c0ef2e4b90f9a463cbedf5771eb4-zip-b04807.zip",
-                "reference": "5fa7787fddc2c0ef2e4b90f9a463cbedf5771eb4",
-                "shasum": "5bb1bd19f3c74ff2cfc2334ea157bff95be19d23"
+                "url": "https://api.github.com/repos/SlovakNationalGallery/laravel-medialibrary-pro/zipball/0cc34f8ec70da23a78550caaaac7133730e2d71c",
+                "reference": "0cc34f8ec70da23a78550caaaac7133730e2d71c",
+                "shasum": ""
             },
             "require": {
                 "ext-json": "*",
@@ -4015,10 +4015,10 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-medialibrary-pro/tree/1.12.17",
-                "issues": "https://github.com/spatie/laravel-medialibrary-pro/issues"
+                "source": "https://github.com/SlovakNationalGallery/laravel-medialibrary-pro/tree/1.12.17",
+                "issues": "https://github.com/SlovakNationalGallery/laravel-medialibrary-pro/issues"
             },
-            "time": "2021-02-24T15:22:30+00:00"
+            "time": "2022-02-10T12:39:11+00:00"
         },
         {
             "name": "spatie/laravel-newsletter",
@@ -9159,5 +9159,5 @@
         "php": "^7.3|^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.2.0"
 }
