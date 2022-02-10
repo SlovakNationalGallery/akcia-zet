@@ -96,7 +96,6 @@
         </h3>
     </div>
     @endif
-    @livewire('newsletter-signup-form')
     <x-footer />
 </x-app-layout>
 

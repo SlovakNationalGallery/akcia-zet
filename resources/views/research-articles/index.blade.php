@@ -17,6 +17,5 @@
     @endforeach
 
     <x-topic-list class="mt-8" />
-    @livewire('newsletter-signup-form')
     <x-footer />
 </x-app-layout>

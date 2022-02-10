@@ -138,7 +138,7 @@
 
         <h2 class="pt-4 -mb-5 md:-mb-8 slab tracking-normal text-center text-6xl md:text-8xl text-gray-700">Texty</h2>
         <div
-            class="relative p-8 bg-gradient-to-r-252 from-red-800 to-gray-700 text-center py-8"
+            class="relative p-8 bg-gradient-to-r-252 from-red-800 to-gray-700 text-center"
             x-data="calculateCutoutPolygon($el, '.cutout')"
             x-on:resize.window.debounce="polygonPoints = calculateCutoutPolygon($el, '.cutout').polygonPoints"
             :style="`clip-path: polygon(${polygonPoints.join(',')})`"
@@ -166,8 +166,7 @@
                 <a href="{{ route('research-articles.index') }}" class="text-gray-400 underline">Všetky texty</a>
             </h3>
         </div>
-        @livewire('newsletter-signup-form', ['class' => 'my-5 md:my-0'])
-        <div class="bg-gradient-to-r-252 from-red-800 to-gray-700 pt-2">
+        <div class="bg-gradient-to-r-252 from-red-800 to-gray-700">
             <x-footer dark />
         </div>
     </div>
